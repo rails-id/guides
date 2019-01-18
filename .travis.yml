@@ -20,6 +20,6 @@ after_success:
   - git remote add deploy $REMOTE_FOR_DEPLOY
   - git push deploy master
 addons:
-  ssh_known_hosts: git.example.com:1234
+  ssh_known_hosts: $SSH_HOST_FOR_DEPLOY
 notifications:
   email: false
