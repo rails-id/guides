@@ -1,7 +1,27 @@
 language: ruby
-cache: bundler
-install: bundle install --jobs 4
+
 rvm:
   - 2.6.0
+
+cache: bundler
+
+before_install:
+  - gem update --system
+
+install:
+  - gem install bundler --no-ri --no-rdoc
+  - bundle install
+
+branches:
+  only:
+    - master
+
+after_success:
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
+  - git remote add deploy $REMOTE_FOR_DEPLOY
+  - git push deploy master
+
 notifications:
   email: false
