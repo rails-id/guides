@@ -16,11 +16,13 @@ branches:
   only:
     - master
 
+before_script:
+  - echo -e "Host 103.52.146.51:34512\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
 after_success:
   - eval "$(ssh-agent -s)"
   - chmod 600 .travis/deploy_key.pem
   - ssh-add .travis/deploy_key.pem
-  - ssh -o "StrictHostKeyChecking no" -q railsid@103.52.146.51:34512 exit && echo $?
   - git remote add deploy $REMOTE_FOR_DEPLOY
   - git push deploy master
 
