@@ -19,7 +19,7 @@ branches:
 addons:
   ssh_known_hosts:
   - git.github.com
-  - $SERVER_DEPLOY
+  - $SERVER_FOR_DEPLOY
 
 after_success:
   - eval "$(ssh-agent -s)"
