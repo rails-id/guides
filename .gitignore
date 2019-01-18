@@ -6,3 +6,4 @@
 .DS_Store
 .sass-cache
 *.css.map
+.travis/
