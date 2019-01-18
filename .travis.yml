@@ -16,6 +16,11 @@ branches:
   only:
     - master
 
+addons:
+  ssh_known_hosts:
+  - git.github.com
+  - $SERVER_DEPLOY
+
 after_success:
   - eval "$(ssh-agent -s)"
   - chmod 600 .travis/deploy_key.pem
