@@ -19,7 +19,5 @@ after_success:
   - ssh-add .travis/deploy_key.pem
   - git remote add deploy $REMOTE_FOR_DEPLOY
   - git push deploy master
-addons:
-  ssh_known_hosts: $SSH_HOST_FOR_DEPLOY
 notifications:
   email: false
