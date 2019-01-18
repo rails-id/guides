@@ -18,8 +18,7 @@ branches:
   only:
     - master
 
-before_script:
-  - echo -e "Host 103.52.146.51:34512\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+before_script: 'echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
 
 after_success:
   - eval "$(ssh-agent -s)"
