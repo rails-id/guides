@@ -1,0 +1,3 @@
+# Kontribusi Panduan Rails Indonesia
+
+- 
