@@ -9,8 +9,8 @@ before_install:
   - gem update --system
 
 install:
-  - gem install bundler --no-ri --no-rdoc
   - bundle install
+  - rake guides:generate:html
 
 branches:
   only:
