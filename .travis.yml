@@ -5,19 +5,19 @@ rvm:
 cache: bundler
 before_install:
   - openssl aes-256-cbc -K $encrypted_b34f33f06a22_key -iv $encrypted_b34f33f06a22_iv -in deploy_rsa.enc -out deploy_rsa -d
-  - gem update --system
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/deploy_key.pem
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - ssh-add .travis/deploy_key.pem
+  - git remote add deploy $REMOTE_FOR_DEPLOY
 install:
+  - gem update --system
   - bundle install
   - rake guides:generate:html
 branches:
   only:
     - master
-before_script: echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
-  - eval "$(ssh-agent -s)"
-  - chmod 600 .travis/deploy_key.pem
-  - ssh-add .travis/deploy_key.pem
-  - git remote add deploy $REMOTE_FOR_DEPLOY
   - git push deploy master
 notifications:
   email: false
