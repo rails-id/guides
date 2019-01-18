@@ -1,6 +1,7 @@
 # Panduan Ruby on Rails Indonesia
 
 ![Country](https://img.shields.io/badge/country-indonesia-blue.svg)
+[![TravisCI](https://api.travis-ci.org/rails-id/guides.svg)](https://travis-ci.org/rails-id/guides)
 
 ## Referensi
 - https://github.com/rails/rails/tree/master/guides
