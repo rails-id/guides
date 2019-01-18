@@ -1,5 +1,7 @@
 # Panduan Ruby on Rails Indonesia
 
+![Country](https://img.shields.io/badge/country-indonesia-blue.svg)
+
 ## Referensi
 - https://github.com/rails/rails/tree/master/guides
 
