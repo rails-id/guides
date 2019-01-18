@@ -6,6 +6,7 @@ rvm:
 cache: bundler
 
 before_install:
+  - whoami
   - gem update --system
 
 install:
