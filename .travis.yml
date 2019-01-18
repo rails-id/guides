@@ -8,7 +8,6 @@ before_install:
     -in deploy_key.enc -out ./deploy_key -d
   - eval "$(ssh-agent -s)"
   - chmod 600 ./deploy_key
-  - cat ./deploy_key.pub >> authorized_keys
   - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
   - ssh -i ./deploy_key railsid@$SERVER_IP_ADDRESS -p $PORT pwd
