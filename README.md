@@ -3,7 +3,7 @@
 [![Country](https://img.shields.io/badge/country-indonesia-blue.svg)](https://en.wikipedia.org/wiki/Indonesia)
 [![TravisCI](https://api.travis-ci.org/rails-id/guides.svg)](https://travis-ci.org/rails-id/guides)
 
-Repositori ini menghasilkan apa yang ada di situs web http://guides.rails.id.
+Repositori ini menghasilkan apa yang ada di situs web [guides.rails.id](http://guides.rails.id).
 
 ## Petunjuk umum
 ##### Tidak lupa untuk bundle sumber Gemfile:
@@ -27,7 +27,7 @@ Secara umum konten panduan Ruby on Rails berada didirektori [source](source), la
 
 ## Kontribusi
 
-[![Contributors](https://img.shields.io/github/contributors/rails-id/guides.svg)](/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/rails-id/guides.svg)](https://github.com/rails-id/guides/graphs/contributors)
 
 Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`
 
