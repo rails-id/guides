@@ -16,6 +16,11 @@ bundle install
 rake guides:generate:html
 ```
 
+##### Jalankan output dengan web server:
+```
+ruby -run -e httpd output -p 4000
+```
+
 ## Kontribusi
 Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`
 
