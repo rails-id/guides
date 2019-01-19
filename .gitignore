@@ -3,6 +3,8 @@
 
 .bundle/
 /output/
+/.idea
+/.vscode
 .DS_Store
 .sass-cache
 *.css.map
