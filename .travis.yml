@@ -11,15 +11,15 @@ before_install:
   - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
   - ssh -i ./deploy_key railsid@$SERVER_IP_ADDRESS -p $PORT pwd
-  - git remote add deploy $REMOTE_FOR_DEPLOY
 install:
-  - gem update --system
+  - gem update --system && gem update
   - bundle install
   - rake guides:generate:html
 branches:
   only:
     - master
 after_success:
+  - cd ./output && git init && git add --all && git commit -m 'Deploy!' && git remote add deploy $REMOTE_FOR_DEPLOY
   - git push deploy master
 notifications:
   email: false
