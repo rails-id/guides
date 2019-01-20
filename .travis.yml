@@ -17,7 +17,7 @@ before_install:
 install:
   - travis_retry gem update --system
   - travis_retry gem update
-  - travis_retry bundle install
+  - travis_retry bundle update --bundler
   - rake guides:generate:html
   # - rake guides:generate ALL=1 RAILS_VERSION=v5.2.2
   # - travis_retry rake guides:validate
