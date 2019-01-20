@@ -63,7 +63,7 @@
     -
       name: Routing Rails dari Luar ke Dalam
       url: routing.html
-      description: Panduan ini menjelaskan fitur-fitur routing Rails dari sudut pandang user. Jika Anda ingin memahami bagaimana penggunaan routing pada aplikasi Rails Anda, silahkan membaca panduan ini. 
+      description: Panduan ini menjelaskan fitur-fitur routing Rails dari sudut pandang user. Jika Anda ingin memahami bagaimana penggunaan routing pada aplikasi Rails Anda, silakan membaca panduan ini. 
 -
   name: Komponen Lain
   documents:
