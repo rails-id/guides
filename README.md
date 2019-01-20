@@ -21,6 +21,11 @@ rake guides:generate:html
 ruby -run -e httpd output -p 4000
 ```
 
+##### Selengkapnya kalian bisa melihat di rake:
+```
+rake
+```
+
 ## Sumber konten
 
 Secara umum konten panduan Ruby on Rails berada didirektori [source](source), lakukan perubahan pada panduan konten tersebut untuk berkontrbusi.
