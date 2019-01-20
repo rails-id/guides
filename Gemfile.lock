@@ -51,6 +51,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
+    json (2.1.0)
     kindlerb (1.2.0)
       mustache
       nokogiri
@@ -110,6 +111,9 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    w3c_validators (1.3.4)
+      json (>= 1.8)
+      nokogiri (~> 1.6)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -121,6 +125,7 @@ DEPENDENCIES
   kindlerb
   rails
   redcarpet
+  w3c_validators
 
 BUNDLED WITH
    1.17.1
