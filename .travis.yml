@@ -19,6 +19,8 @@ install:
   - travis_retry gem update
   - travis_retry bundle install
   - rake guides:generate:html
+  # - rake guides:generate ALL=1 RAILS_VERSION=v5.2.2
+  # - travis_retry rake guides:validate
 branches:
   only:
     - master
