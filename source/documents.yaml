@@ -1,5 +1,5 @@
 -
-  name: Silahkan Mulai dari Sini
+  name: Silakan Mulai dari Sini
   documents:
     -
       name: Memulai untuk Menggunakan Rails
@@ -157,106 +157,106 @@
       description: Panduan ini menjelaskan bagaimana cara untuk menggunakan Rails untuk mengembangkan aplikasi API berbasis JSON secara efektif.
 
 -
-  name: Extending Rails
+  name: Memperluas Implementasi Rails
   documents:
     -
-      name: The Basics of Creating Rails Plugins
+      name: Konsep Dasar Pembuatan Plugin pada Rails 
       work_in_progress: true
       url: plugins.html
-      description: This guide covers how to build a plugin to extend the functionality of Rails.
+      description: Panduan ini menjelaskan bagaimana cara untuk membuat plugin untuk memperluas fungsionalitas Rails.
     -
-      name: Rails on Rack
+      name: Rails menggunakan Rack
       url: rails_on_rack.html
-      description: This guide covers Rails integration with Rack and interfacing with other Rack components.
+      description: Panduan ini menjelaskan mengenai integrasi Rails dengan Rack serta penggunaanya dengan komponen Rack lainnya.
     -
-      name: Creating and Customizing Rails Generators & Templates
+      name: Membuat dan Menyesuaikan Generator & Template pada Rails
       url: generators.html
-      description: This guide covers the process of adding a brand new generator to your extension or providing an alternative to an element of a built-in Rails generator (such as providing alternative test stubs for the scaffold generator).
+      description: Panduan ini menjelaskan bagaimana cara menambahkan generator baru untuk ekstensi Anda atau menyediakan element alternatif untuk generator built-in pada Rails (contohnya menyediakan alternatif test stub untuk generator scaffold).
     -
-      name: Getting Started with Engines
+      name: Memulai untuk Menggunakan Engine
       url: engines.html
-      description: This guide explains how to write a mountable engine.
+      description: Panduan ini menjelaskan cara pembuatan mountable engine.
       work_in_progress: true
     -
-      name: Threading and Code Execution in Rails
+      name: Threading dan Eksekusi Kode pada Rails
       url: threading_and_code_execution.html
-      description: This guide describes the considerations needed and tools available when working directly with concurrency in a Rails application.
+      description: Panduan ini menjelaskan mengenai pertimbangan yang diperlukan dan tools yang tersedia untuk mengimplementasi concurrency secara langsung pada aplikasi Rails.
       work_in_progress: true
 -
-  name: Contributions
+  name: Kontribusi
   documents:
     -
-      name: Contributing to Ruby on Rails
+      name: Kontribusi pada Ruby on Rails
       url: contributing_to_ruby_on_rails.html
-      description: Rails is not 'somebody else's framework.' This guide covers a variety of ways that you can get involved in the ongoing development of Rails.
+      description: Rails bukanlah framework "milik orang lain". Panduan ini mencakup berbakai cara agar Anda dapat terlibat langsung dalam proses pengembangan Rails.
     -
-      name: API Documentation Guidelines
+      name: Pedoman Dokumentasi API
       url: api_documentation_guidelines.html
-      description: This guide documents the Ruby on Rails API documentation guidelines.
+      description: Panduan ini mendokumentasikan pedoman dokumentasi API untuk Ruby on Rails.
     -
-      name: Guides Guidelines
+      name: Pedoman Panduan
       url: ruby_on_rails_guides_guidelines.html
-      description: This guide documents the Ruby on Rails guides guidelines.
+      description: Panduan ini mendokumentasikan pedoman panduan untuk Ruby on Rails.
 -
   name: Policies
   documents:
     -
       name: Maintenance Policy
       url: maintenance_policy.html
-      description: What versions of Ruby on Rails are currently supported, and when to expect new versions.
+      description: Versi Ruby on Rails mana yang saat ini di-support, dan kapan kira-kira versi baru akan di-release.
 -
-  name: Release Notes
+  name: Catatan Release
   documents:
     -
-      name: Upgrading Ruby on Rails
+      name: Memperbarui (Upgrade) Ruby on Rails
       url: upgrading_ruby_on_rails.html
-      description: This guide helps in upgrading applications to latest Ruby on Rails versions.
+      description: Panduan ini membantu untuk memperbarui aplikasi Anda ke versi terbaru dari Ruby on Rails.
     -
-      name: 6.0 Release Notes
+      name: Catatan Release 6.0
       work_in_progress: true
       url: 6_0_release_notes.html
-      description: Release notes for Rails 6.0.
+      description: Catatan release untuk Rails 6.0.
     -
-      name: Version 5.2 - April 2018
+      name: Versi 5.2 - April 2018
       url: 5_2_release_notes.html
-      description: Release notes for Rails 5.2.
+      description: Catatan release untuk Rails 5.2.
     -
-      name: Version 5.1 - April 2017
+      name: Versi 5.1 - April 2017
       url: 5_1_release_notes.html
-      description: Release notes for Rails 5.1.
+      description: Catatan release untuk Rails 5.1.
     -
-      name: Version 5.0 - June 2016
+      name: Versi 5.0 - Juni 2016
       url: 5_0_release_notes.html
-      description: Release notes for Rails 5.0.
+      description: Catatan release untuk Rails 5.0.
     -
-      name: Version 4.2 - December 2014
+      name: Versi 4.2 - Desember 2014
       url: 4_2_release_notes.html
-      description: Release notes for Rails 4.2.
+      description: Catatan release untuk Rails 4.2.
     -
-      name: Version 4.1 - April 2014
+      name: Versi 4.1 - April 2014
       url: 4_1_release_notes.html
-      description: Release notes for Rails 4.1.
+      description: Catatan release untuk Rails 4.1.
     -
-      name: Version 4.0 - June 2013
+      name: Versi 4.0 - Juni 2013
       url: 4_0_release_notes.html
-      description: Release notes for Rails 4.0.
+      description: Catatan release untuk Rails 4.0.
     -
-      name: Version 3.2 - January 2012
+      name: Versi 3.2 - January 2012
       url: 3_2_release_notes.html
-      description: Release notes for Rails 3.2.
+      description: Catatan release untuk Rails 3.2.
     -
-      name: Version 3.1 - August 2011
+      name: Versi 3.1 - Agustus 2011
       url: 3_1_release_notes.html
-      description: Release notes for Rails 3.1.
+      description: Catatan release untuk Rails 3.1.
     -
-      name: Version 3.0 - August 2010
+      name: Versi 3.0 - Agustus 2010
       url: 3_0_release_notes.html
-      description: Release notes for Rails 3.0.
+      description: Catatan release untuk Rails 3.0.
     -
-      name: Version 2.3 - March 2009
+      name: Versi 2.3 - March 2009
       url: 2_3_release_notes.html
-      description: Release notes for Rails 2.3.
+      description: Catatan release untuk Rails 2.3.
     -
-      name: Version 2.2 - November 2008
+      name: Versi 2.2 - November 2008
       url: 2_2_release_notes.html
-      description: Release notes for Rails 2.2.
+      description: Catatan release untuk Rails 2.2.
