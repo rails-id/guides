@@ -3,10 +3,10 @@
 
 .bundle/
 /output/
+.sass-cache
+*.css.map
 /.idea
 /.vscode
 .DS_Store
-.sass-cache
-*.css.map
 deploy_key
 deploy_key.pub
