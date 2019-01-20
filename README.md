@@ -1,7 +1,7 @@
 # Panduan Ruby on Rails Indonesia
 
 [![Country](https://img.shields.io/badge/country-indonesia-blue.svg)](https://en.wikipedia.org/wiki/Indonesia)
-[![TravisCI](https://api.travis-ci.org/rails-id/guides.svg)](https://travis-ci.org/rails-id/guides)
+[![Build Status](https://travis-ci.org/rails-id/guides.svg)](https://travis-ci.org/rails-id/guides)
 
 Repositori ini menghasilkan apa yang ada di situs web [guides.rails.id](http://guides.rails.id).
 
