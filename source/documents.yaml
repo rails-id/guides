@@ -10,7 +10,7 @@
   documents:
     -
       name: Konsep Dasar Active Record
-      url: active_record.html
+      url: active_record_basics.html
       description: Panduan ini akan membantu Anda memulai untuk menggunakan model, persistensi pada database, dan pola penggunaan Active Record beserta library-nya
     -
       name: Migrasi Active Record
