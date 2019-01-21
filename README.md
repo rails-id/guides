@@ -8,22 +8,22 @@ Repositori ini menghasilkan apa yang ada di situs web [guides.rails.id](http://g
 ## Petunjuk umum
 ##### Tidak lupa untuk bundle sumber Gemfile:
 ```
-bundle install
+$ bundle install
 ```
 
 ##### Mengenerate hasil sumber:
 ```
-rake guides:generate:html
+$ rake guides:generate:html
 ```
 
 ##### Jalankan output dengan web server:
 ```
-ruby -run -e httpd output -p 4000
+$ ruby -run -e httpd output -p 4000
 ```
 
 ##### Selengkapnya kalian bisa melihat di rake:
 ```
-rake
+$ rake
 ```
 
 ## Sumber konten
@@ -37,13 +37,13 @@ Secara umum konten panduan Ruby on Rails berada didirektori [source](source), la
 Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`
 
 ```
-git clone git@github.com:rails-id/guides.git
+$ git clone git@github.com:rails-id/guides.git
 ```
 
 Dan bagi yang non member Ruby on Rails Indonesia diharuskan untuk fork repositori, dan melakukan pull request
 
 ```
-git clone git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
+$ git clone git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
 ```
 
 Selengkapnya bisa dilihat di [Kontribusi](CONTRIBUTING.md) dan diharapkan untuk mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
