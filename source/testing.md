@@ -1,4 +1,4 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
 
 Testing Rails Applications
 ==========================
@@ -33,11 +33,11 @@ Rails creates a `test` directory for you as soon as you create a Rails project u
 
 ```bash
 $ ls -F test
-application_system_test_case.rb  controllers/                     helpers/                         mailers/                         system/
-channels/                        fixtures/                        integration/                     models/                          test_helper.rb
+controllers/           helpers/               mailers/               system/                test_helper.rb
+fixtures/              integration/           models/                application_system_test_case.rb
 ```
 
-The `helpers`, `mailers`, and `models` directories are meant to hold tests for view helpers, mailers, and models, respectively. The `channels` directory is meant to hold tests for Action Cable connection and channels. The `controllers` directory is meant to hold tests for controllers, routes, and views. The `integration` directory is meant to hold tests for interactions between controllers.
+The `helpers`, `mailers`, and `models` directories are meant to hold tests for view helpers, mailers, and models, respectively. The `controllers` directory is meant to hold tests for controllers, routes, and views. The `integration` directory is meant to hold tests for interactions between controllers.
 
 The system test directory holds system tests, which are used for full browser
 testing of your application. System tests allow you to test your application
@@ -70,7 +70,7 @@ If you remember, we used the `rails generate model` command in the
 model, and among other things it created test stubs in the `test` directory:
 
 ```bash
-$ rails generate model article title:string body:text
+$ bin/rails generate model article title:string body:text
 ...
 create  app/models/article.rb
 create  test/models/article_test.rb
@@ -105,7 +105,7 @@ class ArticleTest < ActiveSupport::TestCase
 The `ArticleTest` class defines a _test case_ because it inherits from `ActiveSupport::TestCase`. `ArticleTest` thus has all the methods available from `ActiveSupport::TestCase`. Later in this guide, we'll see some of the methods it gives us.
 
 Any method defined within a class inherited from `Minitest::Test`
-(which is the superclass of `ActiveSupport::TestCase`) that begins with `test_` is simply called a test. So, methods defined as `test_password` and `test_valid_password` are legal test names and are run automatically when the test case is run.
+(which is the superclass of `ActiveSupport::TestCase`) that begins with `test_` (case sensitive) is simply called a test. So, methods defined as `test_password` and `test_valid_password` are legal test names and are run automatically when the test case is run.
 
 Rails also adds a `test` method that takes a test name and a block. It generates a normal `Minitest::Unit` test with method names prefixed with `test_`. So you don't have to worry about naming the methods, and you can write something like:
 
@@ -156,7 +156,7 @@ end
 Let us run this newly added test (where `6` is the number of line where the test is defined).
 
 ```bash
-$ rails test test/models/article_test.rb:6
+$ bin/rails test test/models/article_test.rb:6
 Run options: --seed 44656
 
 # Running:
@@ -168,7 +168,7 @@ ArticleTest#test_should_not_save_article_without_title [/path/to/blog/test/model
 Expected true to be nil or false
 
 
-rails test test/models/article_test.rb:6
+bin/rails test test/models/article_test.rb:6
 
 
 
@@ -206,7 +206,7 @@ end
 Now the test should pass. Let us verify by running the test again:
 
 ```bash
-$ rails test test/models/article_test.rb:6
+$ bin/rails test test/models/article_test.rb:6
 Run options: --seed 31252
 
 # Running:
@@ -239,7 +239,7 @@ end
 Now you can see even more output in the console from running the tests:
 
 ```bash
-$ rails test test/models/article_test.rb
+$ bin/rails test test/models/article_test.rb
 Run options: --seed 1808
 
 # Running:
@@ -252,7 +252,7 @@ NameError: undefined local variable or method 'some_undefined_variable' for #<Ar
     test/models/article_test.rb:11:in 'block in <class:ArticleTest>'
 
 
-rails test test/models/article_test.rb:9
+bin/rails test test/models/article_test.rb:9
 
 
 
@@ -276,7 +276,7 @@ code. However there are situations when you want to see the full
 backtrace. Set the `-b` (or `--backtrace`) argument to enable this behavior:
 
 ```bash
-$ rails test -b test/models/article_test.rb
+$ bin/rails test -b test/models/article_test.rb
 ```
 
 If we want this test to pass we can modify it to use `assert_raises` like so:
@@ -381,12 +381,12 @@ documentation](http://docs.seattlerb.org/minitest).
 
 ### The Rails Test Runner
 
-We can run all of our tests at once by using the `rails test` command.
+We can run all of our tests at once by using the `bin/rails test` command.
 
-Or we can run a single test file by passing the `rails test` command the filename containing the test cases.
+Or we can run a single test file by passing the `bin/rails test` command the filename containing the test cases.
 
 ```bash
-$ rails test test/models/article_test.rb
+$ bin/rails test test/models/article_test.rb
 Run options: --seed 1559
 
 # Running:
@@ -404,7 +404,7 @@ You can also run a particular test method from the test case by providing the
 `-n` or `--name` flag and the test's method name.
 
 ```bash
-$ rails test test/models/article_test.rb -n test_the_truth
+$ bin/rails test test/models/article_test.rb -n test_the_truth
 Run options: -n test_the_truth --seed 43583
 
 # Running:
@@ -419,130 +419,47 @@ Finished tests in 0.009064s, 110.3266 tests/s, 110.3266 assertions/s.
 You can also run a test at a specific line by providing the line number.
 
 ```bash
-$ rails test test/models/article_test.rb:6 # run specific test and line
+$ bin/rails test test/models/article_test.rb:6 # run specific test and line
 ```
 
 You can also run an entire directory of tests by providing the path to the directory.
 
 ```bash
-$ rails test test/controllers # run all tests from specific directory
+$ bin/rails test test/controllers # run all tests from specific directory
 ```
 
 The test runner also provides a lot of other features like failing fast, deferring test output
 at the end of test run and so on. Check the documentation of the test runner as follows:
 
 ```bash
-$ rails test -h
-Usage: rails test [options] [files or directories]
-
-You can run a single test by appending a line number to a filename:
-
-    rails test test/models/user_test.rb:27
-
-You can run multiple files and directories at the same time:
-
-    rails test test/controllers test/integration/login_test.rb
-
-By default test failures and errors are reported inline during a run.
-
+$ bin/rails test -h
 minitest options:
     -h, --help                       Display this help.
-        --no-plugins                 Bypass minitest plugin auto-loading (or set $MT_NO_PLUGINS).
     -s, --seed SEED                  Sets random seed. Also via env. Eg: SEED=n rake
     -v, --verbose                    Verbose. Show progress processing files.
     -n, --name PATTERN               Filter run on /regexp/ or string.
         --exclude PATTERN            Exclude /regexp/ or string from run.
 
 Known extensions: rails, pride
+
+Usage: bin/rails test [options] [files or directories]
+You can run a single test by appending a line number to a filename:
+
+    bin/rails test test/models/user_test.rb:27
+
+You can run multiple files and directories at the same time:
+
+    bin/rails test test/controllers test/integration/login_test.rb
+
+By default test failures and errors are reported inline during a run.
+
+Rails options:
     -w, --warnings                   Run with Ruby warnings enabled
-    -e, --environment ENV            Run tests in the ENV environment
+    -e, --environment                Run tests in the ENV environment
     -b, --backtrace                  Show the complete backtrace
     -d, --defer-output               Output test failures and errors after the test run
     -f, --fail-fast                  Abort test run on first failure or error
     -c, --[no-]color                 Enable color in the output
-    -p, --pride                      Pride. Show your testing pride!
-```
-
-Parallel Testing
-----------------
-
-Parallel testing allows you to parallelize your test suite. While forking processes is the
-default method, threading is supported as well. Running tests in parallel reduces the time it
-takes your entire test suite to run.
-
-### Parallel testing with processes
-
-The default parallelization method is to fork processes using Ruby's DRb system. The processes
-are forked based on the number of workers provided. The default number is the actual core count
-on the machine you are on, but can be changed by the number passed to the parallelize method.
-
-To enable parallelization add the following to your `test_helper.rb`:
-
-```ruby
-class ActiveSupport::TestCase
-  parallelize(workers: 2)
-end
-```
-
-The number of workers passed is the number of times the process will be forked. You may want to
-parallelize your local test suite differently from your CI, so an environment variable is provided
-to be able to easily change the number of workers a test run should use:
-
-```bash
-PARALLEL_WORKERS=15 rails test
-```
-
-When parallelizing tests, Active Record automatically handles creating a database and loading the schema into the database for each
-process. The databases will be suffixed with the number corresponding to the worker. For example, if you
-have 2 workers the tests will create `test-database-0` and `test-database-1` respectively.
-
-If the number of workers passed is 1 or fewer the processes will not be forked and the tests will not
-be parallelized and the tests will use the original `test-database` database.
-
-Two hooks are provided, one runs when the process is forked, and one runs before the forked process is closed.
-These can be useful if your app uses multiple databases or perform other tasks that depend on the number of
-workers.
-
-The `parallelize_setup` method is called right after the processes are forked. The `parallelize_teardown` method
-is called right before the processes are closed.
-
-```ruby
-class ActiveSupport::TestCase
-  parallelize_setup do |worker|
-    # setup databases
-  end
-
-  parallelize_teardown do |worker|
-    # cleanup databases
-  end
-
-  parallelize(workers: :number_of_processors)
-end
-```
-
-These methods are not needed or available when using parallel testing with threads.
-
-### Parallel testing with threads
-
-If you prefer using threads or are using JRuby, a threaded parallelization option is provided. The threaded
-parallelizer is backed by Minitest's `Parallel::Executor`.
-
-To change the parallelization method to use threads over forks put the following in your `test_helper.rb`
-
-```ruby
-class ActiveSupport::TestCase
-  parallelize(workers: :number_of_processors, with: :threads)
-end
-```
-
-Rails applications generated from JRuby will automatically include the `with: :threads` option.
-
-The number of workers passed to `parallelize` determines the number of threads the tests will use. You may
-want to parallelize your local test suite differently from your CI, so an environment variable is provided
-to be able to easily change the number of workers a test run should use:
-
-```bash
-PARALLEL_WORKERS=15 rails test
 ```
 
 The Test Database
@@ -562,11 +479,11 @@ structure. The test helper checks whether your test database has any pending
 migrations. It will try to load your `db/schema.rb` or `db/structure.sql`
 into the test database. If migrations are still pending, an error will be
 raised. Usually this indicates that your schema is not fully migrated. Running
-the migrations against the development database (`rails db:migrate`) will
+the migrations against the development database (`bin/rails db:migrate`) will
 bring the schema up to date.
 
 NOTE: If there were modifications to existing migrations, the test database needs to
-be rebuilt. This can be done by executing `rails db:test:prepare`.
+be rebuilt. This can be done by executing `bin/rails db:test:prepare`.
 
 ### The Low-Down on Fixtures
 
@@ -679,7 +596,7 @@ Rails model tests are stored under the `test/models` directory. Rails provides
 a generator to create a model test skeleton for you.
 
 ```bash
-$ rails generate test_unit:model article title:string body:text
+$ bin/rails generate test_unit:model article title:string body:text
 create  test/models/article_test.rb
 create  test/fixtures/articles.yml
 ```
@@ -690,13 +607,13 @@ System Testing
 --------------
 
 System tests allow you to test user interactions with your application, running tests
-in either a real or a headless browser. System tests use Capybara under the hood.
+in either a real or a headless browser. System tests uses Capybara under the hood.
 
 For creating Rails system tests, you use the `test/system` directory in your
 application. Rails provides a generator to create a system test skeleton for you.
 
 ```bash
-$ rails generate system_test users
+$ bin/rails generate system_test users
       invoke test_unit
       create test/system/users_test.rb
 ```
@@ -797,7 +714,7 @@ created for you. If you didn't use the scaffold generator, start by creating a
 system test skeleton.
 
 ```bash
-$ rails generate system_test articles
+$ bin/rails generate system_test articles
 ```
 
 It should have created a test file placeholder for us. With the output of the
@@ -826,11 +743,11 @@ The test should see that there is an `h1` on the articles index page and pass.
 Run the system tests.
 
 ```bash
-rails test:system
+bin/rails test:system
 ```
 
-NOTE: By default, running `rails test` won't run your system tests.
-Make sure to run `rails test:system` to actually run them.
+NOTE: By default, running `bin/rails test` won't run your system tests.
+Make sure to run `bin/rails test:system` to actually run them.
 
 #### Creating articles system test
 
@@ -864,34 +781,6 @@ send a POST request to create the new article in the database.
 We will be redirected back to the articles index page and there we assert
 that the text from the new article's title is on the articles index page.
 
-#### Testing for multiple screen sizes
-If you want to test for mobile sizes on top of testing for desktop,
-you can create another class that inherits from SystemTestCase and use in your
-test suite. In this example a file called `mobile_system_test_case.rb` is created
-in the `/test` directory with the following configuration.
-
-```ruby
-require "test_helper"
-
-class MobileSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :chrome, screen_size: [375, 667]
-end
-```
-To use this configuration, create a test inside `test/system` that inherits from `MobileSystemTestCase`.
-Now you can test your app using multiple different configurations.
-
-```ruby
-require "mobile_system_test_case"
-
-class PostsTest < MobileSystemTestCase
-
-  test "visiting the index" do
-    visit posts_url
-    assert_selector "h1", text: "Posts"
-  end
-end
-```
-
 #### Taking it further
 
 The beauty of system testing is that it is similar to integration testing in
@@ -909,7 +798,7 @@ Integration tests are used to test how various parts of your application interac
 For creating Rails integration tests, we use the `test/integration` directory for our application. Rails provides a generator to create an integration test skeleton for us.
 
 ```bash
-$ rails generate integration_test user_flows
+$ bin/rails generate integration_test user_flows
       exists  test/integration/
       create  test/integration/user_flows_test.rb
 ```
@@ -945,7 +834,7 @@ Let's add an integration test to our blog application. We'll start with a basic 
 We'll start by generating our integration test skeleton:
 
 ```bash
-$ rails generate integration_test blog_flow
+$ bin/rails generate integration_test blog_flow
 ```
 
 It should have created a test file placeholder for us. With the output of the
@@ -1027,13 +916,13 @@ You should test for things such as:
 * was the web request successful?
 * was the user redirected to the right page?
 * was the user successfully authenticated?
+* was the correct object stored in the response template?
 * was the appropriate message displayed to the user in the view?
-* was the correct information displayed in the response?
 
 The easiest way to see functional tests in action is to generate a controller using the scaffold generator:
 
 ```bash
-$ rails generate scaffold_controller article title:string body:text
+$ bin/rails generate scaffold_controller article title:string body:text
 ...
 create  app/controllers/articles_controller.rb
 ...
@@ -1049,7 +938,7 @@ If you already have a controller and just want to generate the test scaffold cod
 each of the seven default actions, you can use the following command:
 
 ```bash
-$ rails generate test_unit:scaffold article
+$ bin/rails generate test_unit:scaffold article
 ...
 invoke  test_unit
 create    test/controllers/articles_controller_test.rb
@@ -1112,10 +1001,11 @@ end
 
 Now you can try running all the tests and they should pass.
 
-NOTE: If you followed the steps in the Basic Authentication section, you'll need to add authorization to every request header to get all the tests passing:
+NOTE: If you followed the steps in the Basic Authentication section, you'll need to add the following to the `setup` block to get all the tests passing:
 
 ```ruby
-post articles_url, params: { article: { body: 'Rails is awesome!', title: 'Hello Rails' } }, headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('dhh', 'secret') }
+request.headers['Authorization'] = ActionController::HttpAuthentication::Basic.
+  encode_credentials('dhh', 'secret')
 ```
 
 ### Available Request Types for Functional Tests
@@ -1129,7 +1019,7 @@ If you're familiar with the HTTP protocol, you'll know that `get` is a type of r
 * `head`
 * `delete`
 
-All of request types have equivalent methods that you can use. In a typical C.R.U.D. application you'll be using `get`, `post`, `put`, and `delete` more often.
+All of request types have equivalent methods that you can use. In a typical C.R.U.D. application you'll be using `get`, `post`, `put` and `delete` more often.
 
 NOTE: Functional tests do not verify whether the specified request type is accepted by the action, we're more concerned with the result. Request tests exist for this use case to make your tests more purposeful.
 
@@ -1223,7 +1113,7 @@ end
 If we run our test now, we should see a failure:
 
 ```bash
-$ rails test test/controllers/articles_controller_test.rb -n test_should_create_article
+$ bin/rails test test/controllers/articles_controller_test.rb -n test_should_create_article
 Run options: -n test_should_create_article --seed 32266
 
 # Running:
@@ -1261,7 +1151,7 @@ end
 Now if we run our tests, we should see it pass:
 
 ```bash
-$ rails test test/controllers/articles_controller_test.rb -n test_should_create_article
+$ bin/rails test test/controllers/articles_controller_test.rb -n test_should_create_article
 Run options: -n test_should_create_article --seed 18981
 
 # Running:
@@ -1397,56 +1287,6 @@ class ProfileControllerTest < ActionDispatch::IntegrationTest
 end
 ```
 
-#### Using Separate Files
-
-If you find your helpers are cluttering `test_helper.rb`, you can extract them into separate files. One good place to store them is `lib/test`.
-
-```ruby
-# lib/test/multiple_assertions.rb
-module MultipleAssertions
-  def assert_multiple_of_fourty_two(number)
-    assert (number % 42 == 0), 'expected #{number} to be a multiple of 42'
-  end
-end
-```
-
-These helpers can then be explicitly required as needed and included as needed
-
-```ruby
-require 'test_helper'
-require 'test/multiple_assertions'
-
-class NumberTest < ActiveSupport::TestCase
-  include MultipleAssertions
-
-  test '420 is a multiple of fourty two' do
-    assert_multiple_of_fourty_two 420
-  end
-end
-```
-
-or they can continue to be included directly into the relevant parent classes
-
-```ruby
-# test/test_helper.rb
-require 'test/sign_in_helper'
-
-class ActionDispatch::IntegrationTest
-  include SignInHelper
-end
-```
-
-#### Eagerly Requiring Helpers
-
-You may find it convenient to eagerly require helpers in `test_helper.rb` so your test files have implicit access to them. This can be accomplished using globbing, as follows
-
-```ruby
-# test/test_helper.rb
-Dir[Rails.root.join('lib', 'test', '**', '*.rb')].each { |file| require file }
-```
-
-This has the downside of increasing the boot-up time, as opposed to manually requiring only the necessary files in your individual tests.
-
 Testing Routes
 --------------
 
@@ -1524,7 +1364,7 @@ Testing Helpers
 ---------------
 
 A helper is just a simple module where you can define methods which are
-available in your views.
+available into your views.
 
 In order to test helpers, all you need to do is check that the output of the
 helper method matches what you'd expect. Tests related to the helpers are
@@ -1611,7 +1451,7 @@ class UserMailerTest < ActionMailer::TestCase
 end
 ```
 
-In the test we create the email and store the returned object in the `email`
+In the test we send the email and store the returned object in the `email`
 variable. We then ensure that it was sent (the first assert), then, in the
 second batch of assertions, we ensure that the email does indeed contain what we
 expect. The helper `read_fixture` is used to read in the content from this file.
@@ -1644,13 +1484,15 @@ manually with: `ActionMailer::Base.deliveries.clear`
 
 ### Functional and System Testing
 
-Unit testing allows us to test the attributes of the email while functional and system testing allows us to test whether user interactions appropriately trigger the email to be delivered. For example, you can check that the invite friend operation is sending an email appropriately:
+Unit testing allows us to test the email body, and recipients. In functional and system tests, we test whether user interactions appropriately trigger email to be delivered. For example, you can check that the invite friend operation is sending an email appropriately:
 
 ```ruby
 # Integration Test
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  include ActionMailer::TestHelper
+
   test "invite friend" do
     # Asserts the difference in the ActionMailer::Base.deliveries
     assert_emails 1 do
@@ -1666,6 +1508,7 @@ require 'test_helper'
 
 class UsersTest < ActionDispatch::SystemTestCase
   driven_by :selenium, using: :headless_chrome
+  include ActionMailer::TestHelper
 
   test "inviting a friend" do
     visit invite_users_url
@@ -1677,7 +1520,7 @@ class UsersTest < ActionDispatch::SystemTestCase
 end
 ```
 
-NOTE: The `assert_emails` method is not tied to a particular deliver method and will work with emails delivered with either the `deliver_now` or `deliver_later` method. If we explicitly want to assert that the email has been enqueued we can use the `assert_enqueued_emails` method. More information can be found in the  [documentation here](https://api.rubyonrails.org/classes/ActionMailer/TestHelper.html).
+NOTE: These examples take advantage of the `ActionMailer::TestHelper`. For emails we expect to be delivered immediately with the `deliver_now` method, we can use the `assert_emails` method. For emails we expect to be delivered as an ActiveJob with the `deliver_later` method, we can use the `assert_enqueued_emails` method. More information can be found in the  [documentation here](https://api.rubyonrails.org/classes/ActionMailer/TestHelper.html).
 
 Testing Jobs
 ------------
@@ -1725,112 +1568,6 @@ require 'test_helper'
 class ProductTest < ActiveJob::TestCase
   test 'billing job scheduling' do
     assert_enqueued_with(job: BillingJob) do
-      product.charge(account)
-    end
-  end
-end
-```
-
-Testing Action Cable
---------------------
-
-Since Action Cable is used at different levels inside your application,
-you'll need to test both the channels, connection classes themselves, and that other
-entities broadcast correct messages.
-
-### Connection Test Case
-
-By default, when you generate new Rails application with Action Cable, a test for the base connection class (`ApplicationCable::Connection`) is generated as well under `test/channels/application_cable` directory.
-
-Connection tests aim to check whether a connection's identifiers get assigned properly
-or that any improper connection requests are rejected. Here is an example:
-
-```ruby
-class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
-  test "connects with params" do
-    # Simulate a connection opening by calling the `connect` method
-    connect params: { user_id: 42 }
-
-    # You can access the Connection object via `connection` in tests
-    assert_equal connection.user_id, "42"
-  end
-
-  test "rejects connection without params" do
-    # Use `assert_reject_connection` matcher to verify that
-    # connection is rejected
-    assert_reject_connection { connect }
-  end
-end
-```
-
-You can also specify request cookies the same way you do in integration tests:
-
-```ruby
-test "connects with cookies" do
-  cookies.signed[:user_id] = "42"
-
-  connect
-
-  assert_equal connection.user_id, "42"
-end
-```
-
-See the API documentation for [`AcionCable::Connection::TestCase`](http://api.rubyonrails.org/classes/ActionCable/Connection/TestCase.html) for more information.
-
-### Channel Test Case
-
-By default, when you generate a channel, an associated test will be generated as well
-under the `test/channels` directory. Here's an example test with a chat channel:
-
-```ruby
-require "test_helper"
-
-class ChatChannelTest < ActionCable::Channel::TestCase
-  test "subscribes and stream for room" do
-    # Simulate a subscription creation by calling `subscribe`
-    subscribe room: "15"
-
-    # You can access the Channel object via `subscription` in tests
-    assert subscription.confirmed?
-    assert_has_stream "chat_15"
-  end
-end
-```
-
-This test is pretty simple and only asserts that the channel subscribes the connection to a particular stream.
-
-You can also specify the underlying connection identifiers. Here's an example test with a web notifications channel:
-
-```ruby
-require "test_helper"
-
-class WebNotificationsChannelTest < ActionCable::Channel::TestCase
-  test "subscribes and stream for user" do
-    stub_connection current_user: users[:john]
-
-    subscribe
-
-    assert_has_stream_for users[:john]
-  end
-end
-```
-
-See the API documentation for [`AcionCable::Channel::TestCase`](http://api.rubyonrails.org/classes/ActionCable/Channel/TestCase.html) for more information.
-
-### Custom Assertions And Testing Broadcasts Inside Other Components
-
-Action Cable ships with a bunch of custom assertions that can be used to lessen the verbosity of tests. For a full list of available assertions, see the API documentation for [`ActionCable::TestHelper`](http://api.rubyonrails.org/classes/ActionCable/TestHelper.html).
-
-It's a good practice to ensure that the correct message has been broadcasted inside other components (e.g. inside your controllers). This is precisely where
-the custom assertions provided by Action Cable are pretty useful. For instance,
-within a model:
-
-```ruby
-require 'test_helper'
-
-class ProductTest < ActionCable::TestCase
-  test "broadcast status after charge" do
-    assert_broadcast_on("products:#{product.id}", type: "charged") do
       product.charge(account)
     end
   end
