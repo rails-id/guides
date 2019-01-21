@@ -26,6 +26,30 @@ $ ruby -run -e httpd output -p 4000
 $ rake
 ```
 
+### Versi
+
+##### File yang selalu di terjemahkan
+- Semua file di direktori `source` yang berektensi Markdown (.md) dan file `documents.yaml`
+
+##### Branch
+- **master**
+
+	Jangan mensinkronkan semua panduan di branch master, karena branch master akan selalu berubah tergantung rilis dari Rails
+
+- **5-2-stable**
+
+	Sedang dikerjakan untuk panduan Rails versi ini
+
+### Salinan terakhir
+
+##### master
+- Repositori: https://github.com/rails/rails/commits/master/guides
+- SHA1: `0bc62b9c27b562986409851789c302be0ac7379f`
+
+##### 5-2-stable
+- Repositori: https://github.com/rails/rails/commits/5-2-stable/guides
+- SHA1: `bd24ef67ff2cb2d378371db25bf65e6afe19cebb`
+
 ## Sumber konten
 
 Secara umum konten panduan Ruby on Rails berada didirektori [source](source), lakukan perubahan pada panduan konten tersebut untuk berkontrbusi.
