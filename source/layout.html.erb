@@ -45,11 +45,11 @@
   </div>
   <div id="header">
     <div class="wrapper clearfix">
-      <h1><a href="index.html" title="Return to home page">Guides.rubyonrails.org</a></h1>
+      <h1><a href="index.html" title="Kembali ke Beranda">Guides.rubyonrails.org</a></h1>
       <ul class="nav">
-        <li><a class="nav-item" href="index.html">Home</a></li>
+        <li><a class="nav-item" href="index.html">Beranda</a></li>
         <li class="guides-index guides-index-large">
-          <a href="index.html" id="guidesMenu" class="guides-index-item nav-item">Guides Index</a>
+          <a href="index.html" id="guidesMenu" class="guides-index-item nav-item">Indeks Panduan</a>
           <div id="guides" class="clearfix" style="display: none;">
             <hr />
             <div class="guides-section-container">
@@ -64,10 +64,10 @@
             </div>
           </div>
         </li>
-        <li><a class="nav-item" href="contributing_to_ruby_on_rails.html">Contribute</a></li>
+        <li><a class="nav-item" href="contributing_to_ruby_on_rails.html">Kontribusi</a></li>
         <li class="guides-index guides-index-small">
           <select class="guides-index-item nav-item">
-            <option value="index.html">Guides Index</option>
+            <option value="index.html">Indeks Panduan</option>
             <% docs_for_menu.each do |section| %>
               <optgroup label="<%= section['name'] %>">
                 <% finished_documents(section['documents']).each do |document| %>
