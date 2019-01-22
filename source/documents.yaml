@@ -183,10 +183,10 @@
       url: ruby_on_rails_guides_guidelines.html
       description: Panduan ini mendokumentasikan pedoman panduan untuk Ruby on Rails.
 -
-  name: Policies
+  name: Kebijakan
   documents:
     -
-      name: Maintenance Policy
+      name: Kebijakan Maintenance
       url: maintenance_policy.html
       description: Versi Ruby on Rails mana yang saat ini di-support, dan kapan kira-kira versi baru akan di-release.
 -
