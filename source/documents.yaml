@@ -97,7 +97,6 @@
       name: Pengenalan Action Cable
       url: action_cable_overview.html
       description: Panduan ini menjelaskan bagaimana cara kerja Action Cable, dan bagaimana menggunakan WebSocket untuk membuat fitur real-time.
-
 -
   name: Panduan Tingkat Lanjut
   documents:
@@ -155,7 +154,6 @@
       name: Menggunakan Rails untuk Aplikasi API
       url: api_app.html
       description: Panduan ini menjelaskan bagaimana cara untuk menggunakan Rails untuk mengembangkan aplikasi API berbasis JSON secara efektif.
-
 -
   name: Memperluas Implementasi Rails
   documents:
@@ -198,10 +196,10 @@
       url: ruby_on_rails_guides_guidelines.html
       description: Panduan ini mendokumentasikan pedoman panduan untuk Ruby on Rails.
 -
-  name: Policies
+  name: Kebijakan
   documents:
     -
-      name: Maintenance Policy
+      name: Kebijakan Maintenance
       url: maintenance_policy.html
       description: Versi Ruby on Rails mana yang saat ini di-support, dan kapan kira-kira versi baru akan di-release.
 -
