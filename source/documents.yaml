@@ -72,19 +72,13 @@
       url: active_support_core_extensions.html
       description: Panduan ini mendokumentasikan core extension Ruby yang didefinisikan pada Active Support.
     -
+      name: API Internationalization (I18n) Rails
+      url: i18n.html
+      description: Panduan ini menjelaskan bagaimana cara menambahkan fitur internationalization pada aplikasi Anda. Aplikasi Anda akan dapat menerjemahkan konten ke dalam bahasa yang berbeda, mengubah aturan pluralisasi, menggunakan format tanggal yang tepat untuk setiap negara dan sebagainya.
+    -
       name: Konsep Dasar Action Mailer
       url: action_mailer_basics.html
       description: Panduan ini menjelaskan mengenai penggunaan Action Mailer untuk mengirim email.
-    -
-      name: Konsep Dasar Action Mailbox
-      work_in_progress: true
-      url: action_mailbox_basics.html
-      description: Panduan ini menjelaskan mengenai penggunaan Action Mailbox untuk menerima email.
-    -
-      name: Pengenalan Action Text
-      work_in_progress: true
-      url: action_text_overview.html
-      description: Panduan ini menjelaskan mengenai penggunaan Action Text untuk menangani konten rich text
     -
       name: Konsep Dasar Active Job
       url: active_job_basics.html
@@ -94,18 +88,6 @@
       url: active_storage_overview.html
       description: Panduan ini menjelaskan bagaimana cara melampirkan file ke dalam Active Record Anda.
     -
-      name: Pengenalan Action Cable
-      url: action_cable_overview.html
-      description: Panduan ini menjelaskan bagaimana cara kerja Action Cable, dan bagaimana menggunakan WebSocket untuk membuat fitur real-time.
-
--
-  name: Panduan Tingkat Lanjut
-  documents:
-    -
-      name: API Internationalization (I18n) Rails
-      url: i18n.html
-      description: Panduan ini menjelaskan bagaimana cara menambahkan fitur internationalization pada aplikasi Anda. Aplikasi Anda akan dapat menerjemahkan konten ke dalam bahasa yang berbeda, mengubah aturan pluralisasi, menggunakan format tanggal yang tepat untuk setiap negara dan sebagainya.
-    -
       name: Testing Aplikasi Rails
       url: testing.html
       description: Panduan ini merupakan panduan yang relatif komprehensif yang mencakup berbagai macam fasilitas testing pada Rails. Panduan ini menjelaskan mulai dari 'Apa itu test?' hingga Integration Testing. Selamat belajar.
@@ -114,11 +96,11 @@
       url: security.html
       description: Panduan ini menjelaskan masalah security yang umum terjadi pada aplikasi web dan bagaimana cara menghindarinya pada Rails.
     -
-      name: Debugging Rails Applications
+      name: Debugging Aplikasi Rails
       url: debugging_rails_applications.html
       description: Panduan ini menjelaskan bagaimana men-debug aplikasi Rails. Panduan ini mencakup berbagai macam metode yang dapat digunakan dan bagaimana untuk memahami apa yang terjadi "di balik layar" kode Anda.
     -
-      name: Konfigurasi Rails Applications
+      name: Konfigurasi Aplikasi Rails
       url: configuring.html
       description: Panduan ini menjelaskan pengaturan konfigurasi dasar pada aplikasi Rails.
     -
@@ -155,7 +137,10 @@
       name: Menggunakan Rails untuk Aplikasi API
       url: api_app.html
       description: Panduan ini menjelaskan bagaimana cara untuk menggunakan Rails untuk mengembangkan aplikasi API berbasis JSON secara efektif.
-
+    -
+      name: Pengenalan Action Cable
+      url: action_cable_overview.html
+      description: Panduan ini menjelaskan bagaimana cara kerja Action Cable, dan bagaimana menggunakan WebSocket untuk membuat fitur real-time.
 -
   name: Memperluas Implementasi Rails
   documents:
@@ -211,11 +196,6 @@
       name: Memperbarui (Upgrade) Ruby on Rails
       url: upgrading_ruby_on_rails.html
       description: Panduan ini membantu untuk memperbarui aplikasi Anda ke versi terbaru dari Ruby on Rails.
-    -
-      name: Catatan Release 6.0
-      work_in_progress: true
-      url: 6_0_release_notes.html
-      description: Catatan release untuk Rails 6.0.
     -
       name: Versi 5.2 - April 2018
       url: 5_2_release_notes.html
