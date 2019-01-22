@@ -66,13 +66,13 @@ Jika kalian melihat kesalahan pengejaan atau versi terbaru tidak sinkron, silaka
 Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`
 
 ```
-$ git clone git@github.com:rails-id/guides.git
+$ git clone -b $BRANCH git@github.com:rails-id/guides.git
 ```
 
 Bagi non member Ruby on Rails Indonesia silakan untuk fork repositori ini, dan melakukan pull request.
 
 ```
-$ git clone git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
+$ git clone -b $BRANCH git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
 ```
 
 Selengkapnya bisa lihat di [Kontribusi](CONTRIBUTING.md) dan diharapkan untuk mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
