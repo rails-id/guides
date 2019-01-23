@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/danchoi/kindlerb.git
+  revision: 56f90d0b82564ce822e9453dd645d6cac9c9b5ff
+  specs:
+    kindlerb (1.2.1)
+      mustache
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,9 +60,6 @@ GEM
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
-    kindlerb (1.2.0)
-      mustache
-      nokogiri
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -122,7 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  kindlerb
+  kindlerb!
   rails
   redcarpet
   w3c_validators

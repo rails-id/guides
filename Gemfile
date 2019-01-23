@@ -4,5 +4,5 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'redcarpet'
-gem 'kindlerb'
+gem 'kindlerb', github: 'danchoi/kindlerb'
 gem 'w3c_validators'
