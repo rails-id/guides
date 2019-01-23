@@ -6,6 +6,9 @@ rvm:
   - 2.6.0
   - ruby-head
 cache: bundler
+env:
+  - USER=ruby-on
+  - LATEST=v5.2.2
 before_install:
   - openssl aes-256-cbc -K $encrypted_b34f33f06a22_key -iv $encrypted_b34f33f06a22_iv
     -in deploy_key.enc -out ./deploy_key -d
@@ -13,14 +16,14 @@ before_install:
   - chmod 600 ./deploy_key
   - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
-  - ssh -i ./deploy_key railsid@$SERVER_IP_ADDRESS -p $PORT pwd
+  - ssh -i ./deploy_key $USER@$SERVER_IP_ADDRESS -p $PORT pwd
   - rm Gemfile.lock -rf
   - travis_retry gem update --system
   - travis_retry gem install bundler
   - travis_retry bundle
 install:
   - rake guides:generate ALL=1
-  # - rake guides:generate ALL=1 RAILS_VERSION=v5.2.2
+  # - rake guides:generate ALL=1 RAILS_VERSION=$LATEST
   # - travis_retry rake guides:validate
 branches:
   only:
