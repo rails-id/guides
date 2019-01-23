@@ -14,11 +14,17 @@ checks:
 plugins:
   fixme:
     enabled: false
+  bundler-audit:
+    enabled: true
 
 exclude_patterns:
   - "*.*"
   - ".*"
 
+  - CNAME
   - Gemfile
   - LICENSE
   - Rakefile
+
+  - assets/images/
+  - assets/stylesheets/
