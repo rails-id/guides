@@ -8,6 +8,7 @@ rvm:
 cache: bundler
 addons:
   ssh_known_hosts:
+    - $SERVER_IP_ADDRESS
     - $SERVER_IP_ADDRESS:$PORT
 # env:
 #   - LATEST=v5.2.2
