@@ -4,23 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= yield(:page_title) %></title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" data-turbolinks-track="reload">
-  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shCore.css" data-turbolinks-track="reload">
-  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shThemeRailsGuides.css" data-turbolinks-track="reload">
-  <link rel="stylesheet" type="text/css" href="stylesheets/fixes.css" data-turbolinks-track="reload">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shCore.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shThemeRailsGuides.css" />
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/fixes.css" />
+
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <script src="javascripts/syntaxhighlighter.js" data-turbolinks-track="reload"></script>
-  <script src="javascripts/turbolinks.js" data-turbolinks-track="reload"></script>
-  <script src="javascripts/guides.js" data-turbolinks-track="reload"></script>
-  <script src="javascripts/responsive-tables.js" data-turbolinks-track="reload"></script>
-  <meta property="og:title" content="<%= yield(:page_title) %>" />
-  <meta name="description" content="<%= yield(:description) %>" />
-  <meta property="og:description" content="<%= yield(:description) %>" />
-  <meta property="og:locale" content="id_ID" />
-  <meta property="og:site_name" content="Panduan Ruby on Rails" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/46654718" />
-  <meta property="og:type" content="website" />
 </head>
 <body class="guide">
   <% if @edge %>
@@ -45,7 +37,7 @@
   </div>
   <div id="header">
     <div class="wrapper clearfix">
-      <h1><a href="index.html" title="Kembali ke Beranda">Guides.rubyonrails.org</a></h1>
+      <h1><a href="index.html" title="Kembali ke Beranda">guides.rails.id</a></h1>
       <ul class="nav">
         <li><a class="nav-item" href="index.html">Beranda</a></li>
         <li class="guides-index guides-index-large">
@@ -102,12 +94,12 @@
         </p>
         <p>
           silakan berkontribusi jika Anda menemukan kesalahan pengetikan atau informasi.
-          Untuk memulai berkontribusi, silakan membaca bagian <%= link_to 'panduan kontribusi', 'https://edgeguides.rubyonrails.org/contributing_to_ruby_on_rails.html#contributing-to-the-rails-documentation' %> terlebih dahulu.
+          Untuk memulai berkontribusi, silakan membaca bagian <%= link_to 'panduan kontribusi', 'https://edgeguides.rails.id/contributing_to_ruby_on_rails.html#contributing-to-the-rails-documentation' %> terlebih dahulu.
         </p>
         <p>
           Anda mungkin menemukan konten yang belum lengkap atau belum diperbaharui.
           silakan tambahkan paduan yang belum lengkap tersebut di master. Pastikan Anda sudah mengecek
-          <%= link_to 'Panduan versi Edge', 'https://edgeguides.rubyonrails.org' %> terlebih dahulu untuk mengetahui
+          <%= link_to 'Panduan versi Edge', 'https://edgeguides.rails.id' %> terlebih dahulu untuk mengetahui
           apakah isu tersebut sudah diperbaiki atau belum di master.
           silakan cek <%= link_to 'Pedoman Panduan Ruby on Rails', 'ruby_on_rails_guides_guidelines.html' %>
           untuk pedoman gaya dan aturan penulisan.
@@ -129,5 +121,16 @@
       <%= render 'license' %>
     </div>
   </div>
+
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/responsive-tables.js"></script>
+  <script type="text/javascript" src="javascripts/guides.js"></script>
+  <script type="text/javascript" src="javascripts/syntaxhighlighter.js"></script>
+  <script type="text/javascript">
+      syntaxhighlighterConfig = {
+          autoLinks: false,
+      };
+      $(guidesIndex.bind);
+  </script>
 </body>
 </html>
