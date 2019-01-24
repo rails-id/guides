@@ -10,7 +10,7 @@ cache:
   directories:
     - vendor/bundle
     - $HOME/.rvm
-before_deploy:
+before_install:
   - openssl aes-256-cbc -K $encrypted_b34f33f06a22_key -iv $encrypted_b34f33f06a22_iv
     -in deploy_key.enc -out ./deploy_key -d
   - eval "$(ssh-agent -s)"
@@ -18,22 +18,16 @@ before_deploy:
   - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
   - ssh -i ./deploy_key $USER@$SERVER_IP_ADDRESS -p $PORT pwd
+  - rm Gemfile.lock -rf
+install:
   - travis_retry gem update --system
-  - travis_retry gem uninstall bundler
-  - travis_retry gem install bundler -v 2.0.1
+  - travis_retry gem install bundler
   - travis_retry bundle
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY_EDGE" ./deploy.sh && bash ./deploy.sh master
-    on:
-      branch: master
-      rvm: 2.6.0
-  - provider: script
-    skip_cleanup: true
-    script: sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY" ./deploy.sh && bash ./deploy.sh v5.2.2 stable
-    on:
-      branch: 5-2-stable
-      rvm: 2.6.0
+after_success:
+  - test $TRAVIS_BRANCH = "master" &&
+    sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY_EDGE" ./deploy.sh && bash ./deploy.sh master
+  - test $TRAVIS_BRANCH = "5-2-stable" &&
+    sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY" ./deploy.sh && bash ./deploy.sh v5.2.2 stable
+  - echo $TRAVIS_RUBY_VERSION
 notifications:
   email: false
