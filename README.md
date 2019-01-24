@@ -37,7 +37,7 @@ $ rake
 ##### Branch
 - **master**
 
-	Jangan mensinkronkan semua panduan di branch master, karena branch master akan selalu berubah tergantung rilis dari Rails.
+	Jika kalian telah menerjemahkan dari branch master jangan sungkan untuk mention member Rails Indonesia, karena perubahan terjemahan akan di cocokan kembali dengan panduan dari [Rails](https://github.com/rails/rails/tree/master/guides) resmi sampai rilisnya Rails versi 6.
 
 - **5-2-stable**
 
