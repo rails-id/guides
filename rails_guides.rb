@@ -27,5 +27,5 @@ RailsGuides::Generator.new(
   kindle:    env_flag["KINDLE"],
   language:  env_value["GUIDES_LANGUAGE"],
   direction: env_value["DIRECTION"],
-  latest:    env_value["LATEST"],
+  stable:    env_value["STABLE"],
 ).generate

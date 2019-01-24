@@ -17,7 +17,7 @@ module RailsGuides
   class Generator
     GUIDES_RE = /\.(?:erb|md)\z/
 
-    def initialize(edge:, version:, all:, only:, kindle:, language:, direction: "ltr", latest:)
+    def initialize(edge:, version:, all:, only:, kindle:, language:, direction: "ltr", stable:)
       @edge      = edge
       @version   = version
       @all       = all
@@ -25,7 +25,7 @@ module RailsGuides
       @kindle    = kindle
       @language  = language
       @direction = direction
-      @latest    = latest
+      @stable    = stable
 
       if @kindle
         check_for_kindlegen
@@ -76,7 +76,7 @@ module RailsGuides
         @source_dir += "/#{@language}" if @language
 
         if @version.present?
-          if @latest == "1" || @latest == "true"
+          if @stable == "1" || @stable == "true"
             @output_dir = "#{@guides_dir}/output/guides"
           else
             @output_dir = "#{@guides_dir}/output/guides/#{@version}"
