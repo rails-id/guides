@@ -18,7 +18,6 @@ before_install:
   - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
   - ssh -i ./deploy_key $USER@$SERVER_IP_ADDRESS -p $PORT pwd
-  - rm Gemfile.lock -rf
 install:
   - travis_retry gem update --system
   - travis_retry gem install bundler
