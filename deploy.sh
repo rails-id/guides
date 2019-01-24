@@ -9,12 +9,10 @@ else
 		cd repository && git add --all && git commit -m "Deploy!"
 		git push origin master
 	else
-	  echo $PATH
-	  find ~/ -name "*bin"
-
 	  git clone https://github.com/danchoi/kindlerb.git && cd kindlerb &&
 	  gem build kindlerb.gemspec && gem install kindlerb-*.gem && cd -
 	  setupkindlerb
+	  cp ~/.rvm/gems/ruby-$TRAVIS_RUBY_VERSION/bundler/gems/kindlerb-56f90d0b8256/bin/kindlegen ~/.rvm/bin
 
 		if [[ $2 == "stable" ]]; then
 		  rake guides:generate:html ALL=1 RAILS_VERSION=$1 STABLE=1
