@@ -25,7 +25,7 @@ install:
 after_success:
   - test $TRAVIS_BRANCH = "master" && test $TRAVIS_RUBY_VERSION = "2.6.0" &&
     sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY_EDGE" ./deploy.sh && bash ./deploy.sh master
-  - test $TRAVIS_BRANCH = "5-2-stable" &&
+  - test $TRAVIS_BRANCH = "5-2-stable" && test $TRAVIS_RUBY_VERSION = "2.6.0" &&
     sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY" ./deploy.sh && bash ./deploy.sh v5.2.2 stable
 notifications:
   email: false
