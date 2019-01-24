@@ -10,6 +10,8 @@ else
 		git push origin master
 
 	else
+	  gem install kindlerb
+	  gem list kindlerb
 	  setupkindlerb
 		if [[ $2 == "stable" ]]; then
 		  rake guides:generate:html ALL=1 RAILS_VERSION=$1 STABLE=1
