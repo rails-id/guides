@@ -14,10 +14,9 @@ before_deploy:
   - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - ssh-add ./deploy_key
   - ssh -i ./deploy_key $USER@$SERVER_IP_ADDRESS -p $PORT pwd
-install:
   - travis_retry gem update --system
   - travis_retry gem install bundler
-  - travis_retry bundle install
+  - travis_retry bundle
 deploy:
   - provider: script
     skip_cleanup: true
