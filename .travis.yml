@@ -19,7 +19,8 @@ before_deploy:
   - ssh-add ./deploy_key
   - ssh -i ./deploy_key $USER@$SERVER_IP_ADDRESS -p $PORT pwd
   - travis_retry gem update --system
-  - travis_retry gem uninstall bundler && travis_retry gem install bundler
+  - travis_retry gem uninstall bundler
+  - travis_retry gem install bundler -v 2.0.1
   - travis_retry bundle
 deploy:
   - provider: script
