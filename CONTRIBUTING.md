@@ -1,7 +1,40 @@
 # Kontribusi
 
 - Diharapkan sebelum berkontribusi kalian harus sudah mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
-- 
+- Setiap kontributor harus memiliki konfigurasi git dengan akun Github yang valid.
+  - Ref: [Why are my commits linked to the wrong user?](https://help.github.com/articles/why-are-my-commits-linked-to-the-wrong-user/)
+- Pastikan pengaturan waktu / tanggal pada device kalian sudah sesuai dan benar.
+
+## Panduan Git
+
+##### Untuk mengambil beberapa branch di remote Github ke local kalian lakukan contoh dibawah:
+``` bash
+git branch --track origin/action-cable-overview # akan mendapatkan branch `action-cable-overview` dari remote origin
+```
+
+##### Untuk menggabungkan file yang baru saja di rubah ke branch lain:
+``` bash
+git checkout 5-2-stable # pindah dulu ke branch 5-2-stable
+git checkout --patch action-cable-overview source/action_cable_overview.md # tambahkan file dari branch action-cable-overview ke branch 5-2-stable
+```
+
+Kalian nanti akan disajikan diff patch, kalau setuju tekan `y` dan [ENTER]
+Nanti akan dapat perubahan, dan cek menggunakan:
+
+``` bash
+git status
+```
+
+##### Jika kalian ingin menambahkan beberapa file ke stabil versi:
+``` bash
+git checkout 5-2-stable
+git checkout action-cable-overview -- file.md
+```
+
+##### Jika kalian ingin membatalkan perubahan di file tertentu:
+``` bash
+git checkout HEAD -- file.md
+```
 
 ## Branchs
 ```
