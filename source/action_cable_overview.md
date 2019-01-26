@@ -1,25 +1,31 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
 
-Meninjau Action Cable 
-=======================
+Action Cable Overview
+=====================
 
-Di dalam panduan ini, kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails kamu.
+In this guide, you will learn how Action Cable works and how to use WebSockets to
+incorporate real-time features into your Rails application.
 
-Setelah membaca panduan ini, kamu akan mengetahui tentang:
+After reading this guide, you will know:
 
-* Apa itu Action Cable untuk mengintergrasikan dengan backend dan frontend
-* Bagaimana pemasangan Action Cable
-* Bagaimana pemasangan Channels
-* Pemasangan dan menjalankan Action Cable pada Arsitektur dan Penyebaran
+* What Action Cable is and its integration backend and frontend
+* How to setup Action Cable
+* How to setup channels
+* Deployment and Architecture setup for running Action Cable
 
 --------------------------------------------------------------------------------
 
-Pengenalan
-----------
+Introduction
+------------
 
-Action cable terintegrasi dengan mulus pada [WebSockets](https://en.wikipedia.org/wiki/WebSocket)
-di aplikasi Rails kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan gaya dan bentuk aplikasi kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan bagi sisi klien kerangka JavaScript dan sisi server kerangka Ruby. Kamu mendapatkan akses penuh untuk menulis model domain dengan
-Active Record atau kamu dapat memilih Object-Relational-Mapping (ORM) pilihan kamu.
+Action Cable seamlessly integrates
+[WebSockets](https://en.wikipedia.org/wiki/WebSocket) with the rest of your
+Rails application. It allows for real-time features to be written in Ruby in the
+same style and form as the rest of your Rails application, while still being
+performant and scalable. It's a full-stack offering that provides both a
+client-side JavaScript framework and a server-side Ruby framework. You have
+access to your full domain model written with Active Record or your ORM of
+choice.
 
 Terminology
 -----------
