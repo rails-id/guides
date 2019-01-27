@@ -80,12 +80,20 @@ Some arguments may be passed via environment variables:
     source/<GUIDES_LANGUAGE> folder (such as source/es)
 
 Examples:
-  $ rake guides:generate ALL=1 RAILS_VERSION=v5.1.0
+  $ rake guides:generate
+  $ rake guides:generate ALL=1
+  $ rake guides:generate ALL=1 RAILS_VERSION=v5.2.2
+  $ rake guides:generate ALL=1 RAILS_VERSION=v5.2.2 STABLE=1
   $ rake guides:generate ONLY=migrations
   $ rake guides:generate:kindle
   $ rake guides:generate GUIDES_LANGUAGE=es
 HELP
   end
+end
+
+desc "Jalankan output dengan web server"
+task :serve do
+  sh "ruby -run -e httpd output -p 4000"
 end
 
 task default: "guides:help"
