@@ -46,8 +46,8 @@ $ rake
 ## Transfer
 
 ##### master
-- Repositori: [rails/rails](https://github.com/rails/rails/commits/master/guides) => [0bc62b9](https://github.com/rails/rails/commit/0bc62b9)
-- SHA1: `0bc62b9c27b562986409851789c302be0ac7379f`
+- Repositori: [rails/rails](https://github.com/rails/rails/commits/master/guides) => [1c5e2f9](https://github.com/rails/rails/commit/1c5e2f9)
+- SHA1: `1c5e2f9b98bc5b50ac990d6f1b0ae9df59580444`
 
 ##### 5-2-stable
 - Repositori: [rails/rails](https://github.com/rails/rails/commits/5-2-stable/guides) => [bd24ef6](https://github.com/rails/rails/commit/bd24ef6)
@@ -69,7 +69,7 @@ Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remot
 $ git clone -b $BRANCH git@github.com:rails-id/guides.git
 ```
 
-Bagi non member Ruby on Rails Indonesia silakan untuk fork repositori ini, dan melakukan pull request.
+Bagi non member organisasi Ruby on Rails Indonesia silakan untuk fork repositori ini, melakukan perubahan, dan melakukan pull request.
 
 ```
 $ git clone -b $BRANCH git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
