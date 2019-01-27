@@ -15,22 +15,14 @@ Setelah membaca panduan ini, Anda akan mengetahui:
 
 --------------------------------------------------------------------------------
 
-Migration Overview
+Iktisar Migration
 ------------------
 
-Migrations are a convenient way to
-[alter your database schema over time](https://en.wikipedia.org/wiki/Schema_migration)
-in a consistent and easy way. They use a Ruby DSL so that you don't have to
-write SQL by hand, allowing your schema and changes to be database independent.
+Migration adalah cara yang nyaman untuk [mengubah skema basis data kamu dari waktu ke waktu](https://en.wikipedia.org/wiki/Schema_migration) dengan cara yang konsisten dan mudah. Migration menggunakan Ruby DSL sehingga kamu tidak perlu menulis SQL secara langsung, memungkinkan skema dan perubahan-perubahan database kamu menjadi independen.
 
-You can think of each migration as being a new 'version' of the database. A
-schema starts off with nothing in it, and each migration modifies it to add or
-remove tables, columns, or entries. Active Record knows how to update your
-schema along this timeline, bringing it from whatever point it is in the
-history to the latest version. Active Record will also update your
-`db/schema.rb` file to match the up-to-date structure of your database.
+Kamu dapat menganggap setiap Migration sebagai 'versi' baru dari database. Sebuah skema bermula adalah sebuah file kosong, dan setiap migration mengubah file tersebut antara lain menambah atau menghapus tabel, kolom, atau entri. Active Record mengetahui bagaimana cara untuk mengupdate skema sepanjang waktu, membawa ke point manapun dalam history migrasi hingga ke versi terakhir. Active Record juga akan mengubah file `db/schema.rb` agar sesuai dengan struktur basis data kamu.
 
-Here's an example of a migration:
+Berikut ini salah satu contoh migration:
 
 ```ruby
 class CreateProducts < ActiveRecord::Migration[5.0]
@@ -44,6 +36,9 @@ class CreateProducts < ActiveRecord::Migration[5.0]
   end
 end
 ```
+
+File migration diatas menambahkan tabel bernama `products` dengan sebuah kolom `name` yang bertipe string dan kolom `description` yang bertipe text. Sebuah primary key bernama `id` akan ditambahkan secara implisit, karena 
+
 
 This migration adds a table called `products` with a string column called
 `name` and a text column called `description`. A primary key column called `id`
