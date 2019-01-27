@@ -23,4 +23,4 @@
 - Selanjutnya `push` ke repositori kalian (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
 - Yang terakhir lakukan `pull request` (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
   - Ref: [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
-- Tidak ada langkah selanjutnya, karena disini kalian hanya mengguna review dari 
+- Tidak ada langkah selanjutnya, karena disini kalian hanya mengguna review dari member organisasi Ruby on Rails Indonesia,
