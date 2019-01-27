@@ -8,7 +8,7 @@
 ## Memulai
 
 - Sebelum memulai silakan ![](https://img.shields.io/github/stars/rails-id/guides.svg?label=Stars&style=social) repositori ini dengan cara klik tombol di atas.
-- Lakukan ![](https://img.shields.io/github/forks/rails-id/guides.svg?label=Fork&style=social) pada repositori ini dengan cara klik tombol diawat
+- Lakukan ![](https://img.shields.io/github/forks/rails-id/guides.svg?label=Fork&style=social) pada repositori ini dengan cara klik tombol di atas.
   - Ref: [Fork a repo](https://help.github.com/articles/fork-a-repo/)
 - Clone repositori kalian yang sudah di fork pada langkah sebelumnya, bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`.
   - Ref: [Cloning a repository](https://help.github.com/articles/cloning-a-repository/)
@@ -18,9 +18,9 @@
       - [GUIDELINES.md](https://github.com/rails-id/guides/blob/master/GUIDELINES.md)
 - Selanjutnya kalian melakukan perubahan pada guide repositori.
   - Ref: [README.md#Sumber Konten](https://github.com/rails-id/guides#sumber-konten)
-- Asumsikan kalian telah melakukan perubahan pada sumber repositori.
+- Asumsikan kalian telah melakukan perubahan pada sumber yang dipilih (Ex: Action Cable Overview) dan di branch yang sudah kalian tentukan (Ex: action-cable-overview).
 - Commit disarankan menggunakan karakter nomor [issues](https://github.com/rails-id/guides/issues), agar mudah melakukan tracking.
 - Selanjutnya `push` ke repositori kalian (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
 - Yang terakhir lakukan `pull request` (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
   - Ref: [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
-- Tidak ada langkah selanjutnya, karena disini kalian hanya mengguna review dari member organisasi Ruby on Rails Indonesia,
+- Tidak ada langkah selanjutnya, karena disini kalian hanya menunggu review dari member organisasi Ruby on Rails Indonesia (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
