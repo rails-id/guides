@@ -1,67 +1,26 @@
 # Kontribusi
 
 - Diharapkan sebelum berkontribusi kalian harus sudah mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
-- 
+- Setiap kontributor harus memiliki konfigurasi git dengan akun Github yang valid.
+  - Ref: [Why are my commits linked to the wrong user?](https://help.github.com/articles/why-are-my-commits-linked-to-the-wrong-user/)
+- Pastikan pengaturan waktu / tanggal pada device kalian sudah sesuai dan benar.
 
-## Branchs
-```
-2-2-release-notes
-2-3-release-notes
-3-0-release-notes
-3-1-release-notes
-3-2-release-notes
-4-0-release-notes
-4-1-release-notes
-4-2-release-notes
-5-0-release-notes
-5-1-release-notes
-5-2-release-notes
-6-0-release-notes
-action-cable-overview
-action-controller-overview
-action-mailbox-basics
-action-mailer-basics
-action-text-overview
-action-view-overview
-active-job-basics
-active-model-basics
-active-record-basics
-active-record-callbacks
-active-record-migrations
-active-record-postgresql
-active-record-querying
-active-record-validations
-active-storage-overview
-active-support-core-extensions
-active-support-instrumentation
-api-app
-api-documentation-guidelines
-asset-pipeline
-association-basics
-autoloading-and-reloading-constants
-caching-with-rails
-command-line
-configuring
-contributing-to-ruby-on-rails
-debugging-rails-applications
-development-dependencies-install
-documents
-engines
-form-helpers
-generators
-getting-started
-i18n
-initialization
-layouts-and-rendering
-maintenance-policy
-plugins
-rails-application-templates
-rails-on-rack
-routing
-ruby-on-rails-guides-guidelines
-security
-testing
-threading-and-code-execution
-upgrading-ruby-on-rails
-working-with-javascript-in-rails
-```
+## Memulai
+
+- Sebelum memulai silakan ![](https://img.shields.io/github/stars/rails-id/guides.svg?label=Stars&style=social) repositori ini dengan cara klik tombol di atas.
+- Lakukan ![](https://img.shields.io/github/forks/rails-id/guides.svg?label=Fork&style=social) pada repositori ini dengan cara klik tombol diawat
+  - Ref: [Fork a repo](https://help.github.com/articles/fork-a-repo/)
+- Clone repositori kalian yang sudah di fork pada langkah sebelumnya, bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`.
+  - Ref: [Cloning a repository](https://help.github.com/articles/cloning-a-repository/)
+  - _Note: Disarankan untuk tidak melakukan pull request di branch master._
+    - Ref:
+      - [README.md#branch](https://github.com/rails-id/guides#branch)
+      - [GUIDELINES.md](https://github.com/rails-id/guides/blob/master/GUIDELINES.md)
+- Selanjutnya kalian melakukan perubahan pada guide repositori.
+  - Ref: [README.md#Sumber Konten](https://github.com/rails-id/guides#sumber-konten)
+- Asumsikan kalian telah melakukan perubahan pada sumber repositori.
+- Commit disarankan menggunakan karakter nomor [issues](https://github.com/rails-id/guides/issues), agar mudah melakukan tracking.
+- Selanjutnya `push` ke repositori kalian (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
+- Yang terakhir lakukan `pull request` (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
+  - Ref: [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
+- Tidak ada langkah selanjutnya, karena disini kalian hanya mengguna review dari 

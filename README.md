@@ -69,7 +69,7 @@ Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remot
 $ git clone -b $BRANCH git@github.com:rails-id/guides.git
 ```
 
-Bagi non member Ruby on Rails Indonesia silakan untuk fork repositori ini, dan melakukan pull request.
+Bagi non member organisasi Ruby on Rails Indonesia silakan untuk fork repositori ini, melakukan perubahan, dan melakukan pull request.
 
 ```
 $ git clone -b $BRANCH git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
