@@ -26,6 +26,6 @@ exclude_patterns:
   - LICENSE
   - Rakefile
 
-  - "bug_report_templates/*_master.rb"
+  - bug_report_templates/*_master.rb
   - assets/images/
   - assets/stylesheets/
