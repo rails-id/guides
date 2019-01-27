@@ -21,14 +21,10 @@ Action cable terintegrasi dengan mulus pada [WebSockets](https://en.wikipedia.or
 di aplikasi Rails kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan gaya dan bentuk aplikasi kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan bagi sisi klien kerangka JavaScript dan sisi server kerangka Ruby. Kamu mendapatkan akses penuh untuk menulis model domain dengan
 Active Record atau kamu dapat memilih Object-Relational-Mapping (ORM) pilihan kamu.
 
-What is Pub/Sub
+Apa itu Pola Berlangganan Publik
 ---------------
 
-[Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), or
-Publish-Subscribe, refers to a message queue paradigm whereby senders of
-information (publishers), send data to an abstract class of recipients
-(subscribers), without specifying individual recipients. Action Cable uses this
-approach to communicate between the server and many clients.
+[Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), atau disebut Publik Berlangganan, mengacu pada antrian pesan yang memilik paradigma dimana pengirim informasi (penerbit),  mengirim data kepada kelas yang abstrak ke penerima (pelanggan), tanpa menentukan spesifikasi individu penerima. Action Cable menggunakan pendekatan ini untuk berkomunikasi antara server dan banyak klien.
 
 ## Server-Side Components
 
