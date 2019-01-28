@@ -4,26 +4,26 @@
     -
       name: Memulai untuk Menggunakan Rails
       url: getting_started.html
-      description: Semua hal yang Anda perlu tahu untuk dapat meng-install Rails dan membuat aplikasi pertama Anda.
+      description: Semua hal yang Kamu perlu tahu untuk dapat meng-install Rails dan membuat aplikasi pertama Kamu.
 -
   name: Model
   documents:
     -
       name: Konsep Dasar Active Record
       url: active_record_basics.html
-      description: Panduan ini akan membantu Anda memulai untuk menggunakan model, persistensi pada database, dan pola penggunaan Active Record beserta library-nya
+      description: Panduan ini akan membantu Kamu memulai untuk menggunakan model, persistensi pada database, dan pola penggunaan Active Record beserta library-nya.
     -
       name: Migrasi Active Record
       url: active_record_migrations.html
-      description: Panduan ini menjelaskan bagaimana Anda dapat menggunakan Migrasi Active Record untuk mengubah database Anda secara terstruktur dan teratur.
+      description: Panduan ini menjelaskan bagaimana Kamu dapat menggunakan Migrasi Active Record untuk mengubah database Kamu secara terstruktur dan teratur.
     -
       name: Validasi Active Record
       url: active_record_validations.html
-      description: Panduan ini menjelaskan bagaimana Anda dapat menggunakan validasi Active Record.
+      description: Panduan ini menjelaskan bagaimana Kamu dapat menggunakan validasi Active Record.
     -
       name: Callback Active Record
       url: active_record_callbacks.html
-      description: Panduan ini menjelaskan bagaimana Anda dapat menggunakan callback Active Record.
+      description: Panduan ini menjelaskan bagaimana Kamu dapat menggunakan callback Active Record.
     -
       name: Asosiasi Active Record
       url: association_basics.html
@@ -59,11 +59,11 @@
     -
       name: Pengenalan Action Controller
       url: action_controller_overview.html
-      description: Panduan ini menjelaskan bagaimana controller bekerja dan digunakan dalam request cycle Aplikasi Anda. Panduan ini juga menjelaskan mengenai session,filter, cookies, streaming data, menangani exception yang di-raise oleh request dan topik-topik lain.
+      description: Panduan ini menjelaskan bagaimana controller bekerja dan digunakan dalam request cycle Aplikasi Kamu. Panduan ini juga menjelaskan mengenai session,filter, cookies, streaming data, menangani exception yang di-raise oleh request dan topik-topik lain.
     -
       name: Routing Rails dari Luar ke Dalam
       url: routing.html
-      description: Panduan ini menjelaskan fitur-fitur routing Rails dari sudut pandang user. Jika Anda ingin memahami bagaimana penggunaan routing pada aplikasi Rails Anda, silakan membaca panduan ini. 
+      description: Panduan ini menjelaskan fitur-fitur routing Rails dari sudut pandang user. Jika Kamu ingin memahami bagaimana penggunaan routing pada aplikasi Rails Kamu, silakan membaca panduan ini. 
 -
   name: Komponen Lain
   documents:
@@ -74,7 +74,7 @@
     -
       name: API Internationalization (I18n) Rails
       url: i18n.html
-      description: Panduan ini menjelaskan bagaimana cara menambahkan fitur internationalization pada aplikasi Anda. Aplikasi Anda akan dapat menerjemahkan konten ke dalam bahasa yang berbeda, mengubah aturan pluralisasi, menggunakan format tanggal yang tepat untuk setiap negara dan sebagainya.
+      description: Panduan ini menjelaskan bagaimana cara menambahkan fitur internationalization pada aplikasi Kamu. Aplikasi Kamu akan dapat menerjemahkan konten ke dalam bahasa yang berbeda, mengubah aturan pluralisasi, menggunakan format tanggal yang tepat untuk setiap negara dan sebagainya.
     -
       name: Konsep Dasar Action Mailer
       url: action_mailer_basics.html
@@ -82,11 +82,11 @@
     -
       name: Konsep Dasar Active Job
       url: active_job_basics.html
-      description: Panduan ini menjelaskan mengenai semua hal yang Anda perlukan untuk mulai membuat, men-queue, dan menjalankan background job.
+      description: Panduan ini menjelaskan mengenai semua hal yang Kamu perlukan untuk mulai membuat, men-queue, dan menjalankan background job.
     -
       name: Pengenalan Active Storage
       url: active_storage_overview.html
-      description: Panduan ini menjelaskan bagaimana cara melampirkan file ke dalam Active Record Anda.
+      description: Panduan ini menjelaskan bagaimana cara melampirkan file ke dalam Active Record Kamu.
     -
       name: Testing Aplikasi Rails
       url: testing.html
@@ -98,7 +98,7 @@
     -
       name: Debugging Aplikasi Rails
       url: debugging_rails_applications.html
-      description: Panduan ini menjelaskan bagaimana men-debug aplikasi Rails. Panduan ini mencakup berbagai macam metode yang dapat digunakan dan bagaimana untuk memahami apa yang terjadi "di balik layar" kode Anda.
+      description: Panduan ini menjelaskan bagaimana men-debug aplikasi Rails. Panduan ini mencakup berbagai macam metode yang dapat digunakan dan bagaimana untuk memahami apa yang terjadi "di balik layar" kode Kamu.
     -
       name: Konfigurasi Aplikasi Rails
       url: configuring.html
@@ -127,7 +127,7 @@
     -
       name: Pengenalan Caching pada Rails
       url: caching_with_rails.html
-      description: Panduan ini menjelaskan secara umum bagaimana cara penggunaan cache untuk optimasi kecepatan aplikasi rails Anda.
+      description: Panduan ini menjelaskan secara umum bagaimana cara penggunaan cache untuk optimasi kecepatan aplikasi rails Kamu.
     -
       name: Active Support Instrumentation
       work_in_progress: true
@@ -156,7 +156,7 @@
     -
       name: Membuat dan Menyesuaikan Generator & Template pada Rails
       url: generators.html
-      description: Panduan ini menjelaskan bagaimana cara menambahkan generator baru untuk ekstensi Anda atau menyediakan element alternatif untuk generator built-in pada Rails (contohnya menyediakan alternatif test stub untuk generator scaffold).
+      description: Panduan ini menjelaskan bagaimana cara menambahkan generator baru untuk ekstensi Kamu atau menyediakan element alternatif untuk generator built-in pada Rails (contohnya menyediakan alternatif test stub untuk generator scaffold).
     -
       name: Memulai untuk Menggunakan Engine
       url: engines.html
@@ -173,7 +173,7 @@
     -
       name: Kontribusi pada Ruby on Rails
       url: contributing_to_ruby_on_rails.html
-      description: Rails bukanlah framework "milik orang lain". Panduan ini mencakup berbakai cara agar Anda dapat terlibat langsung dalam proses pengembangan Rails.
+      description: Rails bukanlah framework "milik orang lain". Panduan ini mencakup berbakai cara agar Kamu dapat terlibat langsung dalam proses pengembangan Rails.
     -
       name: Pedoman Dokumentasi API
       url: api_documentation_guidelines.html
@@ -195,7 +195,7 @@
     -
       name: Memperbarui (Upgrade) Ruby on Rails
       url: upgrading_ruby_on_rails.html
-      description: Panduan ini membantu untuk memperbarui aplikasi Anda ke versi terbaru dari Ruby on Rails.
+      description: Panduan ini membantu untuk memperbarui aplikasi Kamu ke versi terbaru dari Ruby on Rails.
     -
       name: Versi 5.2 - April 2018
       url: 5_2_release_notes.html
