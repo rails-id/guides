@@ -1,38 +1,37 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
 
-Getting Started with Rails
+Memulai dengan Rails
 ==========================
 
-This guide covers getting up and running with Ruby on Rails.
+Panduan ini mencakup membuat dan menjalankan dengan Ruby on Rails.
 
-After reading this guide, you will know:
+Setelah membaca panduan ini, Kamu akan tahu:
 
-* How to install Rails, create a new Rails application, and connect your
-  application to a database.
-* The general layout of a Rails application.
-* The basic principles of MVC (Model, View, Controller) and RESTful design.
-* How to quickly generate the starting pieces of a Rails application.
+* Cara menginstal Rails, membuat aplikasi Rails baru, dan menghubungkan aplikasi Kamu ke database.
+* Tata letak umum aplikasi Rails.
+* Prinsip dasar MVC (Model, View, Controller) dan desain RESTful.
+* Cara cepat mengenerate aplikasi Rails.
 
 --------------------------------------------------------------------------------
 
-Guide Assumptions
+Asumsi Panduan
 -----------------
 
-This guide is designed for beginners who want to get started with a Rails
-application from scratch. It does not assume that you have any prior experience
-with Rails.
+Panduan ini dirancang untuk pemula yang ingin memulai dengan aplikasi Rails dari awal.
+Anggapan bahwa Kamu tidak memiliki pengalaman sebelumnya dengan Rails.
 
-Rails is a web application framework running on the Ruby programming language.
-If you have no prior experience with Ruby, you will find a very steep learning
-curve diving straight into Rails. There are several curated lists of online resources
-for learning Ruby:
+Rails adalah framework aplikasi web yang berjalan pada bahasa pemrograman Ruby.
+Jika Kamu tidak memiliki pengalaman sebelumnya dengan Ruby,
+Kamu akan banyak menemukan kesulitan dalam belajar Rails.
+Ada beberapa daftar sumber online yang dapat dipelajari dari Ruby:
 
-* [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
-* [List of Free Programming Books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#ruby)
+* [Situs Web Resmi Bahasa Pemrograman Ruby](https://www.ruby-lang.org/en/documentation/)
+* [Daftar Buku Pemrograman (Gratis)](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#ruby)
 
-Be aware that some resources, while still excellent, cover versions of Ruby as old as
-1.6, and commonly 1.8, and will not include some syntax that you will see in day-to-day
-development with Rails.
+Ketahuilah bahwa beberapa sumber diatas, walaupun masih bagus,
+mencakup versi Ruby terdahulu yaitu versi 1.6, umumnya Ruby versi 1.8,
+dan disumber tersebut mungkin tidak akan menyertakan beberapa
+syntax yang akan Kamu lihat dalam development di Rails.
 
 What is Rails?
 --------------
