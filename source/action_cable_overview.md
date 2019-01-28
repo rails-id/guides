@@ -30,7 +30,7 @@ Apa itu Pola Berlangganan Publik
 
 ### Koneksi 
 
-*Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi dengan di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri tidak berurusan dengan logika apapun di dalam spesifikasi aplikasi di luar otentikasi dan otorisasi. Klien dari koneksi WebSocket di sebut koneksi *konsumen*. Pengguna secara individu membuat satu pasang konsumen-koneksi per tab browser, jendela, atau perangkat yang di pakai untuk membuka.
+*Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri tidak berurusan dengan logika apapun di dalam spesifikasi aplikasi di luar otentikasi dan otorisasi. Klien dari koneksi WebSocket di sebut koneksi *konsumen*. Pengguna secara individu membuat satu pasang konsumen-koneksi per tab browser, jendela, atau perangkat yang di pakai untuk membuka.
 
 Connections are instances of `ApplicationCable::Connection`. In this class, you
 authorize the incoming connection, and proceed to establish it if the user can
