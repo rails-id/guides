@@ -26,17 +26,11 @@ Apa itu Pola Berlangganan Publik
 
 [Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), atau disebut Publik Berlangganan, mengacu pada antrian pesan yang memilik paradigma dimana pengirim informasi (penerbit),  mengirim data kepada kelas yang abstrak ke penerima (pelanggan), tanpa menentukan spesifikasi individu penerima. Action Cable menggunakan pendekatan ini untuk berkomunikasi antara server dan banyak klien.
 
-## Server-Side Components
+## Komponen Sisi Server
 
-### Connections
+### Koneksi 
 
-*Connections* form the foundation of the client-server relationship. For every
-WebSocket accepted by the server, a connection object is instantiated. This
-object becomes the parent of all the *channel subscriptions* that are created
-from there on. The connection itself does not deal with any specific application
-logic beyond authentication and authorization. The client of a WebSocket
-connection is called the connection *consumer*. An individual user will create
-one consumer-connection pair per browser tab, window, or device they have open.
+*Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi dengan di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri tidak berurusan dengan logika apapun di dalam spesifikasi aplikasi di luar otentikasi dan otorisasi. Klien dari koneksi WebSocket di sebut koneksi *konsumen*. Pengguna secara individu membuat satu pasang konsumen-koneksi per tab browser, jendela, atau perangkat yang di pakai untuk membuka.
 
 Connections are instances of `ApplicationCable::Connection`. In this class, you
 authorize the incoming connection, and proceed to establish it if the user can
