@@ -75,64 +75,65 @@ Dengan mengikuti panduan ini bersama-sama, Kamu akan membuat proyek Rails yang d
 `blog`, weblog (yang sangat) sederhana. Sebelum Kamu memulai membuat aplikasi,
 Kamu perlu memastikan dulu bahwa Rails-mu sudah terinstal.
 
-TIP: Contoh-contoh di bawah ini `$` digunakan untuk mewakili terminal prompt untuk OS UNIX-like,
+TIP: Contoh-contoh di bawah ini tanda `$` digunakan untuk mewakili terminal shell untuk OS UNIX-like,
 walaupun mungkin tampil berbeda karena telah disesuaikan. Jika Kamu menggunakan Windows,
-prompt Kamu akan terlihat seperti `c:\source_code>`
+shell Kamu akan terlihat seperti `c:\source_code>`
 
-### Installing Rails
+### Menginstal Rails
 
-Before you install Rails, you should check to make sure that your system has the
-proper prerequisites installed. These include Ruby and SQLite3.
+Sebelum Kamu menginstal Rails, Kamu harus memeriksa untuk memastikan bahwa
+sistem yang Kamu gunakan telah memenuhi prasyarat untuk diinstal. Termasuk Ruby dan SQLite3.
 
-Open up a command line prompt. On macOS open Terminal.app, on Windows choose
-"Run" from your Start menu and type 'cmd.exe'. Any commands prefaced with a
-dollar sign `$` should be run in the command line. Verify that you have a
-current version of Ruby installed:
+Buka shell command line. Untuk macOS, buka Terminal.app, untuk Windows pilih
+"Run" dari Start menu dan ketik 'cmd.exe'. Perintah apa pun yang diawali dengan tanda
+dolar `$` harus dijalankan di command line. Verifikasi bahwa Kamu memiliki
+versi Ruby yang diinstal:
 
 ```bash
 $ ruby -v
 ruby 2.3.1p112
 ```
 
-Rails requires Ruby version 2.2.2 or later. If the version number returned is
-less than that number, you'll need to install a fresh copy of Ruby.
+Rails membutuhkan Ruby versi 2.2.2 atau lebih baru.
+Jika nomor versi yang dihasilkan kurang dari angka diatas,
+Kamu harus menginstal Ruby yang baru.
 
-TIP: A number of tools exist to help you quickly install Ruby and Ruby
-on Rails on your system. Windows users can use [Rails Installer](http://railsinstaller.org),
-while macOS users can use [Tokaido](https://github.com/tokaido/tokaidoapp).
-For more installation methods for most Operating Systems take a look at
+TIP: Ada beberapa alat untuk membantu Kamu dengan cepat menginstal
+Ruby dan Ruby on Rails di sistem Kamu. Untuk pengguna Windows dapat menggunakan [Rails Installer](http://railsinstaller.org),
+sedangkan untuk pengguna macOS dapat menggunakan [Tokaido](https://github.com/tokaido/tokaidoapp).
+Cara pemasangan lebih lanjut untuk sebagian besar Sistem Operasi, silakan lihat di
 [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
 
-If you are working on Windows, you should also install the
+Jika Kamu menjalankan di Windows, Kamu juga harus menginstal
 [Ruby Installer Development Kit](http://rubyinstaller.org/downloads/).
 
-You will also need an installation of the SQLite3 database.
-Many popular UNIX-like OSes ship with an acceptable version of SQLite3.
-On Windows, if you installed Rails through Rails Installer, you
-already have SQLite installed. Others can find installation instructions
-at the [SQLite3 website](https://www.sqlite.org).
-Verify that it is correctly installed and in your PATH:
+Kamu juga akan memerlukan instalasi database SQLite3.
+Banyak OS turunan UNIX-like yang populer dapat menerima versi SQLite3.
+Untuk Windows, jika Kamu menginstal Rails menggunakan Rails Installer, itu
+sudah termasuk instalasi SQLite. Untuk yang lainnya dapat mencari petunjuk
+instalasi di [Situs web SQLite3](https://www.sqlite.org).
+Verifikasi bahwa installasi PATH sudah terpasang dengan benar:
 
 ```bash
 $ sqlite3 --version
 ```
 
-The program should report its version.
+Program harus menghasilkan versi sesuai perintah diatas.
 
-To install Rails, use the `gem install` command provided by RubyGems:
+Untuk menginstal Rails, gunakan perintah `gem install` yang telah disediakan oleh RubyGems:
 
 ```bash
 $ gem install rails
 ```
 
-To verify that you have everything installed correctly, you should be able to
-run the following:
+Untuk memverifikasi bahwa Kamu telah menginstal semuanya dengan benar, Kamu harus
+bisa menjalankan perintah berikut:
 
 ```bash
 $ rails --version
 ```
 
-If it says something like "Rails 5.2.1", you are ready to continue.
+Jika menghasilkan sesuatu seperti "Rails 5.2.1", Kamu siap untuk melanjutkan ke langkah berikutnya.
 
 ### Creating the Blog Application
 
