@@ -23,7 +23,7 @@ Anggapan bahwa Kamu tidak memiliki pengalaman sebelumnya dengan Rails.
 Rails adalah framework aplikasi web yang berjalan pada bahasa pemrograman Ruby.
 Jika Kamu tidak memiliki pengalaman sebelumnya dengan Ruby,
 Kamu akan banyak menemukan kesulitan dalam belajar Rails.
-Ada beberapa daftar sumber online yang dapat dipelajari dari Ruby:
+Ada beberapa daftar sumber online yang bisa dipelajari dari Ruby:
 
 * [Situs Web Resmi Bahasa Pemrograman Ruby](https://www.ruby-lang.org/en/documentation/)
 * [Daftar Buku Pemrograman (Gratis)](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#ruby)
@@ -38,14 +38,14 @@ Apa itu Rails?
 
 Rails adalah framework untuk mengembangkan aplikasi web yang ditulis
 dalam bahasa pemrograman Ruby. Rails dirancang untuk membuat program
-aplikasi web lebih mudah, hal ini agar setiap developer dapat membuat aplikasi
+aplikasi web lebih mudah, hal ini agar setiap developer bisa membuat aplikasi
 apa yang mereka butuhkan. Rails memungkinkan Kamu untuk menulis kode lebih
 sedikit sementara pencapaian Kamu lebih banyak dengan menulis kode untuk bahasa dan
 framwork lainnya. Developer Rails yang berpengalaman juga telah melaporkan bahwa
 membuat aplikasi web dengan Rails lebih menyenangkan.
 
-Rails adalah perangkat lunak yang disarankan. Hal ini membuat bahwa ada cara "terbaik"
-untuk melakukan sesuatu, yang dapat dirancang dengan dorongan cara tersebut, dan dalam beberapa kasus
+Rails adalah perangkat lunak yang disarankan. Hal ini menunjukkan bahwa ada cara "terbaik"
+untuk melakukan sesuatu, yang bisa dirancang dengan dorongan cara tersebut, dan dalam beberapa kasus
 untuk mencegah alternatif. Jika Kamu mempelajari "The Rails Way" Kamu mungkin akan menemukan
 peningkatan produktivitas yang luar biasa. Jika Kamu terus membawa kebiasaan lama
 dari bahasa lain ke Rails development, dan mencoba menggunakan pola yang Kamu
@@ -56,7 +56,7 @@ Rails memiliki dua Filosofi prinsip utama:
 * **Don't Repeat Yourself:** DRY adalah prinsip development perangkat lunak yang
   menyatakan bahwa "Setiap bagian pengetahuan harus memiliki perwakilan tunggal,
   tidak ambigu, otoritatif dalam suatu sistem." Dengan tidak menulis informasi
-  yang sama berulang-ulang, kode lebih dapat di-maintainable, di-extensible,
+  yang sama berulang-ulang, kode lebih mudah di-maintainable, di-extensible,
   dan sedikit dari bug.
 * **Convention Over Configuration:** Rails memiliki pendapat tentang cara terbaik
   untuk melakukan banyak hal dalam membangun aplikasi web, Rails telah menetapkan
@@ -99,8 +99,8 @@ Jika nomor versi yang dihasilkan kurang dari angka diatas,
 Kamu harus menginstal Ruby yang baru.
 
 TIP: Ada beberapa alat untuk membantu Kamu dengan cepat menginstal
-Ruby dan Ruby on Rails di sistem Kamu. Untuk pengguna Windows dapat menggunakan [Rails Installer](http://railsinstaller.org),
-sedangkan untuk pengguna macOS dapat menggunakan [Tokaido](https://github.com/tokaido/tokaidoapp).
+Ruby dan Ruby on Rails di sistem Kamu. Untuk pengguna Windows bisa menggunakan [Rails Installer](http://railsinstaller.org),
+sedangkan untuk pengguna macOS bisa menggunakan [Tokaido](https://github.com/tokaido/tokaidoapp).
 Cara pemasangan lebih lanjut untuk sebagian besar Sistem Operasi, silakan lihat di
 [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
 
@@ -110,7 +110,7 @@ Jika Kamu menjalankan di Windows, Kamu juga harus menginstal
 Kamu juga akan memerlukan instalasi database SQLite3.
 Banyak OS turunan UNIX-like yang populer dapat menerima versi SQLite3.
 Untuk Windows, jika Kamu menginstal Rails menggunakan Rails Installer, itu
-sudah termasuk instalasi SQLite. Untuk yang lainnya dapat mencari petunjuk
+sudah termasuk instalasi SQLite. Untuk yang lainnya bisa mencari petunjuk
 instalasi di [Situs web SQLite3](https://www.sqlite.org).
 Verifikasi bahwa installasi PATH sudah terpasang dengan benar:
 
@@ -135,62 +135,62 @@ $ rails --version
 
 Jika menghasilkan sesuatu seperti "Rails 5.2.1", Kamu siap untuk melanjutkan ke langkah berikutnya.
 
-### Creating the Blog Application
+### Membuat Aplikasi Blog
 
-Rails comes with a number of scripts called generators that are designed to make
-your development life easier by creating everything that's necessary to start
-working on a particular task. One of these is the new application generator,
-which will provide you with the foundation of a fresh Rails application so that
-you don't have to write it yourself.
+Rails hadir dengan sejumlah script yang disebut dengan generator yang dirancang untuk membuat
+development lebih mudah dengan membuat segala sesuatu yang diperlukan untuk
+menjalankan tugas-tugas tertentu. Salah satunya adalah generator membuat aplikasi baru (new app),
+yang akan memberikan Kamu dasar dari pembuatan aplikasi baru (new app) di Rails sehingga
+Kamu tidak perlu menuliskannya lagi.
 
-To use this generator, open a terminal, navigate to a directory where you have
-rights to create files, and type:
+Untuk menggunakan generator ini, buka terminal, navigasikan ke direktori
+tempat dimana Kamu memiliki hak akses untuk membuat file atau folder, dan ketik:
 
 ```bash
 $ rails new blog
 ```
 
-This will create a Rails application called Blog in a `blog` directory and
-install the gem dependencies that are already mentioned in `Gemfile` using
-`bundle install`.
+Ini akan membuat aplikasi Rails yang disebut Blog, didalam direktori `blog` dan
+akan menginstal dependensi gem yang telah disebutkan dalam `Gemfile`
+menggunakan perintah `bundle install`.
 
-NOTE: If you're using Windows Subsystem for Linux then there are currently some
-limitations on file system notifications that mean you should disable the `spring`
-and `listen` gems which you can do by running `rails new blog --skip-spring --skip-listen`.
+NOTE: Jika Kamu menggunakan Subsistem Windows untuk Linux maka ada beberapa
+limitasi pemberitahuan pada file system yang berarti Kamu harus menonaktifkan gem `spring`
+dan `listen` yang bisa Kamu lakukan dengan menjalankan perintah `rails new blog --skip-spring --skip-listen`.
 
-TIP: You can see all of the command line options that the Rails application
-builder accepts by running `rails new -h`.
+TIP: Kamu bisa melihat semua opsi perintah yang disediakan dari aplikasi Rails builder
+dengan menjalankan perintah `rails new -h`.
 
-After you create the blog application, switch to its folder:
+Setelah Kamu membuat aplikasi blog, navigasikan ke direktori blog:
 
 ```bash
 $ cd blog
 ```
 
-The `blog` directory has a number of auto-generated files and folders that make
-up the structure of a Rails application. Most of the work in this tutorial will
-happen in the `app` folder, but here's a basic rundown on the function of each
-of the files and folders that Rails created by default:
+Di direktori `blog` memiliki file dan folder yang dihasilkan secara otomatis
+sehingga membentuk struktur aplikasi Rails. Dalam tutorial ini sebagaian besar
+folder yang banyak bekerja adalah folder `app`, dibawah ini adalah ikhtisar
+dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara default:
 
-| File/Folder | Purpose |
+| File/Folder | Fungsi  |
 | ----------- | ------- |
-|app/|Contains the controllers, models, views, helpers, mailers, channels, jobs and assets for your application. You'll focus on this folder for the remainder of this guide.|
-|bin/|Contains the rails script that starts your app and can contain other scripts you use to setup, update, deploy or run your application.|
-|config/|Configure your application's routes, database, and more. This is covered in more detail in [Configuring Rails Applications](configuring.html).|
-|config.ru|Rack configuration for Rack based servers used to start the application. For more information about Rack, see the [Rack website](https://rack.github.io/).|
-|db/|Contains your current database schema, as well as the database migrations.|
-|Gemfile<br>Gemfile.lock|These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the [Bundler website](https://bundler.io).|
-|lib/|Extended modules for your application.|
-|log/|Application log files.|
-|package.json|This file allows you to specify what npm dependencies are needed for your Rails application. This file is used by Yarn. For more information about Yarn, see the [Yarn website](https://yarnpkg.com/lang/en/).|
-|public/|The only folder seen by the world as-is. Contains static files and compiled assets.|
-|Rakefile|This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing `Rakefile`, you should add your own tasks by adding files to the `lib/tasks` directory of your application.|
-|README.md|This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.|
-|test/|Unit tests, fixtures, and other test apparatus. These are covered in [Testing Rails Applications](testing.html).|
-|tmp/|Temporary files (like cache and pid files).|
-|vendor/|A place for all third-party code. In a typical Rails application this includes vendored gems.|
-|.gitignore|This file tells git which files (or patterns) it should ignore. See [GitHub - Ignoring files](https://help.github.com/articles/ignoring-files) for more info about ignoring files.
-|.ruby-version|This file contains the default Ruby version.|
+|app/|Berisi controllers, models, views, helpers, mailers, channels, jobs dan assets untuk aplikasi. Kamu akan fokus pada folder-folder ini selama mengikuti panduan ini.|
+|bin/|Berisi script Rails yang dimana untuk menjalankan aplikasi dan bisa juga berisi script lain yang Kamu gunakan untuk menyiapkan, memperbarui, men-deploy atau menjalankan aplikasi.|
+|config/|Berisi konfigurasi route, database aplikasi, dan lain-lain. Untuk panduan lebih lanjut tentang Konfigurasi, lihat di [Konfigurasi Aplikasi Rails](configuring.html).|
+|config.ru|Konfigurasi untuk server berbasis Rack yang digunakan untuk memulai aplikasi. Untuk informasi lebih lanjut tentang Rack, lihat di [Situs web Rack](https://rack.github.io/).|
+|db/|Berisi skema database saat ini, serta migrasi database.|
+|Gemfile<br>Gemfile.lock|File ini memungkinkan Kamu untuk menentukan dependensi gem apa yang diperlukan. File ini dioperasikan oleh gem Bundler. Untuk informasi lebih lanjut tentang Bundler, lihat di [Situs web Bundler](https://bundler.io).|
+|lib/|Modul yang di Extend untuk aplikasi Rails.|
+|log/|File log aplikasi.|
+|package.json|File ini memungkinkan Kamu untuk menentukan dependensi npm apa yang diperlukan untuk aplikasi Rails. File ini dioperasikan oleh Yarn. Untuk informasi lebih lanjut tentang Yarn, lihat di [Situs web Yarn](https://yarnpkg.com/lang/en/).|
+|public/|Satu-satunya folder yang dilihat oleh pengguna publik. Berisi file statis dan asset yang dikompilasi.|
+|Rakefile|File ini mencari dan memuat task yang dapat dijalankan dari command line. Task yang dimaksud adalah definisi untuk seluruh komponen yang ada di Rails. Untuk dapat menambahkan task di `Rakefile` cukup menambahkan script yang buat ke direktori `lib/tasks` aplikasi Rails Kamu.|
+|README.md|Ini adalah instruksi manual singkat untuk aplikasi Rails Kamu. Kamu bisa mengedit file ini untuk memberi tahu orang lain apa yang harus dilakukan untuk aplikasi Kamu, cara pengaturannya, dan lain sebagainya.|
+|test/|Tes unit, fixture, dan peralatan tes lainnya. Untuk panduan lebih lanjut tentang Testing, lihat di [Testing Aplikasi Rails](testing.html).|
+|tmp/|File sementara (seperti cache dan file pid).|
+|vendor/|Tempat untuk semua kode pihak ketiga (third-party). Tipikal ini untuk memasukkan vendor gem ke aplikasi Rails.|
+|.gitignore|File ini memberi tahu git ke file (atau pattern) dimana yang harus diabaikan. Lihat di [GitHub - Mengabaikan file](https://help.github.com/articles/ignoring-files) untuk info lebih lanjut tentang mengabaikan file.
+|.ruby-version|File ini berisi versi Ruby yang digunakan secara default dalam satu proyek Ruby.|
 
 Hello, Rails!
 -------------
