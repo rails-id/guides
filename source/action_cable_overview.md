@@ -32,14 +32,11 @@ Apa itu Pola Berlangganan Publik
 
 *Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri tidak berurusan dengan logika apapun di dalam spesifikasi aplikasi di luar otentikasi dan otorisasi. Klien dari koneksi WebSocket di sebut koneksi *konsumen*. Pengguna secara individu membuat satu pasang konsumen-koneksi per tab browser, jendela, atau perangkat yang di pakai untuk membuka.
 
-Connections are instances of `ApplicationCable::Connection`. In this class, you
-authorize the incoming connection, and proceed to establish it if the user can
-be identified.
-
-#### Connection Setup
+#### Mempersiapkan Koneksi
 
 ```ruby
 # app/channels/application_cable/connection.rb
+
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
@@ -59,10 +56,7 @@ module ApplicationCable
   end
 end
 ```
-
-Here `identified_by` is a connection identifier that can be used to find the
-specific connection later. Note that anything marked as an identifier will automatically
-create a delegate by the same name on any channel instances created off the connection.
+Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk spesifikasi koneksi nanti. Perhatikan bahwa apa pun yang ditandai sebagai pengenal identifikasi secara otomatis dibuat delegasi dengan nama yang sama di dalam semua channel seperti contoh koneksi di atas.
 
 This example relies on the fact that you will already have handled authentication of the user
 somewhere else in your application, and that a successful authentication sets a signed
