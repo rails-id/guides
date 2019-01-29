@@ -82,8 +82,8 @@ Some arguments may be passed via environment variables:
 Examples:
   $ rake guides:generate
   $ rake guides:generate ALL=1
-  $ rake guides:generate ALL=1 RAILS_VERSION=v5.2.2
-  $ rake guides:generate ALL=1 RAILS_VERSION=v5.2.2 STABLE=1
+  $ rake guides:generate ALL=1 RAILS_VERSION=v5.2
+  $ rake guides:generate ALL=1 RAILS_VERSION=v5.2 STABLE=1
   $ rake guides:generate ONLY=migrations
   $ rake guides:generate:kindle
   $ rake guides:generate GUIDES_LANGUAGE=es
