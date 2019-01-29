@@ -33,32 +33,37 @@ mencakup versi Ruby terdahulu yaitu versi 1.6, umumnya Ruby versi 1.8,
 dan disumber tersebut mungkin tidak akan menyertakan beberapa
 syntax yang akan Kamu lihat dalam development di Rails.
 
-What is Rails?
+Apa itu Rails?
 --------------
 
-Rails is a web application development framework written in the Ruby programming language.
-It is designed to make programming web applications easier by making assumptions
-about what every developer needs to get started. It allows you to write less
-code while accomplishing more than many other languages and frameworks.
-Experienced Rails developers also report that it makes web application
-development more fun.
+Rails adalah framework untuk mengembangkan aplikasi web yang ditulis
+dalam bahasa pemrograman Ruby. Rails dirancang untuk membuat program
+aplikasi web lebih mudah, hal ini agar setiap developer dapat membuat aplikasi
+apa yang mereka butuhkan. Rails memungkinkan Kamu untuk menulis kode lebih
+sedikit sementara pencapaian Kamu lebih banyak dengan menulis kode untuk bahasa dan
+framwork lainnya. Developer Rails yang berpengalaman juga telah melaporkan bahwa
+membuat aplikasi web dengan Rails lebih menyenangkan.
 
-Rails is opinionated software. It makes the assumption that there is a "best"
-way to do things, and it's designed to encourage that way - and in some cases to
-discourage alternatives. If you learn "The Rails Way" you'll probably discover a
-tremendous increase in productivity. If you persist in bringing old habits from
-other languages to your Rails development, and trying to use patterns you
-learned elsewhere, you may have a less happy experience.
+Rails adalah perangkat lunak yang disarankan. Hal ini membuat bahwa ada cara "terbaik"
+untuk melakukan sesuatu, yang dapat dirancang dengan dorongan cara tersebut, dan dalam beberapa kasus
+untuk mencegah alternatif. Jika Kamu mempelajari "The Rails Way" Kamu mungkin akan menemukan
+peningkatan produktivitas yang luar biasa. Jika Kamu terus membawa kebiasaan lama
+dari bahasa lain ke Rails development, dan mencoba menggunakan pola yang Kamu
+pelajari di tempat lain, mungkin Kamu adalah salah satu orang yang memiliki pengalaman kurang menyenangkan.
 
-The Rails philosophy includes two major guiding principles:
+Rails memiliki dua Filosofi prinsip utama:
 
-* **Don't Repeat Yourself:** DRY is a principle of software development which
-  states that "Every piece of knowledge must have a single, unambiguous, authoritative
-  representation within a system." By not writing the same information over and over
-  again, our code is more maintainable, more extensible, and less buggy.
-* **Convention Over Configuration:** Rails has opinions about the best way to do many
-  things in a web application, and defaults to this set of conventions, rather than
-  require that you specify minutiae through endless configuration files.
+* **Don't Repeat Yourself:** DRY adalah prinsip development perangkat lunak yang
+  menyatakan bahwa "Setiap bagian pengetahuan harus memiliki perwakilan tunggal,
+  tidak ambigu, otoritatif dalam suatu sistem." Dengan tidak menulis informasi
+  yang sama berulang-ulang, kode lebih dapat di-maintainable, di-extensible,
+  dan sedikit dari bug.
+* **Convention Over Configuration:** Rails memiliki pendapat tentang cara terbaik
+  untuk melakukan banyak hal dalam membangun aplikasi web, Rails telah menetapkan
+  convention ini secara default, hal ini tidak mengharuskan Kamu untuk menentukan hal-hal
+  kecil melalui konfigurasi file yang kurang berguna dan tidak ada habisnya.
+  Masih bingung masalah _Convention Over Configuration_ ini?
+  Baca selengkapnya [Memahami Convention Over Configuration dalam Pemrograman](https://medium.com/laravel-indonesia/memahami-convention-over-configuration-dalam-pemrograman-a61b55602c05)
 
 Creating a New Rails Project
 ----------------------------
