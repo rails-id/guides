@@ -1,6 +1,6 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
 
-Memulai dengan Rails
+Memulai untuk Menggunakan Rails
 ==========================
 
 Panduan ini mencakup membuat dan menjalankan dengan Ruby on Rails.
@@ -65,19 +65,19 @@ Rails memiliki dua Filosofi prinsip utama:
   Masih bingung masalah _Convention Over Configuration_ ini?
   Baca selengkapnya [Memahami Convention Over Configuration dalam Pemrograman](https://medium.com/laravel-indonesia/memahami-convention-over-configuration-dalam-pemrograman-a61b55602c05)
 
-Creating a New Rails Project
+Membuat Proyek Baru dengan Rails
 ----------------------------
-The best way to read this guide is to follow it step by step. All steps are
-essential to run this example application and no additional code or steps are
-needed.
+Cara terbaik untuk mengikuti panduan ini adalah dengan cara mengikuti langkah demi langkah.
+Semua langkah sangat penting untuk menjalankan contoh aplikasi ini dan tidak ada kode atau
+langkah tambahan yang diperlukan.
 
-By following along with this guide, you'll create a Rails project called
-`blog`, a (very) simple weblog. Before you can start building the application,
-you need to make sure that you have Rails itself installed.
+Dengan mengikuti panduan ini bersama-sama, Kamu akan membuat proyek Rails yang disebut
+`blog`, weblog (yang sangat) sederhana. Sebelum Kamu memulai membuat aplikasi,
+Kamu perlu memastikan dulu bahwa Rails-mu sudah terinstal.
 
-TIP: The examples below use `$` to represent your terminal prompt in a UNIX-like OS,
-though it may have been customized to appear differently. If you are using Windows,
-your prompt will look something like `c:\source_code>`
+TIP: Contoh-contoh di bawah ini `$` digunakan untuk mewakili terminal prompt untuk OS UNIX-like,
+walaupun mungkin tampil berbeda karena telah disesuaikan. Jika Kamu menggunakan Windows,
+prompt Kamu akan terlihat seperti `c:\source_code>`
 
 ### Installing Rails
 
