@@ -192,11 +192,10 @@ dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara
 |.gitignore|File ini memberi tahu git ke file (atau pattern) dimana yang harus diabaikan. Lihat di [GitHub - Mengabaikan file](https://help.github.com/articles/ignoring-files) untuk info lebih lanjut tentang mengabaikan file.
 |.ruby-version|File ini berisi versi Ruby yang digunakan secara default dalam satu proyek Ruby.|
 
-Hello, Rails!
+Halo, Rails!
 -------------
 
-To begin with, let's get some text up on screen quickly. To do this, you need to
-get your Rails application server running.
+Untuk memulainya. Untuk melakukan ini, Kamu perlu menjalankan server di aplikasi Rails Kamu.
 
 ### Starting up the Web Server
 
