@@ -58,9 +58,7 @@ end
 ```
 Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk spesifikasi koneksi nanti. Perhatikan bahwa apa pun yang ditandai sebagai pengenal identifikasi secara otomatis dibuat delegasi dengan nama yang sama di dalam semua channel seperti contoh koneksi di atas.
 
-This example relies on the fact that you will already have handled authentication of the user
-somewhere else in your application, and that a successful authentication sets a signed
-cookie with the user ID.
+Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan sukses autentikasi di setujui dari cookie user ID. 
 
 The cookie is then automatically sent to the connection instance when a new connection
 is attempted, and you use that to set the `current_user`. By identifying the connection
