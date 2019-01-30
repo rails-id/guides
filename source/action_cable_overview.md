@@ -131,7 +131,7 @@ Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di serve
 
 #### Berlangganan
 
-A consumer becomes a subscriber by creating a subscription to a given channel:
+Konsumen menjadi pelanggan dengan membuat langganan ke saluran yang diberikan:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
@@ -140,6 +140,7 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" }
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
 App.cable.subscriptions.create { channel: "AppearanceChannel" }
 ```
+
 
 While this creates the subscription, the functionality needed to respond to
 received data will be described later on.
