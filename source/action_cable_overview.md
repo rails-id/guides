@@ -64,9 +64,7 @@ Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, da
 
 ### Saluran 
 
-A *channel* encapsulates a logical unit of work, similar to what a controller does in a
-regular MVC setup. By default, Rails creates a parent `ApplicationCable::Channel` class
-for encapsulating shared logic between your channels.
+Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk bersama merangkum logic antara saluran kamu.
 
 #### Parent Channel Setup
 
