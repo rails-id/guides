@@ -60,7 +60,7 @@ Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk
 
 Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan sukses autentikasi di setujui oleh cookie user ID. 
 
-Cookie secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user(dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
+Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user(dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
 
 ### Channels
 
