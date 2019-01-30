@@ -66,7 +66,7 @@ Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, da
 
 Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk bersama merangkum logic antara saluran kamu.
 
-#### Parent Channel Setup
+#### Memasang Induk Saluran
 
 ```ruby
 # app/channels/application_cable/channel.rb
@@ -76,20 +76,20 @@ module ApplicationCable
 end
 ```
 
-Then you would create your own channel classes. For example, you could have a
-`ChatChannel` and an `AppearanceChannel`:
+Kemudian kamu dapat membuat kelas saluran kamu sendiri. berikut contoh, yang dapat kamu buat
+```ChatChannel` dan `ApperanceChannel`:
 
 ```ruby
 # app/channels/chat_channel.rb
-class ChatChannel < ApplicationCable::Channel
-end
-
-# app/channels/appearance_channel.rb
-class AppearanceChannel < ApplicationCable::Channel
+class CharChannel < ApplicationCable::Channel
 end
 ```
 
-A consumer could then be subscribed to either or both of these channels.
+# app/channels/apperance_channel.rb
+class ApperanceChannel < ApplicationCable::Channel
+end
+```
+Seorang konsumen kemudian dapat berlangganan salah satu atau kedua saluran ini.
 
 #### Subscriptions
 
