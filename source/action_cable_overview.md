@@ -91,7 +91,7 @@ end
 ```
 Seorang konsumen kemudian dapat berlangganan salah satu atau kedua saluran ini.
 
-#### Subscriptions
+#### Berlangganan
 
 Consumers subscribe to channels, acting as *subscribers*. Their connection is
 called a *subscription*. Produced messages are then routed to these channel
