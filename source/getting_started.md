@@ -7,7 +7,7 @@ Panduan ini mencakup membuat dan menjalankan dengan Ruby on Rails.
 
 Setelah membaca panduan ini, Kamu akan tahu:
 
-* Cara menginstal Rails, membuat aplikasi Rails baru, dan menghubungkan aplikasi Kamu ke database.
+* Cara menginstal Rails, membuat aplikasi baru di Rails, dan menghubungkan aplikasi Kamu ke database.
 * Tata letak umum aplikasi Rails.
 * Prinsip dasar MVC (Model, View, Controller) dan desain RESTful.
 * Cara cepat mengenerate aplikasi Rails.
@@ -139,8 +139,8 @@ Jika menghasilkan sesuatu seperti "Rails 5.2.1", Kamu siap untuk melanjutkan ke 
 
 Rails hadir dengan sejumlah script yang disebut dengan generator yang dirancang untuk membuat
 development lebih mudah dengan membuat segala sesuatu yang diperlukan untuk
-menjalankan tugas-tugas tertentu. Salah satunya adalah generator membuat aplikasi baru (new app),
-yang akan memberikan Kamu dasar dari pembuatan aplikasi baru (new app) di Rails sehingga
+menjalankan tugas-tugas tertentu. Salah satunya adalah generator membuat aplikasi baru di Rails,
+yang akan memberikan Kamu dasar dari pembuatan aplikasi baru sehingga
 Kamu tidak perlu menuliskannya lagi.
 
 Untuk menggunakan generator ini, buka terminal, navigasikan ke direktori
@@ -197,45 +197,44 @@ Halo, Rails!
 
 Untuk memulainya. Untuk melakukan ini, Kamu perlu menjalankan server di aplikasi Rails Kamu.
 
-### Starting up the Web Server
+### Memulai Menjalankan Web Server
 
-You actually have a functional Rails application already. To see it, you need to
-start a web server on your development machine. You can do this by running the
-following in the `blog` directory:
+Kamu sebenarnya sudah memiliki aplikasi Rails secara fungsional. Untuk melihatnya,
+Kamu harus menjalankan web server di mesin development Kamu. Kamu dapat melakukan
+ini dengan menjalankan perintah berikut ini di direktori `blog`:
 
 ```bash
 $ bin/rails server
 ```
 
-TIP: If you are using Windows, you have to pass the scripts under the `bin`
-folder directly to the Ruby interpreter e.g. `ruby bin\rails server`.
+TIP: Jika Kamu menggunakan Windows, Kamu harus menjalnkan script di folder `bin`
+melalui Ruby interpreter langsung, contohnya `ruby bin\rails server`.
 
-TIP: Compiling CoffeeScript and JavaScript asset compression requires you
-have a JavaScript runtime available on your system, in the absence
-of a runtime you will see an `execjs` error during asset compilation.
-Usually macOS and Windows come with a JavaScript runtime installed.
-Rails adds the `mini_racer` gem to the generated `Gemfile` in a
-commented line for new apps and you can uncomment if you need it.
-`therubyrhino` is the recommended runtime for JRuby users and is added by
-default to the `Gemfile` in apps generated under JRuby. You can investigate
-all the supported runtimes at [ExecJS](https://github.com/rails/execjs#readme).
+TIP: Mengkompilasi CoffeeScript dan kompresi asset JavaScript Kamu harus
+memiliki runtime JavaScript yang ada di sistem Kamu, jika tidak ada runtime
+Kamu akan melihat error `execjs` selama kompilasi asset.
+Biasanya macOS dan Windows dilengkapi dengan runtime JavaScript yang diinstal.
+Rails menambahkan gem `mini_racer` di generate ke `Gemfile` dengan command line
+saat membuat aplikasi baru di Rails dan Kamu dapat menghapus komentar jika Kamu membutuhkannya.
+`therubyrhino` adalah runtime yang direkomendasikan untuk pengguna JRuby dan akan ditambahkan
+secara default ke `Gemfile` dalam aplikasi yang dibuat dengan JRuby. Kamu bisa melihat
+semua runtime yang didukung oleh [ExecJS](https://github.com/rails/execjs#readme).
 
-This will fire up Puma, a web server distributed with Rails by default. To see
-your application in action, open a browser window and navigate to
-<http://localhost:3000>. You should see the Rails default information page:
+Kali ini untuk menjalankan Puma, web server yang didistribusikan dengan Rails secara default.
+Untuk melihat aplikasi Kamu, buka perambang (browser) dan arahkan ke
+<http://localhost:3000>. Kamu akan melihat halaman default Rails:
 
 ![Welcome aboard screenshot](images/getting_started/rails_welcome.png)
 
-TIP: To stop the web server, hit Ctrl+C in the terminal window where it's
-running. To verify the server has stopped you should see your command prompt
-cursor again. For most UNIX-like systems including macOS this will be a
-dollar sign `$`. In development mode, Rails does not generally require you to
-restart the server; changes you make in files will be automatically picked up by
-the server.
+TIP: Untuk menghentikan web server, tekan Ctrl+C di terminal dimana aplikasi dijalankan.
+Untuk memverifikasi server telah berhenti Kamu harus melihat kursor shell command line Kamu lagi.
+Untuk sebagian besar sistem UNIX-like termasuk macOS akan menjadi tanda dolar `$`.
+Dalam mode development, Rails pada umumnya tidak mengharuskan Kamu untuk me-restart
+server; apa yang Kamu buat atau rubah pada file di server akan secara otomatis berubah.
 
-The "Welcome aboard" page is the _smoke test_ for a new Rails application: it
-makes sure that you have your software configured correctly enough to serve a
-page.
+Halaman "Welcome aboard" adalah _smoke test_ untuk aplikasi baru di Rails:
+halaman itu untuk menunjukkan bawah Kamu telah memiliki perangkat luna yang cukup
+untuk mengkonfigurasi Rails.
 
 ### Say "Hello", Rails
 
