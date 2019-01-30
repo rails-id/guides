@@ -143,8 +143,8 @@ menjalankan tugas-tugas tertentu. Salah satunya adalah generator membuat aplikas
 yang akan memberikan Kamu dasar dari pembuatan aplikasi baru sehingga
 Kamu tidak perlu menuliskannya lagi.
 
-Untuk menggunakan generator ini, buka terminal, navigasikan ke direktori
-tempat dimana Kamu memiliki hak akses untuk membuat file atau folder, dan ketik:
+Untuk menggunakan generator ini, buka terminal, arahkan ke direktori
+tempat di mana Kamu memiliki hak akses untuk membuat file atau folder, dan ketik:
 
 ```bash
 $ rails new blog
@@ -161,7 +161,7 @@ dan `listen` yang bisa Kamu lakukan dengan menjalankan perintah `rails new blog 
 TIP: Kamu bisa melihat semua opsi perintah yang disediakan dari aplikasi Rails builder
 dengan menjalankan perintah `rails new -h`.
 
-Setelah Kamu membuat aplikasi blog, navigasikan ke direktori blog:
+Setelah Kamu membuat aplikasi blog, arahkan ke direktori blog:
 
 ```bash
 $ cd blog
@@ -175,7 +175,7 @@ dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara
 | File/Folder | Fungsi  |
 | ----------- | ------- |
 |app/|Berisi controllers, models, views, helpers, mailers, channels, jobs dan assets untuk aplikasi. Kamu akan fokus pada folder-folder ini selama mengikuti panduan ini.|
-|bin/|Berisi script Rails yang dimana untuk menjalankan aplikasi dan bisa juga berisi script lain yang Kamu gunakan untuk menyiapkan, memperbarui, men-deploy atau menjalankan aplikasi.|
+|bin/|Berisi script Rails yang di mana untuk menjalankan aplikasi dan bisa juga berisi script lain yang Kamu gunakan untuk menyiapkan, memperbarui, men-deploy atau menjalankan aplikasi.|
 |config/|Berisi konfigurasi route, database aplikasi, dan lain-lain. Untuk panduan lebih lanjut tentang Konfigurasi, lihat di [Konfigurasi Aplikasi Rails](configuring.html).|
 |config.ru|Konfigurasi untuk server berbasis Rack yang digunakan untuk memulai aplikasi. Untuk informasi lebih lanjut tentang Rack, lihat di [Situs web Rack](https://rack.github.io/).|
 |db/|Berisi skema database saat ini, serta migrasi database.|
@@ -189,7 +189,7 @@ dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara
 |test/|Tes unit, fixture, dan peralatan tes lainnya. Untuk panduan lebih lanjut tentang Testing, lihat di [Testing Aplikasi Rails](testing.html).|
 |tmp/|File sementara (seperti cache dan file pid).|
 |vendor/|Tempat untuk semua kode pihak ketiga (third-party). Tipikal ini untuk memasukkan vendor gem ke aplikasi Rails.|
-|.gitignore|File ini memberi tahu git ke file (atau pattern) dimana yang harus diabaikan. Lihat di [GitHub - Mengabaikan file](https://help.github.com/articles/ignoring-files) untuk info lebih lanjut tentang mengabaikan file.
+|.gitignore|File ini memberi tahu git ke file (atau pattern) di mana yang harus diabaikan. Lihat di [GitHub - Mengabaikan file](https://help.github.com/articles/ignoring-files) untuk info lebih lanjut tentang mengabaikan file.
 |.ruby-version|File ini berisi versi Ruby yang digunakan secara default dalam satu proyek Ruby.|
 
 Halo, Rails!
@@ -226,7 +226,7 @@ Untuk melihat aplikasi Kamu, buka perambang (browser) dan arahkan ke
 
 ![Welcome aboard screenshot](images/getting_started/rails_welcome.png)
 
-TIP: Untuk menghentikan web server, tekan Ctrl+C di terminal dimana aplikasi dijalankan.
+TIP: Untuk menghentikan web server, tekan Ctrl+C di terminal di mana aplikasi dijalankan.
 Untuk memverifikasi server telah berhenti Kamu harus melihat kursor shell command line Kamu lagi.
 Untuk sebagian besar sistem UNIX-like termasuk macOS akan menjadi tanda dolar `$`.
 Dalam mode development, Rails pada umumnya tidak mengharuskan Kamu untuk me-restart
@@ -292,16 +292,16 @@ kode yang ada didalam file, dan diganti dengan satu baris kode dibawah ini:
 <h1>Halo, Rails!</h1>
 ```
 
-### Setting the Application Home Page
+### Mengatur Aplikasi Halaman Depan
 
-Now that we have made the controller and view, we need to tell Rails when we
-want "Hello, Rails!" to show up. In our case, we want it to show up when we
-navigate to the root URL of our site, <http://localhost:3000>. At the moment,
-"Welcome aboard" is occupying that spot.
+Sekarang kita telah membuat controller dan view, kita perlu memberi tahu Rails
+ketika kita ingin menampilkan "Halo, Rails!" Dalam kasus ini, kita ingin menampilkan
+"Halo, Rails!" dengan mengarahkan ke root URL, <http://localhost:3000>. Untuk saat
+ini masih menampilkan "Welcome aboard".
 
-Next, you have to tell Rails where your actual home page is located.
+Selanjutnya, Kamu harus memberi tahu Rails di mana beranda atau root URL Kamu berada.
 
-Open the file `config/routes.rb` in your editor.
+Buka file `config/routes.rb` dengan text editor Kamu.
 
 ```ruby
 Rails.application.routes.draw do
@@ -311,12 +311,11 @@ Rails.application.routes.draw do
 end
 ```
 
-This is your application's _routing file_ which holds entries in a special
+Ini adalah _file routing_ di aplikasi Kamu yang menyimpan khusus entri dalam
 [DSL (domain-specific language)](https://en.wikipedia.org/wiki/Domain-specific_language)
-that tells Rails how to connect incoming requests to
-controllers and actions.
-Edit this file by adding the line of code `root 'welcome#index'`.
-It should look something like the following:
+yang memberi tahu Rails bagaimana menghubungkan request yang masuk ke controller dan action.
+Edit file tersebut dengan menambahkan baris kode `root 'welcome#index'`.
+Itu terlihat seperti berikut ini:
 
 ```ruby
 Rails.application.routes.draw do
@@ -326,19 +325,19 @@ Rails.application.routes.draw do
 end
 ```
 
-`root 'welcome#index'` tells Rails to map requests to the root of the
-application to the welcome controller's index action and `get 'welcome/index'`
-tells Rails to map requests to <http://localhost:3000/welcome/index> to the
-welcome controller's index action. This was created earlier when you ran the
-controller generator (`bin/rails generate controller Welcome index`).
+`root 'welcome#index'` memberitahu Rails untuk menentukan request root aplikasi
+ke action index di controlller welcome dan `get 'welcome/index'`
+memberitahu Rails untuk menentukan request <http://localhost:3000/welcome/index>
+ke action index di controlller welcome. Ini dibuat ketika Kamu menjalankan
+generator controller (`bin/rails generate controller Welcome index`).
 
-Launch the web server again if you stopped it to generate the controller (`bin/rails
-server`) and navigate to <http://localhost:3000> in your browser. You'll see the
-"Hello, Rails!" message you put into `app/views/welcome/index.html.erb`,
-indicating that this new route is indeed going to `WelcomeController`'s `index`
-action and is rendering the view correctly.
+Jalankan web server lagi jika Kamu menghentikannya dengan perintah (`bin/rails
+server`) dan arahkan ke <http://localhost:3000> di browser Kamu. Kamu akan melihat
+pesan "Hello, Rails!" yang baru dimasukkan ke dalam file `app/views/welcome/index.html.erb`
+pada langkah sebelumnya, itu menunjukkan bahwa route yang baru dimasukan mengarah
+ke `WelcomeController` di action `index` dan me-render ke view yang benar.
 
-TIP: For more information about routing, refer to [Rails Routing from the Outside In](routing.html).
+TIP: Untuk panduan lebih lanjut tentang route, lihat di [Rails Routing from the Outside In](routing.html).
 
 Getting Up and Running
 ----------------------
