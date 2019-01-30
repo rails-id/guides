@@ -1,6 +1,65 @@
 # Pedoman
 
-### Pedoman Git
+## Pedoman Penulisan
+- Gunakan kosakata yang mudah dipahami.
+- Gunakan kapital di awal kalimat atau paragraf dan setelah titik jika beberapa kalimat dalam 1 paragraf, kapital ini tidak berlaku untuk koma kecuali kata tersebut menunjukkan objek.
+- Jika kalian menggunakan Google Translate, mohon untuk dikoreksi kembali dan di-improve kata dan kalimatnya supaya lebih baik.
+- Direkomendasikan untuk improve kata atau kalimat. Contohnya:
+	- Yang tadinya seperti ini:
+	``` markdown
+	File ini berisi versi Ruby secara default
+	```
+
+	- Bisa menjadi seperti ini:
+	```
+	File ini berisi versi Ruby yang digunakan secara default
+	```
+
+- Gunakan kata EYD yang sesuai. Contohnya:
+	- Yang benar __Silakan__ bukan __Silahkan__
+- Penggunaan kata sambung yang benar. Contohnya:
+	- Yang benar __diletakan__ bukan __di letakan__, karena bukan menunjukan objek
+	- Yang benar __letakan__ bukan __leta kan__
+- Gunakan __Kamu__, __Kalian__, __Teman-teman__ sebagai sapaan.
+- Tidak diperbolehkan untuk me-rename file ataupun folder source.
+- URL tidak diterjemahkan.
+- Istilah dalam aplikasi Rails tidak perlu diterjemahkan. Contohnya:
+	- __Active Record__ tidak perlu menjadi __Rekaman Aktif__
+	- __Action View__ tidak perlu menjadi __Tampilan Aksi__ atau __Pemandangan Aksi__
+- Berlaku juga untuk istilah dalam Ruby, tidak perlu diterjemahkan untuk contoh penamaan seperti: `Syntax`, `Class`, `Object`, `Variable`, `Constant`, `Operator`, `Method`, `Module` dan lain sebagainya.
+- Contoh kode didalam block tidak perlu diterjemahkan, ini berhubungan dengan poin diatas, kecuali komentar. Contohnya:
+
+	Contoh yang salah:
+	``` ruby
+	# biarkan Active Record mencari tahu nama kolom
+	remove_foreign_key :rekenings, :cabangs
+	```
+
+	Contoh yang benar:
+	``` ruby
+	# biarkan Active Record mencari tahu nama kolom
+	remove_foreign_key :accounts, :branches
+	```
+
+- Word Wrap tidak boleh memanjang lebih dari 125-130 karakter, kecuali mengandung karakter URL.
+
+	Contoh yang salah:
+	```
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non molestiae doloribus aperiam a iure sequi earum inventore cum quis nulla dolorem odit velit consequatur ipsa reiciendis aspernatur perspiciatis, harum consequuntur!
+	```
+
+	Contoh yang benar:
+	```
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	```
+
+
+## Pedoman Git
 
 ##### Untuk mengambil beberapa branch di remote Github ke local kalian lakukan contoh dibawah:
 ``` bash
@@ -13,39 +72,40 @@ git checkout 5-2-stable # pindah dulu ke branch 5-2-stable
 git checkout --patch action-cable-overview source/action_cable_overview.md # tambahkan file dari branch action-cable-overview ke branch 5-2-stable
 ```
 
-Kalian nanti akan disajikan diff patch, kalau setuju tekan `y` dan [ENTER]
+Kalian nanti akan disajikan diff patch, kalau setuju tekan `y` dan `[ENTER]`
 Nanti akan dapat perubahan, dan cek menggunakan:
 
 ``` bash
-git status
+git status # melihat status perubahan
 ```
 
 ##### Jika kalian ingin menambahkan beberapa file ke stabil versi:
 ``` bash
-git checkout 5-2-stable
-git checkout action-cable-overview -- file.md
+git checkout 5-2-stable # pindah ke branch 5-2-stable
+git checkout action-cable-overview -- contoh.md # menambahkan contoh.md dari branch action-cable-overview ke branch 5-2-stable
 ```
 
 ##### Jika kalian ingin membatalkan perubahan di file tertentu:
 ``` bash
-git checkout HEAD -- file.md
+git checkout HEAD -- contoh.md # akan me-reset file contoh.md
 ```
+
 
 ## Daftar Branch
 
-Kalian bisa melihat branch di device local kalian dengan memsukkan perintah:
+Kalian bisa melihat daftar branch yang tersedia dengan perintah berikut:
 
 ``` bash
 git branch -r
 ```
 
-##### Master dan Stable
+##### Daftar Master dan Stable
 ```
 master
 5-2-stable
 ```
 
-##### Standalone
+##### Daftar branch dengan nama guide source
 ```
 2-2-release-notes
 2-3-release-notes
