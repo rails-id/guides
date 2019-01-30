@@ -62,7 +62,7 @@ Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan
 
 Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user(dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
 
-### Channels
+### Saluran 
 
 A *channel* encapsulates a logical unit of work, similar to what a controller does in a
 regular MVC setup. By default, Rails creates a parent `ApplicationCable::Channel` class
