@@ -236,33 +236,32 @@ Halaman "Welcome aboard" adalah _smoke test_ untuk aplikasi baru di Rails:
 halaman itu untuk menunjukkan bawah Kamu telah memiliki perangkat luna yang cukup
 untuk mengkonfigurasi Rails.
 
-### Say "Hello", Rails
+### Katakan "Halo", Rails
 
-To get Rails saying "Hello", you need to create at minimum a _controller_ and a
+Untuk menampilkan kata "Halo" di Rails, Kamu harus membuat setidaknya _controller_ dan
 _view_.
 
-A controller's purpose is to receive specific requests for the application.
-_Routing_ decides which controller receives which requests. Often, there is more
-than one route to each controller, and different routes can be served by
-different _actions_. Each action's purpose is to collect information to provide
-it to a view.
+Tujuan controller adalah untuk menerima request spesifik ke aplikasi.
+_Routing_ untuk menentukan controller mana yang akan menerima request. Kebanyakan, ada lebih
+dari satu route ke masing-masing controller, dan beberapa route juga bisa melayani berbeda-beda _action_.
+Tujuan setiap action adalah untuk mengumpulkan informasi agar bisa dilihat.
 
-A view's purpose is to display this information in a human readable format. An
-important distinction to make is that it is the _controller_, not the view,
-where information is collected. The view should just display that information.
-By default, view templates are written in a language called eRuby (Embedded
-Ruby) which is processed by the request cycle in Rails before being sent to the
-user.
+Tujuan view adalah untuk menampilkan informasi dalam format yang dapat dibaca oleh pengunjung.
+Untuk membedakannya dibuat dengan _Controller_, bukan view,
+di mana informasi tersebut untuk dikumpulkan. View seharusnya hanya untuk menempilkan informasi.
+Secara default, template view ditulis dalam bahasa yang disebut dengan eRuby
+(Embedded Ruby) yang diproses oleh alur request di Rails sebelum
+dikirim ke pengguna.
 
-To create a new controller, you will need to run the "controller" generator and
-tell it you want a controller called "Welcome" with an action called "index",
-just like this:
+Untuk membuat controller baru, Kamu perlu menjalankan generator "controller" dan
+controller tersebut bernama "Welcome" dengan action yang disebut "index",
+seperti dibawah ini:
 
 ```bash
 $ bin/rails generate controller Welcome index
 ```
 
-Rails will create several files and a route for you.
+Rails akan membuat beberapa file dan route untuk Kamu.
 
 ```bash
 create  app/controllers/welcome_controller.rb
@@ -282,16 +281,15 @@ invoke    scss
 create      app/assets/stylesheets/welcome.scss
 ```
 
-Most important of these are of course the controller, located at
-`app/controllers/welcome_controller.rb` and the view, located at
+Yang terpenting disini adalah controller, berada di
+`app/controllers/welcome_controller.rb` dan view, berada di
 `app/views/welcome/index.html.erb`.
 
-Open the `app/views/welcome/index.html.erb` file in your text editor. Delete all
-of the existing code in the file, and replace it with the following single line
-of code:
+Buka file `app/views/welcome/index.html.erb` dengan text editor Kamu. Hapus semua
+kode yang ada didalam file, dan diganti dengan satu baris kode dibawah ini:
 
 ```html
-<h1>Hello, Rails!</h1>
+<h1>Halo, Rails!</h1>
 ```
 
 ### Setting the Application Home Page
