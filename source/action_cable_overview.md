@@ -208,9 +208,7 @@ CommentsChannel.broadcast_to(@post, @comment)
 
 *Siaran* adalah tautan pub / sub di mana segala sesuatu yang ditransmisikan oleh penerbit dan dikirim langsung ke pelanggan saluran streaming yang bernama siaran. Setiap saluran dapat melakukan streaming siaran dari nol hingga lebih banyak siaran.
 
-Broadcastings are purely an online queue and time-dependent. If a consumer is
-not streaming (subscribed to a given channel), they'll not get the broadcast
-should they connect later.
+Siaran adalah murni antrean online dan tergantung waktu. Jika konsumen tidak streaming (berlangganan saluran yang diberikan), mereka tidak akan mendapatkan siaran jika mereka terhubung nanti.
 
 Broadcasts are called elsewhere in your Rails application:
 
