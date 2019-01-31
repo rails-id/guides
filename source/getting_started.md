@@ -1,265 +1,267 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
 
-Getting Started with Rails
+Memulai untuk Menggunakan Rails
 ==========================
 
-This guide covers getting up and running with Ruby on Rails.
+Panduan ini mencakup membuat dan menjalankan dengan Ruby on Rails.
 
-After reading this guide, you will know:
+Setelah membaca panduan ini, Kamu akan tahu:
 
-* How to install Rails, create a new Rails application, and connect your
-  application to a database.
-* The general layout of a Rails application.
-* The basic principles of MVC (Model, View, Controller) and RESTful design.
-* How to quickly generate the starting pieces of a Rails application.
+* Cara menginstal Rails, membuat aplikasi baru di Rails, dan menghubungkan aplikasi Kamu ke database.
+* Tata letak umum aplikasi Rails.
+* Prinsip dasar MVC (Model, View, Controller) dan desain RESTful.
+* Cara cepat mengenerate aplikasi Rails.
 
 --------------------------------------------------------------------------------
 
-Guide Assumptions
+Asumsi Panduan
 -----------------
 
-This guide is designed for beginners who want to get started with a Rails
-application from scratch. It does not assume that you have any prior experience
-with Rails.
+Panduan ini dirancang untuk pemula yang ingin memulai dengan aplikasi Rails dari awal.
+Anggapan bahwa Kamu tidak memiliki pengalaman sebelumnya dengan Rails.
 
-Rails is a web application framework running on the Ruby programming language.
-If you have no prior experience with Ruby, you will find a very steep learning
-curve diving straight into Rails. There are several curated lists of online resources
-for learning Ruby:
+Rails adalah framework aplikasi web yang berjalan pada bahasa pemrograman Ruby.
+Jika Kamu tidak memiliki pengalaman sebelumnya dengan Ruby,
+Kamu akan banyak menemukan kesulitan dalam belajar Rails.
+Ada beberapa daftar sumber online yang bisa dipelajari dari Ruby:
 
-* [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
-* [List of Free Programming Books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#ruby)
+* [Situs Web Resmi Bahasa Pemrograman Ruby](https://www.ruby-lang.org/en/documentation/)
+* [Daftar Buku Pemrograman (Gratis)](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#ruby)
 
-Be aware that some resources, while still excellent, cover versions of Ruby as old as
-1.6, and commonly 1.8, and will not include some syntax that you will see in day-to-day
-development with Rails.
+Ketahuilah bahwa beberapa sumber diatas, walaupun masih bagus,
+mencakup versi Ruby terdahulu yaitu versi 1.6, umumnya Ruby versi 1.8,
+dan disumber tersebut mungkin tidak akan menyertakan beberapa
+syntax yang akan Kamu lihat dalam development di Rails.
 
-What is Rails?
+Apa itu Rails?
 --------------
 
-Rails is a web application development framework written in the Ruby programming language.
-It is designed to make programming web applications easier by making assumptions
-about what every developer needs to get started. It allows you to write less
-code while accomplishing more than many other languages and frameworks.
-Experienced Rails developers also report that it makes web application
-development more fun.
+Rails adalah framework untuk mengembangkan aplikasi web yang ditulis
+dalam bahasa pemrograman Ruby. Rails dirancang untuk membuat program
+aplikasi web lebih mudah, hal ini agar setiap developer bisa membuat aplikasi
+apa yang mereka butuhkan. Rails memungkinkan Kamu untuk menulis kode lebih
+sedikit sementara pencapaian Kamu lebih banyak dengan menulis kode untuk bahasa dan
+framwork lainnya. Developer Rails yang berpengalaman juga telah melaporkan bahwa
+membuat aplikasi web dengan Rails lebih menyenangkan.
 
-Rails is opinionated software. It makes the assumption that there is a "best"
-way to do things, and it's designed to encourage that way - and in some cases to
-discourage alternatives. If you learn "The Rails Way" you'll probably discover a
-tremendous increase in productivity. If you persist in bringing old habits from
-other languages to your Rails development, and trying to use patterns you
-learned elsewhere, you may have a less happy experience.
+Rails adalah perangkat lunak yang disarankan. Hal ini menunjukkan bahwa ada cara "terbaik"
+untuk melakukan sesuatu, yang bisa dirancang dengan dorongan cara tersebut, dan dalam beberapa kasus
+untuk mencegah alternatif. Jika Kamu mempelajari "The Rails Way" Kamu mungkin akan menemukan
+peningkatan produktivitas yang luar biasa. Jika Kamu terus membawa kebiasaan lama
+dari bahasa lain ke Rails development, dan mencoba menggunakan pola yang Kamu
+pelajari di tempat lain, mungkin Kamu adalah salah satu orang yang memiliki pengalaman kurang menyenangkan.
 
-The Rails philosophy includes two major guiding principles:
+Rails memiliki dua Filosofi prinsip utama:
 
-* **Don't Repeat Yourself:** DRY is a principle of software development which
-  states that "Every piece of knowledge must have a single, unambiguous, authoritative
-  representation within a system." By not writing the same information over and over
-  again, our code is more maintainable, more extensible, and less buggy.
-* **Convention Over Configuration:** Rails has opinions about the best way to do many
-  things in a web application, and defaults to this set of conventions, rather than
-  require that you specify minutiae through endless configuration files.
+* **Don't Repeat Yourself:** DRY adalah prinsip development perangkat lunak yang
+  menyatakan bahwa "Setiap bagian pengetahuan harus memiliki perwakilan tunggal,
+  tidak ambigu, otoritatif dalam suatu sistem." Dengan tidak menulis informasi
+  yang sama berulang-ulang, kode lebih mudah di-maintainable, di-extensible,
+  dan sedikit dari bug.
+* **Convention Over Configuration:** Rails memiliki pendapat tentang cara terbaik
+  untuk melakukan banyak hal dalam membangun aplikasi web, Rails telah menetapkan
+  convention ini secara default, hal ini tidak mengharuskan Kamu untuk menentukan hal-hal
+  kecil melalui konfigurasi file yang kurang berguna dan tidak ada habisnya.
+  Masih bingung masalah _Convention Over Configuration_ ini?
+  Baca selengkapnya [Memahami Convention Over Configuration dalam Pemrograman](https://medium.com/laravel-indonesia/memahami-convention-over-configuration-dalam-pemrograman-a61b55602c05)
 
-Creating a New Rails Project
+Membuat Proyek Baru dengan Rails
 ----------------------------
-The best way to read this guide is to follow it step by step. All steps are
-essential to run this example application and no additional code or steps are
-needed.
+Cara terbaik untuk mengikuti panduan ini adalah dengan cara mengikuti langkah demi langkah.
+Semua langkah sangat penting untuk menjalankan contoh aplikasi ini dan tidak ada kode atau
+langkah tambahan yang diperlukan.
 
-By following along with this guide, you'll create a Rails project called
-`blog`, a (very) simple weblog. Before you can start building the application,
-you need to make sure that you have Rails itself installed.
+Dengan mengikuti panduan ini bersama-sama, Kamu akan membuat proyek Rails yang disebut
+`blog`, weblog (yang sangat) sederhana. Sebelum Kamu memulai membuat aplikasi,
+Kamu perlu memastikan dulu bahwa Rails-mu sudah terinstal.
 
-TIP: The examples below use `$` to represent your terminal prompt in a UNIX-like OS,
-though it may have been customized to appear differently. If you are using Windows,
-your prompt will look something like `c:\source_code>`
+TIP: Contoh-contoh di bawah ini tanda `$` digunakan untuk mewakili terminal shell untuk OS UNIX-like,
+walaupun mungkin tampil berbeda karena telah disesuaikan. Jika Kamu menggunakan Windows,
+shell Kamu akan terlihat seperti `c:\source_code>`
 
-### Installing Rails
+### Menginstal Rails
 
-Before you install Rails, you should check to make sure that your system has the
-proper prerequisites installed. These include Ruby and SQLite3.
+Sebelum Kamu menginstal Rails, Kamu harus memeriksa untuk memastikan bahwa
+sistem yang Kamu gunakan telah memenuhi prasyarat untuk diinstal. Termasuk Ruby dan SQLite3.
 
-Open up a command line prompt. On macOS open Terminal.app, on Windows choose
-"Run" from your Start menu and type 'cmd.exe'. Any commands prefaced with a
-dollar sign `$` should be run in the command line. Verify that you have a
-current version of Ruby installed:
+Buka shell command line. Untuk macOS, buka Terminal.app, untuk Windows pilih
+"Run" dari Start menu dan ketik 'cmd.exe'. Perintah apa pun yang diawali dengan tanda
+dolar `$` harus dijalankan di command line. Verifikasi bahwa Kamu memiliki
+versi Ruby yang diinstal:
 
 ```bash
 $ ruby -v
 ruby 2.3.1p112
 ```
 
-Rails requires Ruby version 2.2.2 or later. If the version number returned is
-less than that number, you'll need to install a fresh copy of Ruby.
+Rails membutuhkan Ruby versi 2.2.2 atau lebih baru.
+Jika nomor versi yang dihasilkan kurang dari angka diatas,
+Kamu harus menginstal Ruby yang baru.
 
-TIP: A number of tools exist to help you quickly install Ruby and Ruby
-on Rails on your system. Windows users can use [Rails Installer](http://railsinstaller.org),
-while macOS users can use [Tokaido](https://github.com/tokaido/tokaidoapp).
-For more installation methods for most Operating Systems take a look at
+TIP: Ada beberapa alat untuk membantu Kamu dengan cepat menginstal
+Ruby dan Ruby on Rails di sistem Kamu. Untuk pengguna Windows bisa menggunakan [Rails Installer](http://railsinstaller.org),
+sedangkan untuk pengguna macOS bisa menggunakan [Tokaido](https://github.com/tokaido/tokaidoapp).
+Cara pemasangan lebih lanjut untuk sebagian besar Sistem Operasi, silakan lihat di
 [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
 
-If you are working on Windows, you should also install the
+Jika Kamu menjalankan di Windows, Kamu juga harus menginstal
 [Ruby Installer Development Kit](http://rubyinstaller.org/downloads/).
 
-You will also need an installation of the SQLite3 database.
-Many popular UNIX-like OSes ship with an acceptable version of SQLite3.
-On Windows, if you installed Rails through Rails Installer, you
-already have SQLite installed. Others can find installation instructions
-at the [SQLite3 website](https://www.sqlite.org).
-Verify that it is correctly installed and in your PATH:
+Kamu juga akan memerlukan instalasi database SQLite3.
+Banyak OS turunan UNIX-like yang populer dapat menerima versi SQLite3.
+Untuk Windows, jika Kamu menginstal Rails menggunakan Rails Installer, itu
+sudah termasuk instalasi SQLite. Untuk yang lainnya bisa mencari petunjuk
+instalasi di [Situs web SQLite3](https://www.sqlite.org).
+Verifikasi bahwa installasi PATH sudah terpasang dengan benar:
 
 ```bash
 $ sqlite3 --version
 ```
 
-The program should report its version.
+Program harus menghasilkan versi sesuai perintah diatas.
 
-To install Rails, use the `gem install` command provided by RubyGems:
+Untuk menginstal Rails, gunakan perintah `gem install` yang telah disediakan oleh RubyGems:
 
 ```bash
 $ gem install rails
 ```
 
-To verify that you have everything installed correctly, you should be able to
-run the following:
+Untuk memverifikasi bahwa Kamu telah menginstal semuanya dengan benar, Kamu harus
+bisa menjalankan perintah berikut:
 
 ```bash
 $ rails --version
 ```
 
-If it says something like "Rails 5.2.1", you are ready to continue.
+Jika menghasilkan sesuatu seperti "Rails 5.2.1", Kamu siap untuk melanjutkan ke langkah berikutnya.
 
-### Creating the Blog Application
+### Membuat Aplikasi Blog
 
-Rails comes with a number of scripts called generators that are designed to make
-your development life easier by creating everything that's necessary to start
-working on a particular task. One of these is the new application generator,
-which will provide you with the foundation of a fresh Rails application so that
-you don't have to write it yourself.
+Rails hadir dengan sejumlah script yang disebut dengan generator yang dirancang untuk membuat
+development lebih mudah dengan membuat segala sesuatu yang diperlukan untuk
+menjalankan tugas-tugas tertentu. Salah satunya adalah generator membuat aplikasi baru di Rails,
+yang akan memberikan Kamu dasar dari pembuatan aplikasi baru sehingga
+Kamu tidak perlu menuliskannya lagi.
 
-To use this generator, open a terminal, navigate to a directory where you have
-rights to create files, and type:
+Untuk menggunakan generator ini, buka terminal, arahkan ke direktori
+tempat di mana Kamu memiliki hak akses untuk membuat file atau folder, dan ketik:
 
 ```bash
 $ rails new blog
 ```
 
-This will create a Rails application called Blog in a `blog` directory and
-install the gem dependencies that are already mentioned in `Gemfile` using
-`bundle install`.
+Ini akan membuat aplikasi Rails yang disebut Blog, didalam direktori `blog` dan
+akan menginstal dependensi gem yang telah disebutkan dalam `Gemfile`
+menggunakan perintah `bundle install`.
 
-NOTE: If you're using Windows Subsystem for Linux then there are currently some
-limitations on file system notifications that mean you should disable the `spring`
-and `listen` gems which you can do by running `rails new blog --skip-spring --skip-listen`.
+NOTE: Jika Kamu menggunakan Subsistem Windows untuk Linux maka ada beberapa
+limitasi pemberitahuan pada file system yang berarti Kamu harus menonaktifkan gem `spring`
+dan `listen` yang bisa Kamu lakukan dengan menjalankan perintah `rails new blog --skip-spring --skip-listen`.
 
-TIP: You can see all of the command line options that the Rails application
-builder accepts by running `rails new -h`.
+TIP: Kamu bisa melihat semua opsi perintah yang disediakan dari aplikasi Rails builder
+dengan menjalankan perintah `rails new -h`.
 
-After you create the blog application, switch to its folder:
+Setelah Kamu membuat aplikasi blog, arahkan ke direktori blog:
 
 ```bash
 $ cd blog
 ```
 
-The `blog` directory has a number of auto-generated files and folders that make
-up the structure of a Rails application. Most of the work in this tutorial will
-happen in the `app` folder, but here's a basic rundown on the function of each
-of the files and folders that Rails created by default:
+Di direktori `blog` memiliki file dan folder yang dihasilkan secara otomatis
+sehingga membentuk struktur aplikasi Rails. Dalam tutorial ini sebagaian besar
+folder yang banyak bekerja adalah folder `app`, dibawah ini adalah ikhtisar
+dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara default:
 
-| File/Folder | Purpose |
+| File/Folder | Fungsi  |
 | ----------- | ------- |
-|app/|Contains the controllers, models, views, helpers, mailers, channels, jobs and assets for your application. You'll focus on this folder for the remainder of this guide.|
-|bin/|Contains the rails script that starts your app and can contain other scripts you use to setup, update, deploy or run your application.|
-|config/|Configure your application's routes, database, and more. This is covered in more detail in [Configuring Rails Applications](configuring.html).|
-|config.ru|Rack configuration for Rack based servers used to start the application. For more information about Rack, see the [Rack website](https://rack.github.io/).|
-|db/|Contains your current database schema, as well as the database migrations.|
-|Gemfile<br>Gemfile.lock|These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the [Bundler website](https://bundler.io).|
-|lib/|Extended modules for your application.|
-|log/|Application log files.|
-|package.json|This file allows you to specify what npm dependencies are needed for your Rails application. This file is used by Yarn. For more information about Yarn, see the [Yarn website](https://yarnpkg.com/lang/en/).|
-|public/|The only folder seen by the world as-is. Contains static files and compiled assets.|
-|Rakefile|This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing `Rakefile`, you should add your own tasks by adding files to the `lib/tasks` directory of your application.|
-|README.md|This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.|
-|test/|Unit tests, fixtures, and other test apparatus. These are covered in [Testing Rails Applications](testing.html).|
-|tmp/|Temporary files (like cache and pid files).|
-|vendor/|A place for all third-party code. In a typical Rails application this includes vendored gems.|
-|.gitignore|This file tells git which files (or patterns) it should ignore. See [GitHub - Ignoring files](https://help.github.com/articles/ignoring-files) for more info about ignoring files.
-|.ruby-version|This file contains the default Ruby version.|
+|app/|Berisi controllers, models, views, helpers, mailers, channels, jobs dan assets untuk aplikasi. Kamu akan fokus pada folder-folder ini selama mengikuti panduan ini.|
+|bin/|Berisi script Rails yang di mana untuk menjalankan aplikasi dan bisa juga berisi script lain yang Kamu gunakan untuk menyiapkan, memperbarui, men-deploy atau menjalankan aplikasi.|
+|config/|Berisi konfigurasi route, database aplikasi, dan lain-lain. Untuk panduan lebih lanjut tentang Konfigurasi, lihat di [Konfigurasi Aplikasi Rails](configuring.html).|
+|config.ru|Konfigurasi untuk server berbasis Rack yang digunakan untuk memulai aplikasi. Untuk informasi lebih lanjut tentang Rack, lihat di [Situs web Rack](https://rack.github.io/).|
+|db/|Berisi skema database saat ini, serta migrasi database.|
+|Gemfile<br>Gemfile.lock|File ini memungkinkan Kamu untuk menentukan dependensi gem apa yang diperlukan. File ini dioperasikan oleh gem Bundler. Untuk informasi lebih lanjut tentang Bundler, lihat di [Situs web Bundler](https://bundler.io).|
+|lib/|Modul yang di Extend untuk aplikasi Rails.|
+|log/|File log aplikasi.|
+|package.json|File ini memungkinkan Kamu untuk menentukan dependensi npm apa yang diperlukan untuk aplikasi Rails. File ini dioperasikan oleh Yarn. Untuk informasi lebih lanjut tentang Yarn, lihat di [Situs web Yarn](https://yarnpkg.com/lang/en/).|
+|public/|Satu-satunya folder yang dilihat oleh pengguna publik. Berisi file statis dan asset yang dikompilasi.|
+|Rakefile|File ini mencari dan memuat task yang dapat dijalankan dari command line. Task yang dimaksud adalah definisi untuk seluruh komponen yang ada di Rails. Untuk dapat menambahkan task di `Rakefile` cukup menambahkan script yang buat ke direktori `lib/tasks` aplikasi Rails Kamu.|
+|README.md|Ini adalah instruksi manual singkat untuk aplikasi Rails Kamu. Kamu bisa mengedit file ini untuk memberi tahu orang lain apa yang harus dilakukan untuk aplikasi Kamu, cara pengaturannya, dan lain sebagainya.|
+|test/|Tes unit, fixture, dan peralatan tes lainnya. Untuk panduan lebih lanjut tentang Testing, lihat di [Testing Aplikasi Rails](testing.html).|
+|tmp/|File sementara (seperti cache dan file pid).|
+|vendor/|Tempat untuk semua kode pihak ketiga (third-party). Tipikal ini untuk memasukkan vendor gem ke aplikasi Rails.|
+|.gitignore|File ini memberi tahu git ke file (atau pattern) di mana yang harus diabaikan. Lihat di [GitHub - Mengabaikan file](https://help.github.com/articles/ignoring-files) untuk info lebih lanjut tentang mengabaikan file.
+|.ruby-version|File ini berisi versi Ruby yang digunakan secara default dalam satu proyek Ruby.|
 
-Hello, Rails!
+Halo, Rails!
 -------------
 
-To begin with, let's get some text up on screen quickly. To do this, you need to
-get your Rails application server running.
+Untuk memulainya. Untuk melakukan ini, Kamu perlu menjalankan server di aplikasi Rails Kamu.
 
-### Starting up the Web Server
+### Memulai Menjalankan Web Server
 
-You actually have a functional Rails application already. To see it, you need to
-start a web server on your development machine. You can do this by running the
-following in the `blog` directory:
+Kamu sebenarnya sudah memiliki aplikasi Rails secara fungsional. Untuk melihatnya,
+Kamu harus menjalankan web server di mesin development Kamu. Kamu dapat melakukan
+ini dengan menjalankan perintah berikut ini di direktori `blog`:
 
 ```bash
 $ bin/rails server
 ```
 
-TIP: If you are using Windows, you have to pass the scripts under the `bin`
-folder directly to the Ruby interpreter e.g. `ruby bin\rails server`.
+TIP: Jika Kamu menggunakan Windows, Kamu harus menjalnkan script di folder `bin`
+melalui Ruby interpreter langsung, contohnya `ruby bin\rails server`.
 
-TIP: Compiling CoffeeScript and JavaScript asset compression requires you
-have a JavaScript runtime available on your system, in the absence
-of a runtime you will see an `execjs` error during asset compilation.
-Usually macOS and Windows come with a JavaScript runtime installed.
-Rails adds the `mini_racer` gem to the generated `Gemfile` in a
-commented line for new apps and you can uncomment if you need it.
-`therubyrhino` is the recommended runtime for JRuby users and is added by
-default to the `Gemfile` in apps generated under JRuby. You can investigate
-all the supported runtimes at [ExecJS](https://github.com/rails/execjs#readme).
+TIP: Mengkompilasi CoffeeScript dan kompresi asset JavaScript Kamu harus
+memiliki runtime JavaScript yang ada di sistem Kamu, jika tidak ada runtime
+Kamu akan melihat error `execjs` selama kompilasi asset.
+Biasanya macOS dan Windows dilengkapi dengan runtime JavaScript yang diinstal.
+Rails menambahkan gem `mini_racer` di generate ke `Gemfile` dengan command line
+saat membuat aplikasi baru di Rails dan Kamu dapat menghapus komentar jika Kamu membutuhkannya.
+`therubyrhino` adalah runtime yang direkomendasikan untuk pengguna JRuby dan akan ditambahkan
+secara default ke `Gemfile` dalam aplikasi yang dibuat dengan JRuby. Kamu bisa melihat
+semua runtime yang didukung oleh [ExecJS](https://github.com/rails/execjs#readme).
 
-This will fire up Puma, a web server distributed with Rails by default. To see
-your application in action, open a browser window and navigate to
-<http://localhost:3000>. You should see the Rails default information page:
+Kali ini untuk menjalankan Puma, web server yang didistribusikan dengan Rails secara default.
+Untuk melihat aplikasi Kamu, buka perambang (browser) dan arahkan ke
+<http://localhost:3000>. Kamu akan melihat halaman default Rails:
 
 ![Welcome aboard screenshot](images/getting_started/rails_welcome.png)
 
-TIP: To stop the web server, hit Ctrl+C in the terminal window where it's
-running. To verify the server has stopped you should see your command prompt
-cursor again. For most UNIX-like systems including macOS this will be a
-dollar sign `$`. In development mode, Rails does not generally require you to
-restart the server; changes you make in files will be automatically picked up by
-the server.
+TIP: Untuk menghentikan web server, tekan Ctrl+C di terminal di mana aplikasi dijalankan.
+Untuk memverifikasi server telah berhenti Kamu harus melihat kursor shell command line Kamu lagi.
+Untuk sebagian besar sistem UNIX-like termasuk macOS akan menjadi tanda dolar `$`.
+Dalam mode development, Rails pada umumnya tidak mengharuskan Kamu untuk me-restart
+server; apa yang Kamu buat atau rubah pada file di server akan secara otomatis berubah.
 
-The "Welcome aboard" page is the _smoke test_ for a new Rails application: it
-makes sure that you have your software configured correctly enough to serve a
-page.
+Halaman "Welcome aboard" adalah _smoke test_ untuk aplikasi baru di Rails:
+halaman itu untuk menunjukkan bawah Kamu telah memiliki perangkat luna yang cukup
+untuk mengkonfigurasi Rails.
 
-### Say "Hello", Rails
+### Katakan "Halo", Rails
 
-To get Rails saying "Hello", you need to create at minimum a _controller_ and a
+Untuk menampilkan kata "Halo" di Rails, Kamu harus membuat setidaknya _controller_ dan
 _view_.
 
-A controller's purpose is to receive specific requests for the application.
-_Routing_ decides which controller receives which requests. Often, there is more
-than one route to each controller, and different routes can be served by
-different _actions_. Each action's purpose is to collect information to provide
-it to a view.
+Tujuan controller adalah untuk menerima request spesifik ke aplikasi.
+_Routing_ untuk menentukan controller mana yang akan menerima request. Kebanyakan, ada lebih
+dari satu route ke masing-masing controller, dan beberapa route juga bisa melayani berbeda-beda _action_.
+Tujuan setiap action adalah untuk mengumpulkan informasi agar bisa dilihat.
 
-A view's purpose is to display this information in a human readable format. An
-important distinction to make is that it is the _controller_, not the view,
-where information is collected. The view should just display that information.
-By default, view templates are written in a language called eRuby (Embedded
-Ruby) which is processed by the request cycle in Rails before being sent to the
-user.
+Tujuan view adalah untuk menampilkan informasi dalam format yang dapat dibaca oleh pengunjung.
+Untuk membedakannya dibuat dengan _Controller_, bukan view,
+di mana informasi tersebut untuk dikumpulkan. View seharusnya hanya untuk menempilkan informasi.
+Secara default, template view ditulis dalam bahasa yang disebut dengan eRuby
+(Embedded Ruby) yang diproses oleh alur request di Rails sebelum
+dikirim ke pengguna.
 
-To create a new controller, you will need to run the "controller" generator and
-tell it you want a controller called "Welcome" with an action called "index",
-just like this:
+Untuk membuat controller baru, Kamu perlu menjalankan generator "controller" dan
+controller tersebut bernama "Welcome" dengan action yang disebut "index",
+seperti dibawah ini:
 
 ```bash
 $ bin/rails generate controller Welcome index
 ```
 
-Rails will create several files and a route for you.
+Rails akan membuat beberapa file dan route untuk Kamu.
 
 ```bash
 create  app/controllers/welcome_controller.rb
@@ -279,28 +281,27 @@ invoke    scss
 create      app/assets/stylesheets/welcome.scss
 ```
 
-Most important of these are of course the controller, located at
-`app/controllers/welcome_controller.rb` and the view, located at
+Yang terpenting disini adalah controller, berada di
+`app/controllers/welcome_controller.rb` dan view, berada di
 `app/views/welcome/index.html.erb`.
 
-Open the `app/views/welcome/index.html.erb` file in your text editor. Delete all
-of the existing code in the file, and replace it with the following single line
-of code:
+Buka file `app/views/welcome/index.html.erb` dengan text editor Kamu. Hapus semua
+kode yang ada didalam file, dan diganti dengan satu baris kode dibawah ini:
 
 ```html
-<h1>Hello, Rails!</h1>
+<h1>Halo, Rails!</h1>
 ```
 
-### Setting the Application Home Page
+### Mengatur Aplikasi Halaman Depan
 
-Now that we have made the controller and view, we need to tell Rails when we
-want "Hello, Rails!" to show up. In our case, we want it to show up when we
-navigate to the root URL of our site, <http://localhost:3000>. At the moment,
-"Welcome aboard" is occupying that spot.
+Sekarang kita telah membuat controller dan view, kita perlu memberi tahu Rails
+ketika kita ingin menampilkan "Halo, Rails!" Dalam kasus ini, kita ingin menampilkan
+"Halo, Rails!" dengan mengarahkan ke root URL, <http://localhost:3000>. Untuk saat
+ini masih menampilkan "Welcome aboard".
 
-Next, you have to tell Rails where your actual home page is located.
+Selanjutnya, Kamu harus memberi tahu Rails di mana beranda atau root URL Kamu berada.
 
-Open the file `config/routes.rb` in your editor.
+Buka file `config/routes.rb` dengan text editor Kamu.
 
 ```ruby
 Rails.application.routes.draw do
@@ -310,12 +311,11 @@ Rails.application.routes.draw do
 end
 ```
 
-This is your application's _routing file_ which holds entries in a special
+Ini adalah _file routing_ di aplikasi Kamu yang menyimpan khusus entri dalam
 [DSL (domain-specific language)](https://en.wikipedia.org/wiki/Domain-specific_language)
-that tells Rails how to connect incoming requests to
-controllers and actions.
-Edit this file by adding the line of code `root 'welcome#index'`.
-It should look something like the following:
+yang memberi tahu Rails bagaimana menghubungkan request yang masuk ke controller dan action.
+Edit file tersebut dengan menambahkan baris kode `root 'welcome#index'`.
+Itu terlihat seperti berikut ini:
 
 ```ruby
 Rails.application.routes.draw do
@@ -325,19 +325,19 @@ Rails.application.routes.draw do
 end
 ```
 
-`root 'welcome#index'` tells Rails to map requests to the root of the
-application to the welcome controller's index action and `get 'welcome/index'`
-tells Rails to map requests to <http://localhost:3000/welcome/index> to the
-welcome controller's index action. This was created earlier when you ran the
-controller generator (`bin/rails generate controller Welcome index`).
+`root 'welcome#index'` memberitahu Rails untuk menentukan request root aplikasi
+ke action index di controlller welcome dan `get 'welcome/index'`
+memberitahu Rails untuk menentukan request <http://localhost:3000/welcome/index>
+ke action index di controlller welcome. Ini dibuat ketika Kamu menjalankan
+generator controller (`bin/rails generate controller Welcome index`).
 
-Launch the web server again if you stopped it to generate the controller (`bin/rails
-server`) and navigate to <http://localhost:3000> in your browser. You'll see the
-"Hello, Rails!" message you put into `app/views/welcome/index.html.erb`,
-indicating that this new route is indeed going to `WelcomeController`'s `index`
-action and is rendering the view correctly.
+Jalankan web server lagi jika Kamu menghentikannya dengan perintah (`bin/rails
+server`) dan arahkan ke <http://localhost:3000> di browser Kamu. Kamu akan melihat
+pesan "Hello, Rails!" yang baru dimasukkan ke dalam file `app/views/welcome/index.html.erb`
+pada langkah sebelumnya, itu menunjukkan bahwa route yang baru dimasukan mengarah
+ke `WelcomeController` di action `index` dan me-render ke view yang benar.
 
-TIP: For more information about routing, refer to [Rails Routing from the Outside In](routing.html).
+TIP: Untuk panduan lebih lanjut tentang route, lihat di [Rails Routing from the Outside In](routing.html).
 
 Getting Up and Running
 ----------------------
