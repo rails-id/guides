@@ -210,7 +210,7 @@ CommentsChannel.broadcast_to(@post, @comment)
 
 Siaran adalah murni antrean online dan tergantung waktu. Jika konsumen tidak streaming (berlangganan saluran yang diberikan), mereka tidak akan mendapatkan siaran jika mereka terhubung nanti.
 
-Siaran di Aplikasi rails kamu di mana saja:
+Panggil Siaran di Aplikasi rails kamu di mana saja:
 
 ```ruby
 WebNotificationsChannel.broadcast_to(
