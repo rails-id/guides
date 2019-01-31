@@ -164,8 +164,7 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" }
 App.cable.subscriptions.create { channel: "AppearanceChannel" }
 ```
 
-While this creates the subscription, the functionality needed to respond to
-received data will be described later on.
+Meskipun langganan telah di buat, fungsionalitas yang diperlukan untuk menanggapi data yang diterima akan dijabarkan lagi.
 
 A consumer can act as a subscriber to a given channel any number of times. For
 example, a consumer could subscribe to multiple chat rooms at the same time:
