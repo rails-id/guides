@@ -17,7 +17,7 @@ Setelah membaca panduan ini, Kamu akan tahu:
 Asumsi Panduan
 -----------------
 
-Panduan ini dirancang untuk pemula yang ingin memulai dengan aplikasi Rails dari awal.
+Panduan ini di rancang untuk pemula yang ingin memulai dengan aplikasi Rails dari awal.
 Anggapan bahwa Kamu tidak memiliki pengalaman sebelumnya dengan Rails.
 
 Rails adalah framework aplikasi web yang berjalan pada bahasa pemrograman Ruby.
@@ -28,7 +28,7 @@ Ada beberapa daftar sumber online yang bisa dipelajari dari Ruby:
 * [Situs Web Resmi Bahasa Pemrograman Ruby](https://www.ruby-lang.org/en/documentation/)
 * [Daftar Buku Pemrograman (Gratis)](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#ruby)
 
-Ketahuilah bahwa beberapa sumber diatas, walaupun masih bagus,
+Ketahuilah bahwa beberapa sumber di atas, walaupun masih bagus,
 mencakup versi Ruby terdahulu yaitu versi 1.6, umumnya Ruby versi 1.8,
 dan disumber tersebut mungkin tidak akan menyertakan beberapa
 syntax yang akan Kamu lihat dalam development di Rails.
@@ -95,13 +95,13 @@ ruby 2.3.1p112
 ```
 
 Rails membutuhkan Ruby versi 2.2.2 atau lebih baru.
-Jika nomor versi yang dihasilkan kurang dari angka diatas,
+Jika nomor versi yang dihasilkan kurang dari angka di atas,
 Kamu harus menginstal Ruby yang baru.
 
 TIP: Ada beberapa alat untuk membantu Kamu dengan cepat menginstal
 Ruby dan Ruby on Rails di sistem Kamu. Untuk pengguna Windows bisa menggunakan [Rails Installer](http://railsinstaller.org),
 sedangkan untuk pengguna macOS bisa menggunakan [Tokaido](https://github.com/tokaido/tokaidoapp).
-Cara pemasangan lebih lanjut untuk sebagian besar Sistem Operasi, silakan lihat di
+Cara instalasai lebih lanjut untuk sebagian besar Sistem Operasi, silakan lihat di
 [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
 
 Jika Kamu menjalankan di Windows, Kamu juga harus menginstal
@@ -150,7 +150,7 @@ tempat di mana Kamu memiliki hak akses untuk membuat file atau folder, dan ketik
 $ rails new blog
 ```
 
-Ini akan membuat aplikasi Rails yang disebut Blog, didalam direktori `blog` dan
+Ini akan membuat aplikasi Rails yang disebut Blog, di dalam direktori `blog` dan
 akan menginstal dependensi gem yang telah disebutkan dalam `Gemfile`
 menggunakan perintah `bundle install`.
 
@@ -184,7 +184,7 @@ dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara
 |log/|File log aplikasi.|
 |package.json|File ini memungkinkan Kamu untuk menentukan dependensi npm apa yang diperlukan untuk aplikasi Rails. File ini dioperasikan oleh Yarn. Untuk informasi lebih lanjut tentang Yarn, lihat di [Situs web Yarn](https://yarnpkg.com/lang/en/).|
 |public/|Satu-satunya folder yang dilihat oleh pengguna publik. Berisi file statis dan asset yang dikompilasi.|
-|Rakefile|File ini mencari dan memuat task yang dapat dijalankan dari command line. Task yang dimaksud adalah definisi untuk seluruh komponen yang ada di Rails. Untuk dapat menambahkan task di `Rakefile` cukup menambahkan script yang buat ke direktori `lib/tasks` aplikasi Rails Kamu.|
+|Rakefile|File ini mencari dan memuat task yang dapat dijalankan dari command line. Task yang dimaksud adalah definisi untuk seluruh komponen yang ada di Rails. Untuk dapat menambahkan task di `Rakefile` cukup menambahkan script yang dibuat ke direktori `lib/tasks` aplikasi Rails Kamu.|
 |README.md|Ini adalah instruksi manual singkat untuk aplikasi Rails Kamu. Kamu bisa mengedit file ini untuk memberi tahu orang lain apa yang harus dilakukan untuk aplikasi Kamu, cara pengaturannya, dan lain sebagainya.|
 |test/|Tes unit, fixture, dan peralatan tes lainnya. Untuk panduan lebih lanjut tentang Testing, lihat di [Testing Aplikasi Rails](testing.html).|
 |tmp/|File sementara (seperti cache dan file pid).|
@@ -195,7 +195,7 @@ dasar tentang masing-masing fungsi file dan folder yang dibuat oleh Rails secara
 Halo, Rails!
 -------------
 
-Untuk memulainya. Untuk melakukan ini, Kamu perlu menjalankan server di aplikasi Rails Kamu.
+Untuk memulai melakukan ini, Kamu perlu menjalankan server di aplikasi Rails Kamu.
 
 ### Memulai Menjalankan Web Server
 
@@ -213,7 +213,7 @@ melalui Ruby interpreter langsung, contohnya `ruby bin\rails server`.
 TIP: Mengkompilasi CoffeeScript dan kompresi asset JavaScript Kamu harus
 memiliki runtime JavaScript yang ada di sistem Kamu, jika tidak ada runtime
 Kamu akan melihat error `execjs` selama kompilasi asset.
-Biasanya macOS dan Windows dilengkapi dengan runtime JavaScript yang diinstal.
+Biasanya macOS dan Windows dilengkapi dengan runtime JavaScript yang sudah diinstal.
 Rails menambahkan gem `mini_racer` di generate ke `Gemfile` dengan command line
 saat membuat aplikasi baru di Rails dan Kamu dapat menghapus komentar jika Kamu membutuhkannya.
 `therubyrhino` adalah runtime yang direkomendasikan untuk pengguna JRuby dan akan ditambahkan
@@ -221,7 +221,7 @@ secara default ke `Gemfile` dalam aplikasi yang dibuat dengan JRuby. Kamu bisa m
 semua runtime yang didukung oleh [ExecJS](https://github.com/rails/execjs#readme).
 
 Kali ini untuk menjalankan Puma, web server yang didistribusikan dengan Rails secara default.
-Untuk melihat aplikasi Kamu, buka perambang (browser) dan arahkan ke
+Untuk melihat aplikasi Kamu, buka peramban (browser) dan arahkan ke
 <http://localhost:3000>. Kamu akan melihat halaman default Rails:
 
 ![Welcome aboard screenshot](images/getting_started/rails_welcome.png)
@@ -233,7 +233,7 @@ Dalam mode development, Rails pada umumnya tidak mengharuskan Kamu untuk me-rest
 server; apa yang Kamu buat atau rubah pada file di server akan secara otomatis berubah.
 
 Halaman "Welcome aboard" adalah _smoke test_ untuk aplikasi baru di Rails:
-halaman itu untuk menunjukkan bawah Kamu telah memiliki perangkat luna yang cukup
+halaman itu untuk menunjukkan bawah Kamu telah memiliki perangkat lunak yang cukup
 untuk mengkonfigurasi Rails.
 
 ### Katakan "Halo", Rails
@@ -242,7 +242,7 @@ Untuk menampilkan kata "Halo" di Rails, Kamu harus membuat setidaknya _controlle
 _view_.
 
 Tujuan controller adalah untuk menerima request spesifik ke aplikasi.
-_Routing_ untuk menentukan controller mana yang akan menerima request. Kebanyakan, ada lebih
+_Routing_ untuk menentukan controller mana yang akan menerima request. Kebanyakan, ada yang lebih
 dari satu route ke masing-masing controller, dan beberapa route juga bisa melayani berbeda-beda _action_.
 Tujuan setiap action adalah untuk mengumpulkan informasi agar bisa dilihat.
 
@@ -281,12 +281,12 @@ invoke    scss
 create      app/assets/stylesheets/welcome.scss
 ```
 
-Yang terpenting disini adalah controller, berada di
+Yang terpenting di sini adalah controller, berada di
 `app/controllers/welcome_controller.rb` dan view, berada di
 `app/views/welcome/index.html.erb`.
 
 Buka file `app/views/welcome/index.html.erb` dengan text editor Kamu. Hapus semua
-kode yang ada didalam file, dan diganti dengan satu baris kode dibawah ini:
+kode yang ada di dalam file, dan diganti dengan satu baris kode dibawah ini:
 
 ```html
 <h1>Halo, Rails!</h1>
@@ -315,7 +315,7 @@ Ini adalah _file routing_ di aplikasi Kamu yang menyimpan khusus entri dalam
 [DSL (domain-specific language)](https://en.wikipedia.org/wiki/Domain-specific_language)
 yang memberi tahu Rails bagaimana menghubungkan request yang masuk ke controller dan action.
 Edit file tersebut dengan menambahkan baris kode `root 'welcome#index'`.
-Itu terlihat seperti berikut ini:
+Seperti berikut ini:
 
 ```ruby
 Rails.application.routes.draw do
@@ -337,7 +337,7 @@ pesan "Hello, Rails!" yang baru dimasukkan ke dalam file `app/views/welcome/inde
 pada langkah sebelumnya, itu menunjukkan bahwa route yang baru dimasukan mengarah
 ke `WelcomeController` di action `index` dan me-render ke view yang benar.
 
-TIP: Untuk panduan lebih lanjut tentang route, lihat di [Rails Routing from the Outside In](routing.html).
+TIP: Untuk panduan lebih lanjut tentang route, lihat di [Routing Rails dari Luar ke Dalam](routing.html).
 
 Getting Up and Running
 ----------------------
