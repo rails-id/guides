@@ -4,6 +4,7 @@
 
 - Baca [README](README.md) terlebih dahulu.
 - Diharapkan sebelum berkontribusi kalian harus sudah mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
+- Tidak lupa untuk menginstal plugin di sini [editorconfig](https://editorconfig.org/#download) sesuai dengan Text Editor atau IDE yang kalian gunakan.
 - Setiap kontributor harus memiliki konfigurasi git dengan akun GitHub yang sesuai dan benar.
   - Ref: [Why are my commits linked to the wrong user?](https://help.github.com/articles/why-are-my-commits-linked-to-the-wrong-user/)
 - Pastikan pengaturan waktu / tanggal pada local kalian sudah sesuai dan benar.
@@ -31,5 +32,5 @@
       - Ref:
         - [README#branch](https://github.com/rails-id/guides#branch)
         - [GUIDELINES.md](https://github.com/rails-id/guides/blob/master/GUIDELINES.md)
-- Tidak ada langkah selanjutnya, karena disini kalian hanya menunggu review dari member organisasi Ruby on Rails Indonesia (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
+- Tidak ada langkah selanjutnya, karena di sini kalian hanya menunggu review dari member organisasi Ruby on Rails Indonesia (tidak berlaku untuk member organisasi Ruby on Rails Indonesia).
   - Ref: [Requesting a pull request review](https://help.github.com/articles/requesting-a-pull-request-review/)

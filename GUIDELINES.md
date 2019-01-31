@@ -17,9 +17,7 @@
 
 - Gunakan kata EYD yang sesuai. Contohnya:
 	- Yang benar __Silakan__ bukan __Silahkan__
-- Penggunaan kata sambung yang benar. Contohnya:
-	- Yang benar __diletakan__ bukan __di letakan__, karena bukan menunjukan objek
-	- Yang benar __letakan__ bukan __leta kan__
+- Penggunaan [Preposisi](https://id.wikipedia.org/wiki/Preposisi) dengan benar.
 - Gunakan __Kamu__, __Kalian__, __Teman-teman__ sebagai sapaan.
 - Tidak diperbolehkan untuk me-rename file ataupun folder source.
 - URL tidak diterjemahkan.
