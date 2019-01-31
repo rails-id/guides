@@ -80,6 +80,49 @@ Selengkapnya bisa lihat di [Kontribusi](CONTRIBUTING.md) dan diharapkan untuk me
 ## Referensi
 - [github.com/rails/rails/tree/master/guides](https://github.com/rails/rails/tree/master/guides)
 
+## Script Tambahan
+
+Ini hanya informasi saja, kalain tidak perlu melakukan ini, karena ini telah ditambahkan di repositori ini.
+
+Membuat file di `assets/stylesheets/utility.css`
+``` css
+.contribute-to-github {
+  text-align: center;
+  margin: 5rem auto;
+}
+.contribute-to-github a {
+  font-size: 1.1rem;
+  color: #fff !important;
+  background-color: #cc0000;
+  padding: 1.25rem 3rem;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.contribute-to-github a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+```
+
+Membuat file di `assets/javascripts/utility.js`
+``` js
+$('#feedback').prepend("<section class=\"contribute-to-github\">\n" +
+  "  <a href=\"https://github.com/rails-id/guides\" target=\"_blank\">Kontribusi panduan ini di GitHub</a>\n" +
+  "</section>");
+```
+
+Menambah kode file di `source/layout.html.erb` untuk stylesheet dan javascript
+``` html
+<link rel="stylesheet" href="stylesheets/utility.css">
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="javascripts/utility.js"></script>
+```
+
+Menambah `id` di `source/layout.html.erb` untuk bagian Feedback atau Masukan
+``` html
+<h3 id="feedback">Masukan</h3>
+```
+
 ## Lisensi
 
 [![License](https://img.shields.io/github/license/rails-id/guides.svg)](LICENSE)
