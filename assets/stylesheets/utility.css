@@ -1,0 +1,16 @@
+.contribute-to-github {
+  text-align: center;
+  margin: 5rem auto;
+}
+.contribute-to-github a {
+  font-size: 1.1rem;
+  color: #fff !important;
+  background-color: #cc0000;
+  padding: 1.25rem 3rem;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.contribute-to-github a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
