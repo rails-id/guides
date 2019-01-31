@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= yield(:page_title) %></title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shCore.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shThemeRailsGuides.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shCore.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shThemeRailsGuides.css">
 
-  <link rel="stylesheet" type="text/css" href="stylesheets/fixes.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/fixes.css">
 
-  <link rel="stylesheet" type="text/css" href="stylesheets/utility.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/utility.css">
 
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body class="guide">
   <% if @edge %>
   <div>
-    <img src="images/edge_badge.png" alt="edge-badge" id="edge-badge" />
+    <img src="images/edge_badge.png" alt="edge-badge" id="edge-badge">
   </div>
   <% end %>
   <div id="topNav">
@@ -45,7 +45,7 @@
         <li class="guides-index guides-index-large">
           <a href="index.html" id="guidesMenu" class="guides-index-item nav-item">Indeks Panduan</a>
           <div id="guides" class="clearfix" style="display: none;">
-            <hr />
+            <hr>
             <div class="guides-section-container">
               <% documents_by_section.each do |section| %>
                 <div class="guides-section">
@@ -75,7 +75,7 @@
       </ul>
     </div>
   </div>
-  <hr class="hide" />
+  <hr class="hide">
 
   <div id="feature">
     <div class="wrapper">
@@ -117,7 +117,7 @@
     </div>
   </div>
 
-  <hr class="hide" />
+  <hr class="hide">
   <div id="footer">
     <div class="wrapper">
       <%= render 'license' %>
