@@ -105,11 +105,22 @@ Membuat file di `assets/stylesheets/utility.css`
 ```
 
 Membuat file di `assets/javascripts/utility.js`
-``` js
-$('#feedback').prepend("<section class=\"contribute-to-github\">\n" +
-  "  <a href=\"https://github.com/rails-id/guides\" target=\"_blank\">Kontribusi panduan ini di GitHub</a>\n" +
-  "</section>");
-```
+
+  Untuk Guide Rails versi 6 ke atas:
+  ``` js
+  document.addEventListener("turbolinks:load", function() {
+    $('#feedback').prepend("<section class=\"contribute-to-github\">\n" +
+      "  <a href=\"https://github.com/rails-id/guides\" target=\"_blank\">Kontribusi panduan ini di GitHub</a>\n" +
+      "</section>");
+  })
+  ```
+
+  Untuk Guide Rails versi 5:
+  ``` js
+  $('#feedback').prepend("<section class=\"contribute-to-github\">\n" +
+    "  <a href=\"https://github.com/rails-id/guides\" target=\"_blank\">Kontribusi panduan ini di GitHub</a>\n" +
+    "</section>");
+  ```
 
 Menambah kode file di `source/layout.html.erb` untuk stylesheet dan javascript
 ``` html
