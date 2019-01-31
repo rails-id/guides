@@ -35,7 +35,7 @@ menggunakan pendekatan ini untuk berkomunikasi antara server dan banyak klien.
 
 ## Komponen Sisi Server
 
-### Koneksi 
+### Koneksi
 
 *Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi
 di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri
@@ -79,7 +79,7 @@ Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, da
 mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user
 (dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
 
-### Saluran 
+### Saluran
 
 Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada
 MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk
@@ -114,7 +114,7 @@ Seorang konsumen kemudian dapat berlangganan salah satu atau kedua saluran ini.
 
 Konsumen yang berlangganan pada saluran di sebut *pelanggan*. Dan koneksinya di sebut *berlangganan*.
 Pesan yang dihasilkan kemudian dialihkan ke saluran
-langganan berdasarkan pengenal yang dikirim oleh konsumen kabel. 
+langganan berdasarkan pengenal yang dikirim oleh konsumen kabel.
 
 ```ruby
 # app/channels/chat_channel.rb
