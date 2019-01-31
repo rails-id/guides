@@ -17,18 +17,18 @@
   <script src="javascripts/guides.js" data-turbolinks-track="reload"></script>
   <script src="javascripts/responsive-tables.js" data-turbolinks-track="reload"></script>
   <script src="javascripts/utility.js" data-turbolinks-track="reload"></script>
-  <meta property="og:title" content="<%= yield(:page_title) %>" />
-  <meta name="description" content="<%= yield(:description) %>" />
-  <meta property="og:description" content="<%= yield(:description) %>" />
-  <meta property="og:locale" content="id_ID" />
-  <meta property="og:site_name" content="Panduan Ruby on Rails" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/46654718" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<%= yield(:page_title) %>">
+  <meta name="description" content="<%= yield(:description) %>">
+  <meta property="og:description" content="<%= yield(:description) %>">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Panduan Ruby on Rails">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/46654718">
+  <meta property="og:type" content="website">
 </head>
 <body class="guide">
   <% if @edge %>
   <div>
-    <img src="images/edge_badge.png" alt="edge-badge" id="edge-badge" />
+    <img src="images/edge_badge.png" alt="edge-badge" id="edge-badge">
   </div>
   <% end %>
   <div id="topNav">
@@ -54,7 +54,7 @@
         <li class="guides-index guides-index-large">
           <a href="index.html" id="guidesMenu" class="guides-index-item nav-item">Indeks Panduan</a>
           <div id="guides" class="clearfix" style="display: none;">
-            <hr />
+            <hr>
             <div class="guides-section-container">
               <% documents_by_section.each do |section| %>
                 <div class="guides-section">
@@ -83,7 +83,7 @@
       </ul>
     </div>
   </div>
-  <hr class="hide" />
+  <hr class="hide">
 
   <div id="feature">
     <div class="wrapper">
@@ -125,7 +125,7 @@
     </div>
   </div>
 
-  <hr class="hide" />
+  <hr class="hide">
   <div id="footer">
     <div class="wrapper">
       <%= render 'license' %>
