@@ -173,12 +173,11 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "1st Room" }
 App.cable.subscriptions.create { channel: "ChatChannel", room: "2nd Room" }
 ```
 
-## Client-Server Interactions
+## Interaksi Klien-Server
 
-### Streams
+### Streaming
 
-*Streams* provide the mechanism by which channels route published content
-(broadcasts) to their subscribers.
+*streaming* menyediakan mekanisme saluran yang di kirimkan sebagai publikasi konten (siaran) ke pelanggan yang berlangganan.
 
 ```ruby
 # app/channels/chat_channel.rb
