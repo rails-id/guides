@@ -41,7 +41,7 @@ $ rake
 
 - **5-2-stable**
 
-	Sedang dikerjakan untuk panduan Rails versi 5-2-stable ini.
+	Sedang di kerjakan untuk panduan Rails versi 5-2-stable ini.
 
 ## Transfer
 
@@ -55,7 +55,7 @@ $ rake
 
 ## Sumber Konten
 
-Secara umum konten panduan Ruby on Rails berada didirektori [source](source), lakukan perubahan pada panduan konten tersebut untuk berkontrbusi.
+Secara umum konten panduan Ruby on Rails berada di direktori [source](source), lakukan perubahan pada panduan konten tersebut untuk berkontrbusi.
 
 ## Kontribusi
 
