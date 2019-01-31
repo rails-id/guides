@@ -188,9 +188,7 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 
-If you have a stream that is related to a model, then the broadcasting used
-can be generated from the model and channel. The following example would
-subscribe to a broadcasting like `comments:Z2lkOi8vVGVzdEFwcC9Qb3N0LzE`
+Jika kamu memiliki streaming yang berhubungan dengan model, maka siaran dapat menggunakan model dan saluran tersebut. Berikut contoh siaran pada saluran berlangganan `comments:Z2lkOi8vVGVzdEFwcC9Qb3N0LzE`
 
 ```ruby
 class CommentsChannel < ApplicationCable::Channel
@@ -201,12 +199,11 @@ class CommentsChannel < ApplicationCable::Channel
 end
 ```
 
-You can then broadcast to this channel like this:
+kamu dapat melakukan siaran pada saluran di atas seperti ini:
 
 ```ruby
 CommentsChannel.broadcast_to(@post, @comment)
 ```
-
 ### Broadcasting
 
 A *broadcasting* is a pub/sub link where anything transmitted by a publisher
