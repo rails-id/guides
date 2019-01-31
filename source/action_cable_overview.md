@@ -166,8 +166,7 @@ App.cable.subscriptions.create { channel: "AppearanceChannel" }
 
 Meskipun langganan telah di buat, fungsionalitas yang diperlukan untuk menanggapi data yang diterima akan dijabarkan lagi.
 
-A consumer can act as a subscriber to a given channel any number of times. For
-example, a consumer could subscribe to multiple chat rooms at the same time:
+Konsumen dapat bertindak sebagai pelanggan kapan saja pada setiap saluran yang di berikan. Sebagai contoh, konsumen dapat berlangganan beberapa ruang obrolan secara bersamaan:
 
 ```coffeescript
 App.cable.subscriptions.create { channel: "ChatChannel", room: "1st Room" }
