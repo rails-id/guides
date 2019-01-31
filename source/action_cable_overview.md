@@ -210,7 +210,7 @@ CommentsChannel.broadcast_to(@post, @comment)
 
 Siaran adalah murni antrean online dan tergantung waktu. Jika konsumen tidak streaming (berlangganan saluran yang diberikan), mereka tidak akan mendapatkan siaran jika mereka terhubung nanti.
 
-Broadcasts are called elsewhere in your Rails application:
+Siaran di Aplikasi rails kamu di mana saja:
 
 ```ruby
 WebNotificationsChannel.broadcast_to(
@@ -219,15 +219,9 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
+Panggilan `webNotificationsChannel.broadcast_to` menempatkan pesan pada adaptor berlangganan(secara default `redis` untuk produksi dan `async` untuk development dan test pengembangan) antrean pub/sub di pisahkan oleh nama saluran untuk masing - masing user. Untuk dengan ID 1, nama saluran menjadi `web_notification:1`.
 
-The `WebNotificationsChannel.broadcast_to` call places a message in the current
-subscription adapter (by default `redis` for production and `async` for development and
-test environments)'s pubsub queue under a separate broadcasting name for each user.
-For a user with an ID of 1, the broadcasting name would be `web_notifications:1`.
-
-The channel has been instructed to stream everything that arrives at
-`web_notifications:1` directly to the client by invoking the `received`
-callback.
+Saluran telah diinstruksikan untuk streaming semua yang datang pada `web_notifications:1`. langsung ke klien dengan memohon `received` kembali.
 
 ### Subscriptions
 
