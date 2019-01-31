@@ -1,9 +1,10 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
 
-Meninjau Action Cable 
+Ikhtisar Action Cable
 =======================
 
-Di dalam panduan ini, kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails kamu.
+Di dalam panduan ini, kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan
+WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails kamu.
 
 Setelah membaca panduan ini, kamu akan mengetahui tentang:
 
@@ -18,19 +19,29 @@ Pengenalan
 ----------
 
 Action cable terintegrasi dengan mulus pada [WebSockets](https://en.wikipedia.org/wiki/WebSocket)
-di aplikasi Rails kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan gaya dan bentuk aplikasi kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan bagi sisi klien kerangka JavaScript dan sisi server kerangka Ruby. Kamu mendapatkan akses penuh untuk menulis model domain dengan
-Active Record atau kamu dapat memilih Object-Relational-Mapping (ORM) pilihan kamu.
+di aplikasi Rails kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan
+gaya dan bentuk aplikasi kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan
+bagi sisi klien kerangka JavaScript dan sisi server kerangka Ruby. Kamu mendapatkan akses penuh untuk
+menulis model domain dengan Active Record atau kamu dapat memilih Object-Relational-Mapping (ORM)
+pilihan kamu.
 
-Apa itu Pola Berlangganan Publik
+Apa itu Pub/Sub
 ---------------
 
-[Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), atau disebut Publik Berlangganan, mengacu pada antrian pesan yang memilik paradigma dimana pengirim informasi (penerbit),  mengirim data kepada kelas yang abstrak ke penerima (pelanggan), tanpa menentukan spesifikasi individu penerima. Action Cable menggunakan pendekatan ini untuk berkomunikasi antara server dan banyak klien.
+[Pub/Sub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), atau disebut Publik Berlangganan,
+mengacu pada antrian pesan yang memilik paradigma dimana pengirim informasi (penerbit),  mengirim data kepada
+kelas yang abstrak ke penerima (pelanggan), tanpa menentukan spesifikasi individu penerima. Action Cable
+menggunakan pendekatan ini untuk berkomunikasi antara server dan banyak klien.
 
 ## Komponen Sisi Server
 
 ### Koneksi 
 
-*Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri tidak berurusan dengan logika apapun di dalam spesifikasi aplikasi di luar otentikasi dan otorisasi. Klien dari koneksi WebSocket di sebut koneksi *konsumen*. Pengguna secara individu membuat satu pasang konsumen-koneksi per tab browser, jendela, atau perangkat yang di pakai untuk membuka.
+*Koneksi* adalah fondasi dasar hubungan dengan Klien Server. Agar semua Websocket di terima oleh server, koneksi
+di pakai pada objek. Objek menjadi induk bagi semua *saluran pelanggan* yang di buat di dalamnya. Koneksi sendiri
+tidak berurusan dengan logika apapun di dalam spesifikasi aplikasi di luar otentikasi dan otorisasi. Klien dari
+koneksi WebSocket di sebut koneksi *konsumen*. Pengguna secara individu membuat satu pasang konsumen-koneksi per
+tab browser, jendela, atau perangkat yang di pakai untuk membuka.
 
 #### Mempersiapkan Koneksi
 
@@ -56,15 +67,23 @@ module ApplicationCable
   end
 end
 ```
-Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk spesifikasi koneksi nanti. Perhatikan bahwa apa pun yang ditandai sebagai pengenal identifikasi secara otomatis dibuat delegasi dengan nama yang sama di dalam semua channel seperti contoh koneksi di atas.
 
-Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan sukses autentikasi di setujui oleh cookie user ID. 
+Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk spesifikasi koneksi nanti.
+Perhatikan bahwa apa pun yang ditandai sebagai pengenal identifikasi secara otomatis dibuat delegasi dengan
+nama yang sama di dalam semua channel seperti contoh koneksi di atas.
 
-Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user(dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
+Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan sukses autentikasi di setujui
+oleh cookie user ID.
+
+Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk
+mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user
+(dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
 
 ### Saluran 
 
-Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk bersama merangkum logic antara saluran kamu.
+Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada
+MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk
+bersama merangkum logic antara saluran kamu.
 
 #### Memasang Induk Saluran
 
@@ -83,18 +102,18 @@ Kemudian kamu dapat membuat kelas saluran kamu sendiri. berikut contoh, yang dap
 # app/channels/chat_channel.rb
 class CharChannel < ApplicationCable::Channel
 end
-```
 
 # app/channels/apperance_channel.rb
 class ApperanceChannel < ApplicationCable::Channel
 end
 ```
+
 Seorang konsumen kemudian dapat berlangganan salah satu atau kedua saluran ini.
 
 #### Berlangganan
 
-
-Konsumen yang berlangganan pada saluran di sebut *pelanggan*. Dan koneksinya di sebut *berlangganan*. Pesan yang dihasilkan kemudian dialihkan ke saluran
+Konsumen yang berlangganan pada saluran di sebut *pelanggan*. Dan koneksinya di sebut *berlangganan*.
+Pesan yang dihasilkan kemudian dialihkan ke saluran
 langganan berdasarkan pengenal yang dikirim oleh konsumen kabel. 
 
 ```ruby
@@ -106,11 +125,13 @@ class ChatChannel < ApplicationCable::Channel
   end
 end
 ```
+
 ## Komponen Sisi Klien
 
 ### Koneksi
 
-Konsumen memerlukan contoh koneksi dari sisi konsumen. Ini bisa dibuat menggunakan JavaScript berikut, yang dibuat secara default oleh Rails:
+Konsumen memerlukan contoh koneksi dari sisi konsumen. Ini bisa dibuat menggunakan
+JavaScript berikut, yang dibuat secara default oleh Rails:
 
 #### Koneksi Konsumen
 
@@ -127,7 +148,9 @@ Konsumen memerlukan contoh koneksi dari sisi konsumen. Ini bisa dibuat menggunak
 }).call(this);
 ```
 
-Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di server kamu secara default. Koneksi tidak akan terjalin sampai mendapat minimal satu pelanggan yang telah di tentukan untuk menjadi pelanggan. 
+Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di server kamu
+secara default. Koneksi tidak akan terjalin sampai mendapat minimal satu pelanggan
+yang telah di tentukan untuk menjadi pelanggan.
 
 #### Berlangganan
 
@@ -140,7 +163,6 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" }
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
 App.cable.subscriptions.create { channel: "AppearanceChannel" }
 ```
-
 
 While this creates the subscription, the functionality needed to respond to
 received data will be described later on.
