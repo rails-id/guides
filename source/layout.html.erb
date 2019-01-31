@@ -12,6 +12,8 @@
 
   <link rel="stylesheet" type="text/css" href="stylesheets/fixes.css" />
 
+  <link rel="stylesheet" type="text/css" href="stylesheets/utility.css" />
+
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body class="guide">
@@ -88,7 +90,7 @@
       <div id="mainCol">
         <%= yield %>
 
-        <h3>Masukan</h3>
+        <h3 id="feedback">Masukan</h3>
         <p>
           Kami sangat menghargai bantuan Kamu untuk meningkatkan kualitas panduan ini.
         </p>
@@ -126,6 +128,7 @@
   <script type="text/javascript" src="javascripts/responsive-tables.js"></script>
   <script type="text/javascript" src="javascripts/guides.js"></script>
   <script type="text/javascript" src="javascripts/syntaxhighlighter.js"></script>
+  <script type="text/javascript" src="javascripts/utility.js"></script>
   <script type="text/javascript">
       syntaxhighlighterConfig = {
           autoLinks: false,
