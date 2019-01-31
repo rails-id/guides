@@ -163,7 +163,6 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" }
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
 App.cable.subscriptions.create { channel: "AppearanceChannel" }
 ```
-
 Meskipun langganan telah di buat, fungsionalitas yang diperlukan untuk menanggapi data yang diterima akan dijabarkan lagi.
 
 Konsumen dapat bertindak sebagai pelanggan kapan saja pada setiap saluran yang di berikan. Sebagai contoh, konsumen dapat berlangganan beberapa ruang obrolan secara bersamaan:
