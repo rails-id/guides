@@ -204,11 +204,9 @@ kamu dapat melakukan siaran pada saluran di atas seperti ini:
 ```ruby
 CommentsChannel.broadcast_to(@post, @comment)
 ```
-### Broadcasting
+### Siaran
 
-A *broadcasting* is a pub/sub link where anything transmitted by a publisher
-is routed directly to the channel subscribers who are streaming that named
-broadcasting. Each channel can be streaming zero or more broadcastings.
+*Siaran* adalah tautan pub / sub di mana segala sesuatu yang ditransmisikan oleh penerbit dan dikirim langsung ke pelanggan saluran streaming yang bernama siaran. Setiap saluran dapat melakukan streaming siaran dari nol hingga lebih banyak siaran.
 
 Broadcastings are purely an online queue and time-dependent. If a consumer is
 not streaming (subscribed to a given channel), they'll not get the broadcast
