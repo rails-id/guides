@@ -227,7 +227,7 @@ Saluran telah diinstruksikan untuk streaming semua yang datang pada `web_notific
 
 Ketika konsumen berlangganan di sebuah channel, konsumen menjadi pelanggan. Koneksi ini di sebut berlangganan.
 . Pesan yang masuk kemudian dialihkan ke
-langganan saluran ini berdasarkan pengenal yang dikirim oleh jalur pada konsumen.
+langganan saluran ini berdasarkan pengenal yang dikirim oleh konsumen.
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
