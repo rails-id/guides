@@ -331,13 +331,12 @@ Langkah - langkah pengaturan umum pada kedua contoh:
   2. [Memasang induk saluran](#parent-channel-setup).
   3. [Hubungkan konsumen](#connect-consumer).
 
-### Example 1: User Appearances
+### Contoh 1: Menampilkan User
 
-Here's a simple example of a channel that tracks whether a user is online or not
-and what page they're on. (This is useful for creating presence features like showing
-a green dot next to a user name if they're online).
+Berikut adalah contoh sederhana saluran yang melacak apakah pengguna sedang online atau tidak dan di halaman mana mereka berada. (Ini berguna untuk membuat fitur kehadiran seperti menunjukkan
+titik hijau di sebelah nama pengguna jika sedang online)
 
-Create the server-side appearance channel:
+Buat tampilan saluran sisi server:
 
 ```ruby
 # app/channels/appearance_channel.rb
