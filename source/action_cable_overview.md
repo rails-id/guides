@@ -328,8 +328,8 @@ kamu berlangganan saluran.
 Langkah - langkah pengaturan umum pada kedua contoh di atas:
 
   1. [Memasang koneksi](#connection-setup).
-  2. [memasang induk saluran](#parent-channel-setup).
-  3. [hubungkan konsumen](#connect-consumer).
+  2. [Memasang induk saluran](#parent-channel-setup).
+  3. [Hubungkan konsumen](#connect-consumer).
 
 ### Example 1: User Appearances
 
