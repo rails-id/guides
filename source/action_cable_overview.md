@@ -323,13 +323,13 @@ App.chatChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
 Siaran ulang akan di terima oleh semua yang terkoneksi bersama, _termasuk_ klien yang mengirim pesan tersebut. Perhatikan bahwa parameter sama seperti ketika
 kamu berlangganan saluran.
 
-## Full-Stack Examples
+## Contoh Full-Stack 
 
-The following setup steps are common to both examples:
+Langkah - langkah pengaturan umum pada kedua contoh di atas:
 
-  1. [Setup your connection](#connection-setup).
-  2. [Setup your parent channel](#parent-channel-setup).
-  3. [Connect your consumer](#connect-consumer).
+  1. [Memasang koneksi](#connection-setup).
+  2. [memasang induk saluran](#parent-channel-setup).
+  3. [hubungkan konsumen](#connect-consumer).
 
 ### Example 1: User Appearances
 
