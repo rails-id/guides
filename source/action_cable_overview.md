@@ -223,7 +223,7 @@ Panggilan `webNotificationsChannel.broadcast_to` menempatkan pesan pada adaptor 
 
 Saluran telah diinstruksikan untuk streaming semua yang datang pada `web_notifications:1`. langsung ke klien dengan memohon `received` kembali.
 
-### Berlangganan
+### Subscriptions
 
 When a consumer is subscribed to a channel, they act as a subscriber. This
 connection is called a subscription. Incoming messages are then routed to
