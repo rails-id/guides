@@ -231,7 +231,7 @@ langganan saluran ini berdasarkan pengenal yang dikirim oleh konsumen.
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
-# Assumes you've already requested the right to send web notifications
+# Asumsi kamu telah mengirim request pada notifikasi web
 App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
   received: (data) ->
     @appendLine(data)
@@ -249,10 +249,9 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
     """
 ```
 
-### Passing Parameters to Channels
+### Memberikan Parameter untuk Saluran
 
-You can pass parameters from the client side to the server side when creating a
-subscription. For example:
+Kamu dapat memberikan parameter dari sisi klien ke sisi server dengan membuat langganan. Sebagai contoh:
 
 ```ruby
 # app/channels/chat_channel.rb
@@ -263,8 +262,8 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 
-An object passed as the first argument to `subscriptions.create` becomes the
-params hash in the cable channel. The keyword `channel` is required:
+Kemudian objek di teruskan ke`subscriptions.create` 
+dan menjadi parameter hash di dalam saluran. Keyword `channel` di haruskan:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
