@@ -285,8 +285,8 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
 ```
 
 ```ruby
-# Somewhere in your app this is called, perhaps
-# from a NewCommentJob.
+# Misal di app kamu seperti
+# dari NewCommentJob
 ActionCable.server.broadcast(
   "chat_#{room}",
   sent_by: 'Paul',
@@ -294,10 +294,9 @@ ActionCable.server.broadcast(
 )
 ```
 
-### Rebroadcasting a Message
+### Siaran ulang sebuah Pesan
 
-A common use case is to *rebroadcast* a message sent by one client to any
-other connected clients.
+Kasus yang biasa terjadi adalah *siaran ulang* sebuah pesan oleh satu klien ke klien lain yang sama - sama terkoneksi.
 
 ```ruby
 # app/channels/chat_channel.rb
@@ -321,9 +320,8 @@ App.chatChannel = App.cable.subscriptions.create { channel: "ChatChannel", room:
 App.chatChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
 ```
 
-The rebroadcast will be received by all connected clients, _including_ the
-client that sent the message. Note that params are the same as they were when
-you subscribed to the channel.
+Siaran ulang akan di terima oleh semua yang terkoneksi bersama, _termasuk_ klien yang mengirim pesan tersebut. Perhatikan bahwa parameter sama seperti ketika
+kamu berlangganan saluran.
 
 ## Full-Stack Examples
 
