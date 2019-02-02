@@ -339,21 +339,20 @@ ke `WelcomeController` di action `index` dan me-render ke view yang benar.
 
 TIP: Untuk panduan lebih lanjut tentang route, lihat di [Routing Rails dari Luar ke Dalam](routing.html).
 
-Getting Up and Running
+Mulai dan Jalankan
 ----------------------
 
-Now that you've seen how to create a controller, an action and a view, let's
-create something with a bit more substance.
+Sekarang setelah Kamu melihat cara membuat controller, action, dan view,
+mari kita membuat sesuatu yang lebih dengan sedikit substansi.
 
-In the Blog application, you will now create a new _resource_. A resource is the
-term used for a collection of similar objects, such as articles, people or
-animals.
-You can create, read, update and destroy items for a resource and these
-operations are referred to as _CRUD_ operations.
+Di aplikasi Blog, Kamu sekarang akan membuat _resource_ baru. Resource adalah
+istilah yang digunakan untuk nama koleksi objek, seperti article,
+peran atau nama hewan. Kamu bisa membuat, membaca, memperbarui, menghapus sebuah
+item untuk resource dan operasi ini biasanya disebut dengan _CRUD_.
 
-Rails provides a `resources` method which can be used to declare a standard REST
-resource. You need to add the _article resource_ to the
-`config/routes.rb` so the file will look as follows:
+Rails menyediakan metode `resource` yang dapat digunakan untuk mendeklarasikan
+REST standar. Kamu perlu menambahkan _resource article_ ke file `config/routes.rb`
+sehingga akan terlihat seperti di bawah ini:
 
 ```ruby
 Rails.application.routes.draw do
@@ -365,12 +364,13 @@ Rails.application.routes.draw do
 end
 ```
 
-If you run `bin/rails routes`, you'll see that it has defined routes for all the
-standard RESTful actions.  The meaning of the prefix column (and other columns)
-will be seen later, but for now notice that Rails has inferred the
-singular form `article` and makes meaningful use of the distinction.
+Jika Kamu menjalankan `bin/rails routes`, Kamu akan melihat bahwa kode di atas
+untuk menentukan route semua action RESTful standar.
+Maksudnya adalah akan menampilkan kolom dari awal sampai kolom berikutnya, tapi
+perhatikan bawah ada beberapa perbedaan yang dapat dilihat hasil yang sekarang
+terdapat bentuk dari singular `article`.
 
-```bash
+```
 $ bin/rails routes
        Prefix Verb   URI Pattern                  Controller#Action
 welcome_index GET    /welcome/index(.:format)     welcome#index
@@ -385,14 +385,14 @@ welcome_index GET    /welcome/index(.:format)     welcome#index
          root GET    /                            welcome#index
 ```
 
-In the next section, you will add the ability to create new articles in your
-application and be able to view them. This is the "C" and the "R" from CRUD:
-create and read. The form for doing this will look like this:
+Di bagian selanjutnya, Kamu akan membuat artikel baru di aplikasi Kamu
+dan dapat melihat hasilnya. Ini adalah "C" dan "R" dari CRUD:
+membuat dan membaca. Untuk bisa melakukan itu Kamu akan melihat seperti ini nantinya:
 
 ![The new article form](images/getting_started/new_article.png)
 
-It will look a little basic for now, but that's ok. We'll look at improving the
-styling for it afterwards.
+Untuk tampilan yang sekarang terlihat sedikit mendasar, tapi tidak apa-apa.
+Kita bisa kapanpun untuk menambahkan style tersebut.
 
 ### Laying down the groundwork
 
