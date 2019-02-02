@@ -325,7 +325,7 @@ kamu berlangganan saluran.
 
 ## Contoh Full-Stack 
 
-Langkah - langkah pengaturan umum pada kedua contoh:
+Langkah-langkah pengaturan umum pada kedua contoh:
 
   1. [Memasang koneksi](#connection-setup).
   2. [Memasang induk saluran](#parent-channel-setup).
