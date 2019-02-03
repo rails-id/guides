@@ -362,7 +362,7 @@ end
 Ketika pelangggan mulai `berlangganan` panggilan ulang dibatalkan dan mendapatkan kesempatan untuk "user saat ini telah di tampilkan" . That
 appear/disappear API dapat di dukung oleh redis, sebuah database, atau yang lainnya.
 
-Membuat tampilan berlangganan sisi-klien pada channel:
+Membuat tampilan berlangganan sisi-klien pada saluran:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
