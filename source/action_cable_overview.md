@@ -359,11 +359,10 @@ class AppearanceChannel < ApplicationCable::Channel
 end
 ```
 
-When a subscription is initiated the `subscribed` callback gets fired and we
-take that opportunity to say "the current user has indeed appeared". That
-appear/disappear API could be backed by Redis, a database, or whatever else.
+Ketika pelangggan mulai `berlangganan` panggilan ulang dibatalkan dan mendapatkan kesempatan untuk "user saat ini telah di tampilkan" . That
+appear/disappear API dapat di dukung oleh redis, sebuah database, atau yang lainnya.
 
-Create the client-side appearance channel subscription:
+Membuat tampilan berlangganan sisi-klien pada channel:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
