@@ -422,11 +422,8 @@ metode pada`current_user`. (`appearance_channel.rb`)
 `connected` (`appearance.coffee`) yang mendapat giliran `@install` dan `@appear`.
 `@appear` dipanggil `AppearanceChannel#appear(data)` di dalam server, dan persediaan hash data pada `{ appearing_on: $("main").data("appearing-on") }`. Hal ini dimungkinkan karena contoh saluran sisi server secara otomatis memaparkan semua metode publik yang dideklarasikan di kelas (minus panggilan balik), sehingga dapat tercapai dengan remote prosedur yang dipanggil lewat metode `perform` pada langganan.
 
-5. **Server** receives the request for the `appear` action on the appearance
-channel for the connection identified by `current_user`
-(`appearance_channel.rb`). **Server** retrieves the data with the
-`:appearing_on` key from the data hash and sets it as the value for the `:on`
-key being passed to `current_user.appear`.
+5. **Server** menerima request untuk aksi`appear` pada tampilan saluran agar koneksi diidentifikasi oleh `current_user`
+(`appearance_channel.rb`). **Server** mengambil data pada `:appearing_on` key dari hash data telah di tetapkan sebagai nilai pada `:on` key diteruskan ke`current_user.appear`.
 
 ### Example 2: Receiving New Web Notifications
 
