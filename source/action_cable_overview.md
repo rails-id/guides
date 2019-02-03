@@ -463,17 +463,10 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
+The `WebNotificationsChannel.broadcast_to` call places a message in the current subscription adapter's pub/sub queue under a separate broadcasting name for each user. For a user with an ID of 1, the broadcasting name would be `web_notifications:1`.
 
-`WebNotificationsChannel.broadcast_to` call places a message in the current
-subscription adapter's pubsub queue under a separate broadcasting name for each
-user. For a user with an ID of 1, the broadcasting name would be
-`web_notifications:1`.
-
-The channel has been instructed to stream everything that arrives at
-`web_notifications:1` directly to the client by invoking the `received`
-callback. The data passed as argument is the hash sent as the second parameter
-to the server-side broadcast call, JSON encoded for the trip across the wire
-and unpacked for the data argument arriving as `received`.
+The channel has been instructed to stream everything that arrives at `web_notifications:1` directly to the client by invoking the `received` callback. The data passed as argument is the hash sent as the second parameter
+to the server-side broadcast call, JSON encoded for the trip across the wire and unpacked for the data argument arriving as `received`.
 
 ### More Complete Examples
 
