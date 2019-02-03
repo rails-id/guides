@@ -372,11 +372,11 @@ App.cable.subscriptions.create "AppearanceChannel",
     @install()
     @appear()
 
-  # Called when the WebSocket connection is closed.
+  # Dipanggil saat WebSocket koneksi tertutup.
   disconnected: ->
     @uninstall()
 
-  # Called when the subscription is rejected by the server.
+  # Dipanggil ketika berlangganan di tolak oleh server.
   rejected: ->
     @uninstall()
 
