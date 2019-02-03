@@ -425,17 +425,13 @@ metode pada`current_user`. (`appearance_channel.rb`)
 5. **Server** menerima request untuk aksi`appear` pada tampilan saluran agar koneksi diidentifikasi oleh `current_user`
 (`appearance_channel.rb`). **Server** mengambil data pada `:appearing_on` key dari hash data telah di tetapkan sebagai nilai pada `:on` key diteruskan ke`current_user.appear`.
 
-### Example 2: Receiving New Web Notifications
+### Example 2: Menerima Pemberitahuan Baru Web
 
-The appearance example was all about exposing server functionality to
-client-side invocation over the WebSocket connection. But the great thing
-about WebSockets is that it's a two-way street. So now let's show an example
-where the server invokes an action on the client.
+Contoh tampilan adalah tentang mengekspose fungsionalitas server ada sisi klien melalu koneksi WebSocket. Tapi yang menarik tentang WebSocket adalah memiliki dua arah jalan. Sekarang mari kita lihat sebuah contoh di mana server meminta tindakan pada klien
 
-This is a web notification channel that allows you to trigger client-side
-web notifications when you broadcast to the right streams:
+Dibawah ini adalah saluran web notifikasi yang mengizinkan kamu untuk memicu sisi klien web notifikasi ketika kamu menyiarkan ke streaming yang tepat:
 
-Create the server-side web notifications channel:
+Membuat saluran sisi server web notifikasi:
 
 ```ruby
 # app/channels/web_notifications_channel.rb
@@ -446,7 +442,7 @@ class WebNotificationsChannel < ApplicationCable::Channel
 end
 ```
 
-Create the client-side web notifications channel subscription:
+Membuat saluran berlangganan sisi klien web notifikasi:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/web_notifications.coffee
@@ -457,11 +453,10 @@ App.cable.subscriptions.create "WebNotificationsChannel",
     new Notification data["title"], body: data["body"]
 ```
 
-Broadcast content to a web notification channel instance from elsewhere in your
-application:
+Konten siaran untuk saluran web notifikasi misalnya dari aplikasi kamu:
 
 ```ruby
-# Somewhere in your app this is called, perhaps from a NewCommentJob
+# Misal di app kamu dari NewCommentJob
 WebNotificationsChannel.broadcast_to(
   current_user,
   title: 'New things!',
@@ -469,7 +464,7 @@ WebNotificationsChannel.broadcast_to(
 )
 ```
 
-The `WebNotificationsChannel.broadcast_to` call places a message in the current
+`WebNotificationsChannel.broadcast_to` call places a message in the current
 subscription adapter's pubsub queue under a separate broadcasting name for each
 user. For a user with an ID of 1, the broadcasting name would be
 `web_notifications:1`.
