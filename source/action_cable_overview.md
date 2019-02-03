@@ -367,7 +367,7 @@ Membuat tampilan berlangganan sisi-klien pada saluran:
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
 App.cable.subscriptions.create "AppearanceChannel",
-  # Called when the subscription is ready for use on the server.
+  # Dipanggil saat langganan telah siap untuk di gunakan pada server.
   connected: ->
     @install()
     @appear()
