@@ -418,13 +418,9 @@ ActionCable.createConsumer("ws://cable.example.com")`. (`cable.js`). dan
 3. **Server** menerima sebuah langganan baru telah terpasang untuk di tampilkan pada saluran dan menjalankan `berlangganan` memanggil ulang, memanggil `appear`
 metode pada`current_user`. (`appearance_channel.rb`)
 
-4. **Client** recognizes that a subscription has been established and calls
-`connected` (`appearance.coffee`) which in turn calls `@install` and `@appear`.
-`@appear` calls `AppearanceChannel#appear(data)` on the server, and supplies a
-data hash of `{ appearing_on: $("main").data("appearing-on") }`. This is
-possible because the server-side channel instance automatically exposes all
-public methods declared on the class (minus the callbacks), so that these can be
-reached as remote procedure calls via a subscription's `perform` method.
+4. **Client** mengakui bahwa sebuah langganan telah terpasang  dan dipanggil
+`connected` (`appearance.coffee`) yang mendapat giliran `@install` dan `@appear`.
+`@appear` dipanggil `AppearanceChannel#appear(data)` di dalam server, dan persediaan hash data pada `{ appearing_on: $("main").data("appearing-on") }`. Hal ini dimungkinkan karena contoh saluran sisi server secara otomatis memaparkan semua metode publik yang dideklarasikan di kelas (minus panggilan balik), sehingga dapat tercapai dengan remote prosedur yang dipanggil lewat metode `perform` pada langganan.
 
 5. **Server** receives the request for the `appear` action on the appearance
 channel for the connection identified by `current_user`
