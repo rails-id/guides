@@ -406,18 +406,17 @@ App.cable.subscriptions.create "AppearanceChannel",
     $(buttonSelector).hide()
 ```
 
-##### Client-Server Interaction
+##### Klien-Server Interaksi
 
-1. **Client** connects to the **Server** via `App.cable =
-ActionCable.createConsumer("ws://cable.example.com")`. (`cable.js`). The
-**Server** identifies this connection by `current_user`.
+1. **Client** dihubungkan dengan **Server** via `App.cable =
+ActionCable.createConsumer("ws://cable.example.com")`. (`cable.js`). dan
+**Server** mengindentifikasi koneksi ini oleh `current_user`.
 
-2. **Client** subscribes to the appearance channel via
+2. **Client** berlangganan ke saluran yang ditampilkan via
 `App.cable.subscriptions.create(channel: "AppearanceChannel")`. (`appearance.coffee`)
 
-3. **Server** recognizes a new subscription has been initiated for the
-appearance channel and runs its `subscribed` callback, calling the `appear`
-method on `current_user`. (`appearance_channel.rb`)
+3. **Server** menerima sebuah langganan baru telah terpasang untuk di tampilkan pada saluran dan menjalankan `berlangganan` memanggil ulang, memanggil `appear`
+metode pada`current_user`. (`appearance_channel.rb`)
 
 4. **Client** recognizes that a subscription has been established and calls
 `connected` (`appearance.coffee`) which in turn calls `@install` and `@appear`.
