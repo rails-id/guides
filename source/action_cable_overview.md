@@ -446,8 +446,8 @@ Membuat saluran berlangganan sisi klien web notifikasi:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/web_notifications.coffee
-# Client-side which assumes you've already requested
-# the right to send web notifications.
+# Asumsi sisi klien kamu telah melakukan request
+# dengan benar ke web notifikasi
 App.cable.subscriptions.create "WebNotificationsChannel",
   received: (data) ->
     new Notification data["title"], body: data["body"]
