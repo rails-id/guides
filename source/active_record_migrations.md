@@ -50,11 +50,22 @@ class CreateProducts < ActiveRecord::Migration[5.0]
 end
 ```
 
-Migrasi ini menambahkan sebuah tabel bernama `products` dengan sebuah kolom string bernama `name` dan sebuah kolom teks bernama `description`. Sebuah kolom primary key bernama `id` juga akan ditambahkan secara implisit, sebagai mana primary key standar untuk semua model Active Record. `timestamps` macro menambahkan dua kolom, `created_at` dan `updated_at`. Kolom spesial ini otomatis diatur oleh Active Record jika ada.
+Migrasi ini menambahkan sebuah tabel bernama `products` dengan sebuah kolom string
+bernama `name` dan sebuah kolom teks bernama `description`. Sebuah kolom primary key
+bernama `id` juga akan ditambahkan secara implisit, sebagai mana primary key standar
+untuk semua model Active Record. `timestamps` macro menambahkan dua kolom, `created_at`
+dan `updated_at`. Kolom spesial ini otomatis diatur oleh Active Record jika ada.
 
-Catat bahwa kita mendefinisikan perubahan yang kita inginkan terjadi suatu waktu. Sebelum migrasi berjalan, akan tidak ada tabel. Setelahnya, tabel akan terbuat. Active Record juga mengetahui bagaimana melakukan kebalikannya: jika kita menarik migrasinya kembali, Active Record akan menghapus tabel.
+Catat bahwa kita mendefinisikan perubahan yang kita inginkan terjadi suatu waktu.
+Sebelum migrasi berjalan, akan tidak ada tabel. Setelahnya, tabel akan terbuat. Active Record
+juga mengetahui bagaimana melakukan kebalikannya: jika kita menarik migrasinya kembali,
+Active Record akan menghapus tabel.
 
-Di database yang mendukung transaksi dengan statement yang mengubah skema, migrasi dibungkus di dalam transaksi. Jika database tidak mendukung transaksi dengan statement yang mengubah skema maka ketika sebuah migrasi gagal dalam suatu bagian yang berhasil dijalankan, migrasi tidak dapat ditarik kembali. Kamu harus mengembalikan perubahan yang telah dibuat secara manual.
+Di database yang mendukung transaksi dengan statement yang mengubah skema, migrasi
+dibungkus di dalam transaksi. Jika database tidak mendukung transaksi dengan statement
+yang mengubah skema maka ketika sebuah migrasi gagal dalam suatu bagian yang berhasil dijalankan,
+migrasi tidak dapat ditarik kembali. Kamu harus mengembalikan perubahan yang telah
+dibuat secara manual.
 
 NOTE: There are certain queries that can't run inside a transaction. If your
 adapter supports DDL transactions you can use `disable_ddl_transaction!` to
