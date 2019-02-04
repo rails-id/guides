@@ -50,10 +50,6 @@ class CreateProducts < ActiveRecord::Migration[5.0]
 end
 ```
 
-File migration diatas menambahkan tabel bernama `products` dengan sebuah
-kolom `name` yang bertipe string dan kolom `description` yang bertipe text.
-Sebuah primary key bernama `id` akan ditambahkan secara implisit, karena
-
 Migrasi ini menambahkan sebuah tabel bernama `products` dengan sebuah kolom string bernama `name` dan sebuah kolom teks bernama `description`. Sebuah kolom primary key bernama `id` juga akan ditambahkan secara implisit, sebagai mana primary key standar untuk semua model Active Record. `timestamps` macro menambahkan dua kolom, `created_at` dan `updated_at`. Kolom spesial ini otomatis diatur oleh Active Record jika ada.
 
 Catat bahwa kita mendefinisikan perubahan yang kita inginkan terjadi suatu waktu. Sebelum migrasi berjalan, akan tidak ada tabel. Setelahnya, tabel akan terbuat. Active Record juga mengetahui bagaimana melakukan kebalikannya: jika kita menarik migrasinya kembali, Active Record akan menghapus tabel.
