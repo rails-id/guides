@@ -54,22 +54,11 @@ File migration diatas menambahkan tabel bernama `products` dengan sebuah
 kolom `name` yang bertipe string dan kolom `description` yang bertipe text.
 Sebuah primary key bernama `id` akan ditambahkan secara implisit, karena
 
-This migration adds a table called `products` with a string column called
-`name` and a text column called `description`. A primary key column called `id`
-will also be added implicitly, as it's the default primary key for all Active
-Record models. The `timestamps` macro adds two columns, `created_at` and
-`updated_at`. These special columns are automatically managed by Active Record
-if they exist.
+Migrasi ini menambahkan sebuah tabel bernama `products` dengan sebuah kolom string bernama `name` dan sebuah kolom teks bernama `description`. Sebuah kolom primary key bernama `id` juga akan ditambahkan secara implisit, sebagai mana primary key standar untuk semua model Active Record. `timestamps` macro menambahkan dua kolom, `created_at` dan `updated_at`. Kolom spesial ini otomatis diatur oleh Active Record jika ada.
 
-Note that we define the change that we want to happen moving forward in time.
-Before this migration is run, there will be no table. After, the table will
-exist. Active Record knows how to reverse this migration as well: if we roll
-this migration back, it will remove the table.
+Catat bahwa kita mendefinisikan perubahan yang kita inginkan terjadi suatu waktu. Sebelum migrasi berjalan, akan tidak ada tabel. Setelahnya, tabel akan terbuat. Active Record juga mengetahui bagaimana melakukan kebalikannya: jika kita menarik migrasinya kembali, Active Record akan menghapus tabel.
 
-On databases that support transactions with statements that change the schema,
-migrations are wrapped in a transaction. If the database does not support this
-then when a migration fails the parts of it that succeeded will not be rolled
-back. You will have to rollback the changes that were made by hand.
+Di database yang mendukung transaksi dengan statement yang mengubah skema, migrasi dibungkus di dalam transaksi. Jika database tidak mendukung transaksi dengan statement yang mengubah skema maka ketika sebuah migrasi gagal dalam suatu bagian yang berhasil dijalankan, migrasi tidak dapat ditarik kembali. Kamu harus mengembalikan perubahan yang telah dibuat secara manual.
 
 NOTE: There are certain queries that can't run inside a transaction. If your
 adapter supports DDL transactions you can use `disable_ddl_transaction!` to
