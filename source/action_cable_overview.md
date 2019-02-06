@@ -475,7 +475,7 @@ repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pad
 
 ## Konfigurasi
 
-Action Cable has two required configurations: a subscription adapter and allowed request origins.
+Action Cable memilik dua konfigurasi yang diperlukan: adapter berlangganan dan mengizinkan permintaan yang masuk.
 
 ### Subscription Adapter
 
