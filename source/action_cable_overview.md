@@ -494,7 +494,7 @@ production:
   url: redis://10.10.3.153:6381
   channel_prefix: appname_production
 ```
-#### Adapter Configuration
+#### Adaptor Konfigurasi
 
 Below is a list of the subscription adapters available for end users.
 
