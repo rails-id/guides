@@ -463,7 +463,7 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
-Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pub / sub adapter berlangganan saat ini, di bawah nama penyiaran yang terpisah untuk setiap pengguna. Untuk pengguna user ID 1, nama penyiarannya adalah `web_notifications: 1`.
+Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pub / sub adaptor berlangganan saat ini, di bawah nama penyiaran yang terpisah untuk setiap pengguna. Untuk pengguna user ID 1, nama penyiarannya adalah `web_notifications: 1`.
 
 Saluran telah diinstruksikan untuk melakukan streaming untuk semua yang di terima di `web_notifications: 1` langsung ke klien dengan memohon panggilan balik` received`. Data yang dikirimkan sebagai argumen adalah hash yang dikirim sebagai parameter kedua
 ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di lewati dan dibuka untuk argumen data yang tiba sebagai `received`.
@@ -477,11 +477,10 @@ repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pad
 
 Action Cable memiliki dua konfigurasi yang diperlukan: adapter berlangganan dan mengizinkan permintaan yang masuk.
 
-### Subscription Adapter
+### Adaptor Berlangganan
 
-By default, Action Cable looks for a configuration file in `config/cable.yml`.
-The file must specify an adapter for each Rails environment. See the
-[Dependencies](#dependencies) section for additional information on adapters.
+Secara default, Action Cable mencari konfigurasi file di `config/cable.yml`.
+File harus di tetapkan untuk setiap adaptor Rails environment. Lihat di [Dependencies](#dependencies) bagian untuk menambahkan informasi didalam adaptor.
 
 ```yaml
 development:
