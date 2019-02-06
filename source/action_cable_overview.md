@@ -468,10 +468,10 @@ Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pu
 Saluran telah diinstruksikan untuk melakukan streaming untuk semua yang di terima di `web_notifications: 1` langsung ke klien dengan memohon panggilan balik` received`. Data yang dikirimkan sebagai argumen adalah hash yang dikirim sebagai parameter kedua
 ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di lewati dan dibuka untuk argumen data yang tiba sebagai `received`.
 
-### More Complete Examples
+### Contoh Yang Lebih Komplet
 
-See the [rails/actioncable-examples](https://github.com/rails/actioncable-examples)
-repository for a full example of how to setup Action Cable in a Rails app and adding channels.
+Lihat di [rails/actioncable-examples](https://github.com/rails/actioncable-examples) 
+repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pada Rails aplikasi dan menambahkan saluran.
 
 ## Configuration
 
