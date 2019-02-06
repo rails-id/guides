@@ -473,7 +473,7 @@ ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di le
 Lihat di [rails/actioncable-examples](https://github.com/rails/actioncable-examples) 
 repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pada Rails aplikasi dan menambahkan saluran.
 
-## Configuration
+## Konfigurasi
 
 Action Cable has two required configurations: a subscription adapter and allowed request origins.
 
