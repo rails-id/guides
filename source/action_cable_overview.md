@@ -463,10 +463,10 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
-The `WebNotificationsChannel.broadcast_to` call places a message in the current subscription adapter's pub/sub queue under a separate broadcasting name for each user. For a user with an ID of 1, the broadcasting name would be `web_notifications:1`.
+Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pub / sub adapter berlangganan saat ini, di bawah nama penyiaran yang terpisah untuk setiap pengguna. Untuk pengguna user ID 1, nama penyiarannya adalah `web_notifications: 1`.
 
-The channel has been instructed to stream everything that arrives at `web_notifications:1` directly to the client by invoking the `received` callback. The data passed as argument is the hash sent as the second parameter
-to the server-side broadcast call, JSON encoded for the trip across the wire and unpacked for the data argument arriving as `received`.
+Saluran telah diinstruksikan untuk melakukan streaming untuk semua yang di terima di `web_notifications: 1` langsung ke klien dengan memohon panggilan balik` received`. Data yang dikirimkan sebagai argumen adalah hash yang dikirim sebagai parameter kedua
+ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di lewati dan dibuka untuk argumen data yang tiba sebagai `received`.
 
 ### More Complete Examples
 
