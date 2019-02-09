@@ -512,7 +512,7 @@ saat menggunakan server Redis yang sama untuk beberapa aplikasi. Lihat [Dokument
 
 Adaptor PostgreSQL menggunakan kumpulan koneksi Active Record's, dan konfigurasi database `config / database.yml`aplikasi, untuk koneksinya. Ini mungkin berubah di masa depan. [# 27214](https://github.com/rails/rails/issues/27214)
 
-### Allowed Request Origins
+### Menerima Request Dari Sumber
 
 Action Cable hanya akan menerima permintaan dari sumber yang ditentukan, yang diteruskan ke konfigurasi server sebagai array. Sumber dapat berupa contoh string atau ekspresi reguler, yang dicek kecocokan dan akan digunakan.
 
@@ -532,7 +532,7 @@ To configure the URL, add a call to `action_cable_meta_tag` in your HTML layout
 HEAD. This uses a URL or path typically set via `config.action_cable.url` in the
 environment configuration files.
 
-### Other Configurations
+### Other Configurations 
 
 The other common option to configure is the log tags applied to the
 per-connection logger. Here's an example that uses
