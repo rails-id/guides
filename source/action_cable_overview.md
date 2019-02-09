@@ -546,13 +546,11 @@ Class `ActionCable :: Server :: Configuration`.
 
 Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi database yang sama seperti di pakai. Ukuran yang dipakai secara default diatur ke 4 pool, jadi itu berarti Anda harus membuat setidaknya tersedia. Anda dapat mengubahnya di `config / database.yml` melalui atribut` pool`.
 
-## Running Standalone Cable Servers
+## Menjalankan Cable Server Mandiri 
 
 ### In App
 
-Action Cable can run alongside your Rails application. For example, to
-listen for WebSocket requests on `/websocket`, specify that path to
-`config.action_cable.mount_path`:
+Action Cable dapat berjalan di samping aplikasi Rails kamu. Misalnya, untuk mendapat permintaan WebSocket di `/ websocket`, tentukan path itu ke` config.action_cable.mount_path`:
 
 ```ruby
 # config/application.rb
@@ -561,13 +559,10 @@ class Application < Rails::Application
 end
 ```
 
-You can use `App.cable = ActionCable.createConsumer()` to connect to the cable
-server if `action_cable_meta_tag` is invoked in the layout. A custom path is
-specified as first argument to `createConsumer` (e.g. `App.cable =
-ActionCable.createConsumer("/websocket")`).
+Kamu dapat menggunakan `App.cable = ActionCable.createConsumer ()` untuk terhubung ke cable server jika `action_cable_meta_tag` dipanggil dalam layout. Jalur khusus ditetapkan sebagai argumen pertama untuk `createConsumer` (mis.` App.cable =
+ActionCable.createConsumer ("/ websocket") `).
 
-For every instance of your server you create and for every worker your server
-spawns, you will also have a new instance of Action Cable, but the use of Redis
+For every instance of your server you create and for every worker your server spawns, you will also have a new instance of Action Cable, but the use of Redis
 keeps messages synced across connections.
 
 ### Standalone
