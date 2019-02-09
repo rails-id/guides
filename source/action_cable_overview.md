@@ -548,7 +548,7 @@ Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi d
 
 ## Menjalankan Cable Server Mandiri 
 
-### In App
+### Di Aplikasi
 
 Action Cable dapat berjalan di samping aplikasi Rails kamu. Misalnya, untuk mendapat permintaan WebSocket di `/ websocket`, tentukan path itu ke` config.action_cable.mount_path`:
 
@@ -562,8 +562,8 @@ end
 Kamu dapat menggunakan `App.cable = ActionCable.createConsumer ()` untuk terhubung ke cable server jika `action_cable_meta_tag` dipanggil dalam layout. Jalur khusus ditetapkan sebagai argumen pertama untuk `createConsumer` (mis.` App.cable =
 ActionCable.createConsumer ("/ websocket") `).
 
-For every instance of your server you create and for every worker your server spawns, you will also have a new instance of Action Cable, but the use of Redis
-keeps messages synced across connections.
+Untuk setiap permintaan dari server yang Kamu buat dan untuk setiap pekerjaan yang dihasilkan oleh server Kamu, Kamu juga akan memiliki permintaan baru dari Action Cable, tetapi penggunaan Redis
+membuat pesan disinkronkan di seluruh koneksi.
 
 ### Standalone
 
