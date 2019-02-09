@@ -565,7 +565,7 @@ ActionCable.createConsumer ("/ websocket") `).
 Untuk setiap permintaan dari server yang Kamu buat dan untuk setiap pekerjaan yang dihasilkan oleh server Kamu, Kamu juga akan memiliki permintaan baru dari Action Cable, tetapi penggunaan Redis
 membuat pesan disinkronkan di seluruh koneksi.
 
-### Standalone
+### Mandiri
 
 The cable servers can be separated from your normal application server. It's
 still a Rack application, but it is its own Rack application. The recommended
