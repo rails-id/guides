@@ -526,11 +526,9 @@ config.action_cable.disable_request_forgery_protection = true
 ```
 Secara default, Action Cable memungkinkan semua permintaan dari localhost: 3000 saat berjalan di development environment.
 
-### Consumer Configuration
+### Konsumen Konfigurasi
 
-To configure the URL, add a call to `action_cable_meta_tag` in your HTML layout
-HEAD. This uses a URL or path typically set via `config.action_cable.url` in the
-environment configuration files.
+Untuk mengkonfigurasi URL, tambahkan panggilan ke `action_cable_meta_tag` di layout HTML HEAD. Ini menggunakan URL atau jalur yang biasanya ditetapkan melalui `config.action_cable.url` di file konfigurasi environment.
 
 ### Other Configurations 
 
