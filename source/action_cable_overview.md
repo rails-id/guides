@@ -504,9 +504,9 @@ Adaptor async dimaksudkan untuk development/testing dan tidak boleh digunakan da
 
 ##### Redis Adapter
 
-The Redis adapter requires users to provide a URL pointing to the Redis server.
-Additionally, a `channel_prefix` may be provided to avoid channel name collisions
-when using the same Redis server for multiple applications. See the [Redis PubSub documentation](https://redis.io/topics/pubsub#database-amp-scoping) for more details.
+Adaptor Redis mengharuskan pengguna untuk menyediakan URL yang menunjuk ke server Redis.
+Selain itu, `channel_prefix` dapat disediakan untuk menghindari tabrakan nama saluran
+saat menggunakan server Redis yang sama untuk beberapa aplikasi. Lihat [Dokumentasi Redis PubSub](https://redis.io/topics/pubsub#database-amp-scoping) untuk detail lebih lanjut.
 
 ##### PostgreSQL Adapter
 
