@@ -500,7 +500,7 @@ Below is a list of the subscription adapters available for end users.
 
 ##### Async Adapter
 
-The async adapter is intended for development/testing and should not be used in production.
+Adaptor async dimaksudkan untuk development/testing dan tidak boleh digunakan dalam produksi.
 
 ##### Redis Adapter
 
