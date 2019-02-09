@@ -514,22 +514,17 @@ Adaptor PostgreSQL menggunakan kumpulan koneksi Active Record's, dan konfigurasi
 
 ### Allowed Request Origins
 
-Action Cable will only accept requests from specified origins, which are
-passed to the server config as an array. The origins can be instances of
-strings or regular expressions, against which a check for the match will be performed.
+Action Cable hanya akan menerima permintaan dari sumber yang ditentukan, yang diteruskan ke konfigurasi server sebagai array. Sumber dapat berupa contoh string atau ekspresi reguler, yang dicek kecocokan dan akan digunakan.
 
 ```ruby
 config.action_cable.allowed_request_origins = ['http://rubyonrails.com', %r{http://ruby.*}]
 ```
-
-To disable and allow requests from any origin:
+Untuk dinonaktifkan dan diterima request dari sumber:
 
 ```ruby
 config.action_cable.disable_request_forgery_protection = true
 ```
-
-By default, Action Cable allows all requests from localhost:3000 when running
-in the development environment.
+Secara default, Action Cable memungkinkan semua permintaan dari localhost: 3000 saat berjalan di development environment.
 
 ### Consumer Configuration
 
