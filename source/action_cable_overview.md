@@ -502,17 +502,15 @@ Below is a list of the subscription adapters available for end users.
 
 Adaptor async dimaksudkan untuk development/testing dan tidak boleh digunakan dalam produksi.
 
-##### Redis Adapter
+##### Redis Adaptor
 
 Adaptor Redis mengharuskan pengguna untuk menyediakan URL yang menunjuk ke server Redis.
 Selain itu, `channel_prefix` dapat disediakan untuk menghindari tabrakan nama saluran
 saat menggunakan server Redis yang sama untuk beberapa aplikasi. Lihat [Dokumentasi Redis PubSub](https://redis.io/topics/pubsub#database-amp-scoping) untuk detail lebih lanjut.
 
-##### PostgreSQL Adapter
+##### PostgreSQL Adaptor
 
-The PostgreSQL adapter uses Active Record's connection pool, and thus the
-application's `config/database.yml` database configuration, for its connection.
-This may change in the future. [#27214](https://github.com/rails/rails/issues/27214)
+Adaptor PostgreSQL menggunakan kumpulan koneksi Active Record's, dan konfigurasi database `config / database.yml`aplikasi, untuk koneksinya. Ini mungkin berubah di masa depan. [# 27214](https://github.com/rails/rails/issues/27214)
 
 ### Allowed Request Origins
 
