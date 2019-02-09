@@ -530,11 +530,9 @@ Secara default, Action Cable memungkinkan semua permintaan dari localhost: 3000 
 
 Untuk mengkonfigurasi URL, tambahkan panggilan ke `action_cable_meta_tag` di layout HTML HEAD. Ini menggunakan URL atau jalur yang biasanya ditetapkan melalui `config.action_cable.url` di file konfigurasi environment.
 
-### Other Configurations 
+### Konfigurasi Lainnya
 
-The other common option to configure is the log tags applied to the
-per-connection logger. Here's an example that uses
-the user account id if available, else "no-account" while tagging:
+Opsi umum lainnya untuk mengonfigurasi adalah tag log yang diterapkan ke logger per-koneksi. Berikut adalah contoh yang menggunakan id akun user jika tersedia, dan jika tidak "tidak ada akun" saat memberi tag:
 
 ```ruby
 config.action_cable.log_tags = [
@@ -543,14 +541,10 @@ config.action_cable.log_tags = [
   -> request { request.uuid }
 ]
 ```
+Untuk daftar lengkap semua opsi konfigurasi, lihat
+Class `ActionCable :: Server :: Configuration`.
 
-For a full list of all configuration options, see the
-`ActionCable::Server::Configuration` class.
-
-Also, note that your server must provide at least the same number of database
-connections as you have workers. The default worker pool size is set to 4, so
-that means you have to make at least that available. You can change that in
-`config/database.yml` through the `pool` attribute.
+Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi database yang sama seperti di pakai. Ukuran yang dipakai secara default diatur ke 4 pool, jadi itu berarti Anda harus membuat setidaknya tersedia. Anda dapat mengubahnya di `config / database.yml` melalui atribut` pool`.
 
 ## Running Standalone Cable Servers
 
