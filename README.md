@@ -1,11 +1,32 @@
-# Panduan Ruby on Rails Indonesia
+<h1 align="center">Panduan Ruby on Rails Indonesia</h1>
 
+<p align="center">
+  <a href="http://guides.rails.id">
+    <img src="https://user-images.githubusercontent.com/3952281/52688710-1c66c400-2f8a-11e9-82a9-b5827bc9ccc9.png" alt="Rails Indonesia">
+  </a>
+</p>
+
+<p align="center">
+  Repositori ini adalah hasil dari apa yang ada di situs web:
+  <br>
+  <a href="http://guides.rails.id">
+    <strong>Guides</strong>
+  </a>
+  •
+  <a href="http://edgeguides.rails.id">
+    <strong>Edge Guides</strong>
+  </a>
+</p>
+
+
+## Status
 [![Country](https://img.shields.io/badge/country-indonesia-blue.svg)](https://en.wikipedia.org/wiki/Indonesia)
 [![Build Status](https://travis-ci.org/rails-id/guides.svg)](https://travis-ci.org/rails-id/guides)
+[![Contributors](https://img.shields.io/github/contributors/rails-id/guides.svg)](https://github.com/rails-id/guides/graphs/contributors)
+[![License](https://img.shields.io/github/license/rails-id/guides.svg)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/rails-id/guides.svg)](https://github.com/rails-id/guides/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues/rails-id/guides.svg)](https://github.com/rails-id/guides/issues)
 
-Repositori ini adalah hasil dari apa yang ada di situs web:
-- [guides.rails.id](http://guides.rails.id) versi stabil.
-- [edgeguides.rails.id](http://edgeguides.rails.id) versi edge di branch master.
 
 ## Petunjuk Umum
 ##### Tidak lupa untuk bundle sumber Gemfile:
@@ -58,8 +79,6 @@ $ rake
 Secara umum konten panduan Ruby on Rails berada di direktori [source](source), lakukan perubahan pada panduan konten tersebut untuk berkontrbusi.
 
 ## Kontribusi
-
-[![Contributors](https://img.shields.io/github/contributors/rails-id/guides.svg)](https://github.com/rails-id/guides/graphs/contributors)
 
 Jika kalian melihat kesalahan pengejaan atau versi terbaru tidak sinkron, silakan untuk berkontribusi.
 
@@ -135,7 +154,5 @@ Menambah `id` di `source/layout.html.erb` untuk bagian Feedback atau Masukan
 ```
 
 ## Lisensi
-
-[![License](https://img.shields.io/github/license/rails-id/guides.svg)](LICENSE)
 
 Ruby on Rails Indonesia dirilis di bawah [Lisensi MIT](https://opensource.org/licenses/MIT).
