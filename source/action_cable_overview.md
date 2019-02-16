@@ -163,7 +163,7 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" }
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
 App.cable.subscriptions.create { channel: "AppearanceChannel" }
 ```
--
+
 Meskipun langganan telah di buat, fungsionalitas yang diperlukan untuk menanggapi data yang diterima akan dijabarkan lagi.
 
 Konsumen dapat bertindak sebagai pelanggan kapan saja pada setiap saluran yang di berikan. Sebagai contoh, konsumen dapat berlangganan beberapa ruang obrolan secara bersamaan:
@@ -204,6 +204,7 @@ kamu dapat melakukan siaran pada saluran di atas seperti ini:
 ```ruby
 CommentsChannel.broadcast_to(@post, @comment)
 ```
+
 ### Siaran
 
 *Siaran* adalah tautan pub / sub di mana segala sesuatu yang ditransmisikan oleh penerbit dan dikirim langsung ke pelanggan saluran streaming yang bernama siaran. Setiap saluran dapat melakukan streaming siaran dari nol hingga lebih banyak siaran.
@@ -219,6 +220,7 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
+
 Panggilan `webNotificationsChannel.broadcast_to` menempatkan pesan pada adaptor berlangganan(secara default `redis` untuk produksi dan `async` untuk development dan test pengembangan) antrean pub/sub di pisahkan oleh nama saluran untuk masing - masing user. Untuk dengan ID 1, nama saluran menjadi `web_notification:1`.
 
 Saluran telah diinstruksikan untuk streaming semua yang datang pada `web_notifications:1`. langsung ke klien dengan memohon `received` kembali.
@@ -463,6 +465,7 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
+
 Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pub / sub adaptor berlangganan saat ini, di bawah nama penyiaran yang terpisah untuk setiap pengguna. Untuk pengguna user ID 1, nama penyiarannya adalah `web_notifications: 1`.
 
 Saluran telah diinstruksikan untuk melakukan streaming untuk semua yang di terima di `web_notifications: 1` langsung ke klien dengan memohon panggilan balik` received`. Data yang dikirimkan sebagai argumen adalah hash yang dikirim sebagai parameter kedua
@@ -494,6 +497,7 @@ production:
   url: redis://10.10.3.153:6381
   channel_prefix: appname_production
 ```
+
 #### Adaptor Konfigurasi
 
 Below is a list of the subscription adapters available for end users.
@@ -541,6 +545,7 @@ config.action_cable.log_tags = [
   -> request { request.uuid }
 ]
 ```
+
 Untuk daftar lengkap semua opsi konfigurasi, lihat
 Class `ActionCable :: Server :: Configuration`.
 
