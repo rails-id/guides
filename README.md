@@ -29,6 +29,7 @@
 
 
 ## Petunjuk Umum
+
 ##### Tidak lupa untuk bundle sumber Gemfile:
 ```
 $ bundle install
@@ -49,6 +50,7 @@ $ ruby -run -e httpd output -p 4000
 $ rake
 ```
 
+
 ## Versi
 
 ##### File terjemah
@@ -64,6 +66,7 @@ $ rake
 
 	Sedang di kerjakan untuk panduan Rails versi 5-2-stable ini.
 
+
 ## Transfer
 
 ##### master
@@ -74,12 +77,12 @@ $ rake
 - Repositori: [rails/rails](https://github.com/rails/rails/commits/5-2-stable/guides) => [bd24ef6](https://github.com/rails/rails/commit/bd24ef6)
 - SHA1: `bd24ef67ff2cb2d378371db25bf65e6afe19cebb`
 
-## Sumber Konten
 
+## Sumber Konten
 Secara umum konten panduan Ruby on Rails berada di direktori [source](source), lakukan perubahan pada panduan konten tersebut untuk berkontrbusi.
 
-## Kontribusi
 
+## Kontribusi
 Jika kalian melihat kesalahan pengejaan atau versi terbaru tidak sinkron, silakan untuk berkontribusi.
 
 Bagi member organisasi Ruby on Rails Indonesia bisa kontribusi langsung di remote `git@github.com:rails-id/guides.git`
@@ -96,15 +99,16 @@ $ git clone -b $BRANCH git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
 
 Selengkapnya bisa lihat di [Kontribusi](CONTRIBUTING.md) dan diharapkan untuk mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
 
-# Pedoman Panduan
 
+## Pedoman Panduan
 Untuk dapat berkontribusi dengan baik diharapkan Kalian bisa membaca dan memahami [Pedoman Panduan](GUIDELINES.md), ini adalah standar supaya Panduan tetap terdokumentasi dengan baik, benar dan rapi.
+
 
 ## Referensi
 - [github.com/rails/rails/tree/master/guides](https://github.com/rails/rails/tree/master/guides)
 
-## Script Tambahan
 
+## Script Tambahan
 Ini hanya informasi saja, kalain tidak perlu melakukan ini, karena ini telah ditambahkan di repositori ini.
 
 Membuat file di `assets/stylesheets/utility.css`
@@ -157,6 +161,6 @@ Menambah `id` di `source/layout.html.erb` untuk bagian Feedback atau Masukan
 <h3 id="feedback">Masukan</h3>
 ```
 
-## Lisensi
 
+## Lisensi
 Ruby on Rails Indonesia dirilis di bawah [Lisensi MIT](https://opensource.org/licenses/MIT).
