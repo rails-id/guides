@@ -96,6 +96,10 @@ $ git clone -b $BRANCH git@github.com:$USERNAME/$NAME_OF_REPOSITORY.git
 
 Selengkapnya bisa lihat di [Kontribusi](CONTRIBUTING.md) dan diharapkan untuk mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
 
+# Pedoman Panduan
+
+Untuk dapat berkontribusi dengan baik diharapkan Kalian bisa membaca dan memahami [Pedoman Panduan](GUIDELINES.md), ini adalah standar supaya Panduan tetap terdokumentasi dengan baik, benar dan rapi.
+
 ## Referensi
 - [github.com/rails/rails/tree/master/guides](https://github.com/rails/rails/tree/master/guides)
 
