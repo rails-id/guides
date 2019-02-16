@@ -470,7 +470,7 @@ ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di le
 
 ### Contoh Yang Lebih Komplet
 
-Lihat di [rails/actioncable-examples](https://github.com/rails/actioncable-examples) 
+Lihat di [rails/actioncable-examples](https://github.com/rails/actioncable-examples)
 repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pada Rails aplikasi dan menambahkan saluran.
 
 ## Konfigurasi
@@ -546,7 +546,7 @@ Class `ActionCable :: Server :: Configuration`.
 
 Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi database yang sama seperti di pakai. Ukuran yang dipakai secara default diatur ke 4 pool, jadi itu berarti Anda harus membuat setidaknya tersedia. Anda dapat mengubahnya di `config / database.yml` melalui atribut` pool`.
 
-## Menjalankan Cable Server Mandiri 
+## Menjalankan Cable Server Mandiri
 
 ### Di Aplikasi
 
