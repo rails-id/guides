@@ -262,7 +262,7 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 
-Kemudian objek di teruskan ke`subscriptions.create` 
+Kemudian objek di teruskan ke`subscriptions.create`
 dan menjadi parameter hash di dalam saluran. Keyword `channel` di haruskan:
 
 ```coffeescript
@@ -323,7 +323,7 @@ App.chatChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
 Siaran ulang akan di terima oleh semua yang terkoneksi bersama, _termasuk_ klien yang mengirim pesan tersebut. Perhatikan bahwa parameter sama seperti ketika
 kamu berlangganan saluran.
 
-## Contoh Full-Stack 
+## Contoh Full-Stack
 
 Langkah-langkah pengaturan umum pada kedua contoh:
 
