@@ -113,11 +113,11 @@
       url: security.html
       description: Panduan ini menjelaskan masalah security yang umum terjadi pada aplikasi web dan bagaimana cara menghindarinya pada Rails.
     -
-      name: Debugging Rails Applications
+      name: Debugging Aplikasi Rails
       url: debugging_rails_applications.html
       description: Panduan ini menjelaskan bagaimana men-debug aplikasi Rails. Panduan ini mencakup berbagai macam metode yang dapat digunakan dan bagaimana untuk memahami apa yang terjadi "di balik layar" kode Kamu.
     -
-      name: Konfigurasi Rails Applications
+      name: Konfigurasi Aplikasi Rails
       url: configuring.html
       description: Panduan ini menjelaskan pengaturan konfigurasi dasar pada aplikasi Rails.
     -
