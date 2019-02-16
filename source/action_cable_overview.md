@@ -463,25 +463,24 @@ WebNotificationsChannel.broadcast_to(
   body: 'All the news fit to print'
 )
 ```
-The `WebNotificationsChannel.broadcast_to` call places a message in the current subscription adapter's pub/sub queue under a separate broadcasting name for each user. For a user with an ID of 1, the broadcasting name would be `web_notifications:1`.
+Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pub / sub adaptor berlangganan saat ini, di bawah nama penyiaran yang terpisah untuk setiap pengguna. Untuk pengguna user ID 1, nama penyiarannya adalah `web_notifications: 1`.
 
-The channel has been instructed to stream everything that arrives at `web_notifications:1` directly to the client by invoking the `received` callback. The data passed as argument is the hash sent as the second parameter
-to the server-side broadcast call, JSON encoded for the trip across the wire and unpacked for the data argument arriving as `received`.
+Saluran telah diinstruksikan untuk melakukan streaming untuk semua yang di terima di `web_notifications: 1` langsung ke klien dengan memohon panggilan balik` received`. Data yang dikirimkan sebagai argumen adalah hash yang dikirim sebagai parameter kedua
+ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di lewati dan dibuka untuk argumen data yang tiba sebagai `received`.
 
-### More Complete Examples
+### Contoh Yang Lebih Komplet
 
-See the [rails/actioncable-examples](https://github.com/rails/actioncable-examples)
-repository for a full example of how to setup Action Cable in a Rails app and adding channels.
+Lihat di [rails/actioncable-examples](https://github.com/rails/actioncable-examples) 
+repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pada Rails aplikasi dan menambahkan saluran.
 
-## Configuration
+## Konfigurasi
 
-Action Cable has two required configurations: a subscription adapter and allowed request origins.
+Action Cable memiliki dua konfigurasi yang diperlukan: adapter berlangganan dan mengizinkan permintaan yang masuk.
 
-### Subscription Adapter
+### Adaptor Berlangganan
 
-By default, Action Cable looks for a configuration file in `config/cable.yml`.
-The file must specify an adapter for each Rails environment. See the
-[Dependencies](#dependencies) section for additional information on adapters.
+Secara default, Action Cable mencari konfigurasi file di `config/cable.yml`.
+File harus di tetapkan untuk setiap adaptor Rails environment. Lihat di [Dependencies](#dependencies) bagian untuk menambahkan informasi didalam adaptor.
 
 ```yaml
 development:
@@ -495,56 +494,45 @@ production:
   url: redis://10.10.3.153:6381
   channel_prefix: appname_production
 ```
-#### Adapter Configuration
+#### Adaptor Konfigurasi
 
 Below is a list of the subscription adapters available for end users.
 
 ##### Async Adapter
 
-The async adapter is intended for development/testing and should not be used in production.
+Adaptor async dimaksudkan untuk development/testing dan tidak boleh digunakan dalam produksi.
 
-##### Redis Adapter
+##### Redis Adaptor
 
-The Redis adapter requires users to provide a URL pointing to the Redis server.
-Additionally, a `channel_prefix` may be provided to avoid channel name collisions
-when using the same Redis server for multiple applications. See the [Redis PubSub documentation](https://redis.io/topics/pubsub#database-amp-scoping) for more details.
+Adaptor Redis mengharuskan pengguna untuk menyediakan URL yang menunjuk ke server Redis.
+Selain itu, `channel_prefix` dapat disediakan untuk menghindari tabrakan nama saluran
+saat menggunakan server Redis yang sama untuk beberapa aplikasi. Lihat [Dokumentasi Redis PubSub](https://redis.io/topics/pubsub#database-amp-scoping) untuk detail lebih lanjut.
 
-##### PostgreSQL Adapter
+##### PostgreSQL Adaptor
 
-The PostgreSQL adapter uses Active Record's connection pool, and thus the
-application's `config/database.yml` database configuration, for its connection.
-This may change in the future. [#27214](https://github.com/rails/rails/issues/27214)
+Adaptor PostgreSQL menggunakan kumpulan koneksi Active Record's, dan konfigurasi database `config / database.yml`aplikasi, untuk koneksinya. Ini mungkin berubah di masa depan. [# 27214](https://github.com/rails/rails/issues/27214)
 
-### Allowed Request Origins
+### Menerima Request Dari Sumber
 
-Action Cable will only accept requests from specified origins, which are
-passed to the server config as an array. The origins can be instances of
-strings or regular expressions, against which a check for the match will be performed.
+Action Cable hanya akan menerima permintaan dari sumber yang ditentukan, yang diteruskan ke konfigurasi server sebagai array. Sumber dapat berupa contoh string atau ekspresi reguler, yang dicek kecocokan dan akan digunakan.
 
 ```ruby
 config.action_cable.allowed_request_origins = ['http://rubyonrails.com', %r{http://ruby.*}]
 ```
-
-To disable and allow requests from any origin:
+Untuk dinonaktifkan dan diterima request dari sumber:
 
 ```ruby
 config.action_cable.disable_request_forgery_protection = true
 ```
+Secara default, Action Cable memungkinkan semua permintaan dari localhost: 3000 saat berjalan di development environment.
 
-By default, Action Cable allows all requests from localhost:3000 when running
-in the development environment.
+### Konsumen Konfigurasi
 
-### Consumer Configuration
+Untuk mengkonfigurasi URL, tambahkan panggilan ke `action_cable_meta_tag` di layout HTML HEAD. Ini menggunakan URL atau jalur yang biasanya ditetapkan melalui `config.action_cable.url` di file konfigurasi environment.
 
-To configure the URL, add a call to `action_cable_meta_tag` in your HTML layout
-HEAD. This uses a URL or path typically set via `config.action_cable.url` in the
-environment configuration files.
+### Konfigurasi Lainnya
 
-### Other Configurations
-
-The other common option to configure is the log tags applied to the
-per-connection logger. Here's an example that uses
-the user account id if available, else "no-account" while tagging:
+Opsi umum lainnya untuk mengonfigurasi adalah tag log yang diterapkan ke logger per-koneksi. Berikut adalah contoh yang menggunakan id akun user jika tersedia, dan jika tidak "tidak ada akun" saat memberi tag:
 
 ```ruby
 config.action_cable.log_tags = [
@@ -553,22 +541,16 @@ config.action_cable.log_tags = [
   -> request { request.uuid }
 ]
 ```
+Untuk daftar lengkap semua opsi konfigurasi, lihat
+Class `ActionCable :: Server :: Configuration`.
 
-For a full list of all configuration options, see the
-`ActionCable::Server::Configuration` class.
+Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi database yang sama seperti di pakai. Ukuran yang dipakai secara default diatur ke 4 pool, jadi itu berarti Anda harus membuat setidaknya tersedia. Anda dapat mengubahnya di `config / database.yml` melalui atribut` pool`.
 
-Also, note that your server must provide at least the same number of database
-connections as you have workers. The default worker pool size is set to 4, so
-that means you have to make at least that available. You can change that in
-`config/database.yml` through the `pool` attribute.
+## Menjalankan Cable Server Mandiri 
 
-## Running Standalone Cable Servers
+### Di Aplikasi
 
-### In App
-
-Action Cable can run alongside your Rails application. For example, to
-listen for WebSocket requests on `/websocket`, specify that path to
-`config.action_cable.mount_path`:
+Action Cable dapat berjalan di samping aplikasi Rails kamu. Misalnya, untuk mendapat permintaan WebSocket di `/ websocket`, tentukan path itu ke` config.action_cable.mount_path`:
 
 ```ruby
 # config/application.rb
@@ -577,16 +559,13 @@ class Application < Rails::Application
 end
 ```
 
-You can use `App.cable = ActionCable.createConsumer()` to connect to the cable
-server if `action_cable_meta_tag` is invoked in the layout. A custom path is
-specified as first argument to `createConsumer` (e.g. `App.cable =
-ActionCable.createConsumer("/websocket")`).
+Kamu dapat menggunakan `App.cable = ActionCable.createConsumer ()` untuk terhubung ke cable server jika `action_cable_meta_tag` dipanggil dalam layout. Jalur khusus ditetapkan sebagai argumen pertama untuk `createConsumer` (mis.` App.cable =
+ActionCable.createConsumer ("/ websocket") `).
 
-For every instance of your server you create and for every worker your server
-spawns, you will also have a new instance of Action Cable, but the use of Redis
-keeps messages synced across connections.
+Untuk setiap permintaan dari server yang Kamu buat dan untuk setiap pekerjaan yang dihasilkan oleh server Kamu, Kamu juga akan memiliki permintaan baru dari Action Cable, tetapi penggunaan Redis
+membuat pesan disinkronkan di seluruh koneksi.
 
-### Standalone
+### Mandiri
 
 The cable servers can be separated from your normal application server. It's
 still a Rack application, but it is its own Rack application. The recommended
