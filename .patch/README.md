@@ -14,6 +14,7 @@ git clone https://github.com/rails/rails.git
 cd rails
 git branch --track origin/5-2-stable
 git checkout 5-2-stable
+# INGAT: Saat menyalin, branch di guide dengan rails harus sama
 cp guides/source/*.md ../guides/.patch/5-2-stable -R
 ```
 
