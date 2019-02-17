@@ -3,10 +3,10 @@
 Ikhtisar Action Cable
 =======================
 
-Di dalam panduan ini, kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan
-WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails kamu.
+Di dalam panduan ini, Kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan
+WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails Kamu.
 
-Setelah membaca panduan ini, kamu akan mengetahui tentang:
+Setelah membaca panduan ini, Kamu akan mengetahui tentang:
 
 * Apa itu Action Cable untuk mengintergrasikan dengan backend dan frontend
 * Bagaimana pemasangan Action Cable
@@ -19,11 +19,11 @@ Pengenalan
 ----------
 
 Action cable terintegrasi dengan mulus pada [WebSockets](https://en.wikipedia.org/wiki/WebSocket)
-di aplikasi Rails kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan
-gaya dan bentuk aplikasi kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan
+di aplikasi Rails Kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan
+gaya dan bentuk aplikasi Kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan
 bagi sisi klien kerangka JavaScript dan sisi server kerangka Ruby. Kamu mendapatkan akses penuh untuk
-menulis model domain dengan Active Record atau kamu dapat memilih Object-Relational-Mapping (ORM)
-pilihan kamu.
+menulis model domain dengan Active Record atau Kamu dapat memilih Object-Relational-Mapping (ORM)
+pilihan Kamu.
 
 Apa itu Pub/Sub
 ---------------
@@ -72,18 +72,18 @@ Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk
 Perhatikan bahwa apa pun yang ditandai sebagai pengenal identifikasi secara otomatis dibuat delegasi dengan
 nama yang sama di dalam semua channel seperti contoh koneksi di atas.
 
-Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan sukses autentikasi di setujui
+Contoh di atas tergantung user yang telah di autentikasi dari aplikasi Kamu, dan sukses autentikasi di setujui
 oleh cookie user ID.
 
 Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk
-mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user
+mengidentifikasi koneksi dengan user yang sama, dan juga memastikan Kamu dapat menerima semua koneksi dari user
 (dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
 
 ### Saluran
 
 Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada
 MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk
-bersama merangkum logic antara saluran kamu.
+bersama merangkum logic antara saluran Kamu.
 
 #### Memasang Induk Saluran
 
@@ -95,7 +95,7 @@ module ApplicationCable
 end
 ```
 
-Kemudian kamu dapat membuat kelas saluran kamu sendiri. berikut contoh, yang dapat kamu buat
+Kemudian Kamu dapat membuat kelas saluran Kamu sendiri. berikut contoh, yang dapat Kamu buat
 ```ChatChannel` dan `ApperanceChannel`:
 
 ```ruby
@@ -148,7 +148,7 @@ JavaScript berikut, yang dibuat secara default oleh Rails:
 }).call(this);
 ```
 
-Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di server kamu
+Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di server Kamu
 secara default. Koneksi tidak akan terjalin sampai mendapat minimal satu pelanggan
 yang telah di tentukan untuk menjadi pelanggan.
 
@@ -188,7 +188,7 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 
-Jika kamu memiliki streaming yang berhubungan dengan model, maka siaran dapat menggunakan model dan saluran tersebut. Berikut contoh siaran pada saluran berlangganan `comments:Z2lkOi8vVGVzdEFwcC9Qb3N0LzE`
+Jika Kamu memiliki streaming yang berhubungan dengan model, maka siaran dapat menggunakan model dan saluran tersebut. Berikut contoh siaran pada saluran berlangganan `comments:Z2lkOi8vVGVzdEFwcC9Qb3N0LzE`
 
 ```ruby
 class CommentsChannel < ApplicationCable::Channel
@@ -199,7 +199,7 @@ class CommentsChannel < ApplicationCable::Channel
 end
 ```
 
-kamu dapat melakukan siaran pada saluran di atas seperti ini:
+Kamu dapat melakukan siaran pada saluran di atas seperti ini:
 
 ```ruby
 CommentsChannel.broadcast_to(@post, @comment)
@@ -211,7 +211,7 @@ CommentsChannel.broadcast_to(@post, @comment)
 
 Siaran adalah murni antrean online dan tergantung waktu. Jika konsumen tidak streaming (berlangganan saluran yang diberikan), mereka tidak akan mendapatkan siaran jika mereka terhubung nanti.
 
-Panggil Siaran di Aplikasi rails kamu di mana saja:
+Panggil Siaran di Aplikasi rails Kamu di mana saja:
 
 ```ruby
 WebNotificationsChannel.broadcast_to(
@@ -233,7 +233,7 @@ langganan saluran ini berdasarkan pengenal yang dikirim oleh konsumen.
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
-# Asumsi kamu telah mengirim request pada notifikasi web
+# Asumsi Kamu telah mengirim request pada notifikasi web
 App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
   received: (data) ->
     @appendLine(data)
@@ -287,7 +287,7 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
 ```
 
 ```ruby
-# Misal di app kamu seperti
+# Misal di app Kamu seperti
 # dari NewCommentJob
 ActionCable.server.broadcast(
   "chat_#{room}",
@@ -323,7 +323,7 @@ App.chatChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
 ```
 
 Siaran ulang akan di terima oleh semua yang terkoneksi bersama, _termasuk_ klien yang mengirim pesan tersebut. Perhatikan bahwa parameter sama seperti ketika
-kamu berlangganan saluran.
+Kamu berlangganan saluran.
 
 ## Contoh Full-Stack
 
@@ -431,7 +431,7 @@ metode pada`current_user`. (`appearance_channel.rb`)
 
 Contoh tampilan adalah tentang mengekspose fungsionalitas server ada sisi klien melalu koneksi WebSocket. Tapi yang menarik tentang WebSocket adalah memiliki dua arah jalan. Sekarang mari kita lihat sebuah contoh di mana server meminta tindakan pada klien
 
-Dibawah ini adalah saluran web notifikasi yang mengizinkan kamu untuk memicu sisi klien web notifikasi ketika kamu menyiarkan ke streaming yang tepat:
+Dibawah ini adalah saluran web notifikasi yang mengizinkan Kamu untuk memicu sisi klien web notifikasi ketika Kamu menyiarkan ke streaming yang tepat:
 
 Membuat saluran sisi server web notifikasi:
 
@@ -448,17 +448,17 @@ Membuat saluran berlangganan sisi klien web notifikasi:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/web_notifications.coffee
-# Asumsi sisi klien kamu telah melakukan request
+# Asumsi sisi klien Kamu telah melakukan request
 # dengan benar ke web notifikasi
 App.cable.subscriptions.create "WebNotificationsChannel",
   received: (data) ->
     new Notification data["title"], body: data["body"]
 ```
 
-Konten siaran untuk saluran web notifikasi misalnya dari aplikasi kamu:
+Konten siaran untuk saluran web notifikasi misalnya dari aplikasi Kamu:
 
 ```ruby
-# Misal di app kamu dari NewCommentJob
+# Misal di app Kamu dari NewCommentJob
 WebNotificationsChannel.broadcast_to(
   current_user,
   title: 'New things!',
@@ -555,7 +555,7 @@ Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi d
 
 ### Di Aplikasi
 
-Action Cable dapat berjalan di samping aplikasi Rails kamu. Misalnya, untuk mendapat permintaan WebSocket di `/ websocket`, tentukan path itu ke` config.action_cable.mount_path`:
+Action Cable dapat berjalan di samping aplikasi Rails Kamu. Misalnya, untuk mendapat permintaan WebSocket di `/ websocket`, tentukan path itu ke` config.action_cable.mount_path`:
 
 ```ruby
 # config/application.rb
