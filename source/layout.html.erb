@@ -48,16 +48,16 @@
           <a href="index.html" id="guidesMenu" class="guides-index-item nav-item">Indeks Panduan</a>
           <div id="guides" class="clearfix" style="display: none;">
             <hr>
-            <div class="guides-section-container">
-              <% documents_by_section.each do |section| %>
-                <div class="guides-section">
+            <% ['L', 'R'].each do |position| %>
+              <dl class="<%= position %>">
+                <% docs_for_menu(position).each do |section| %>
                   <dt><%= section['name'] %></dt>
                   <% finished_documents(section['documents']).each do |document| %>
-                  <dd><a href="<%= document['url'] %>"><%= document['name'] %></a></dd>
+                    <dd><a href="<%= document['url'] %>"><%= document['name'] %></a></dd>
                   <% end %>
-                </div>
-              <% end %>
-            </div>
+                <% end %>
+              </dl>
+            <% end %>
           </div>
         </li>
         <li><a class="nav-item" href="contributing_to_ruby_on_rails.html">Kontribusi</a></li>
