@@ -599,7 +599,7 @@ Server WebSocket tidak memiliki akses ke session, tetapi mendapat
 akses ke cookies. Ini dapat digunakan saat kamu perlu mengerjakan
 otentikasi. Kamu dapat melihat salah satu cara melakukannya dengan Devise dalam [artikel] ini (http://www.rubytutorial.io/actioncable-devise-authentication).
 
-## Dependencies
+## Ketergantungan
 
 Action Cable provides a subscription adapter interface to process its
 pubsub internals. By default, asynchronous, inline, PostgreSQL, and Redis
