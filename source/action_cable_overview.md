@@ -572,9 +572,9 @@ membuat pesan disinkronkan di seluruh koneksi.
 
 ### Mandiri
 
-The cable servers can be separated from your normal application server. It's
-still a Rack application, but it is its own Rack application. The recommended
-basic setup is as follows:
+Cable server dapat dipisahkan dari server aplikasi normal kamu. Dan
+masih merupakan sebuah Rack aplikasi, tetapi itu aplikasi Rack-nya sendiri. Direkomendasikan
+pengaturan dasar adalah sebagai berikut:
 
 ```ruby
 # cable/config.ru
