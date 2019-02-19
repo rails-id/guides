@@ -584,7 +584,7 @@ Rails.application.eager_load!
 run ActionCable.server
 ```
 
-Then you start the server using a binstub in `bin/cable` ala:
+Kemudian kamu dapat menjalankan server menggunakan sebuah binstub `bin/cable` seperti ini:
 
 ```
 #!/bin/bash
