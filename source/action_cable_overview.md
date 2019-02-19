@@ -3,10 +3,10 @@
 Ikhtisar Action Cable
 =======================
 
-Di dalam panduan ini, kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan
-WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails kamu.
+Di dalam panduan ini, Kamu akan belajar bagaimana Action Cable bekerja dan bagaimana menggunakan
+WebSockets untuk menggabungkan dalam waktu yang sebenarnya di dalam aplikasi Rails Kamu.
 
-Setelah membaca panduan ini, kamu akan mengetahui tentang:
+Setelah membaca panduan ini, Kamu akan mengetahui tentang:
 
 * Apa itu Action Cable untuk mengintergrasikan dengan backend dan frontend
 * Bagaimana pemasangan Action Cable
@@ -19,11 +19,11 @@ Pengenalan
 ----------
 
 Action cable terintegrasi dengan mulus pada [WebSockets](https://en.wikipedia.org/wiki/WebSocket)
-di aplikasi Rails kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan
-gaya dan bentuk aplikasi kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan
+di aplikasi Rails Kamu. Hal ini memungkinkan untuk membuat fitur dalam waktu yang sebenarnya dengan
+gaya dan bentuk aplikasi Kamu, sementara performa dan skala tetap terjaga. Hal ini mencakup keseluruhan
 bagi sisi klien kerangka JavaScript dan sisi server kerangka Ruby. Kamu mendapatkan akses penuh untuk
-menulis model domain dengan Active Record atau kamu dapat memilih Object-Relational-Mapping (ORM)
-pilihan kamu.
+menulis model domain dengan Active Record atau Kamu dapat memilih Object-Relational-Mapping (ORM)
+pilihan Kamu.
 
 Apa itu Pub/Sub
 ---------------
@@ -72,18 +72,18 @@ Di sini `identified_by` adalah koneksi indentifikasi yang dapat di gunakan untuk
 Perhatikan bahwa apa pun yang ditandai sebagai pengenal identifikasi secara otomatis dibuat delegasi dengan
 nama yang sama di dalam semua channel seperti contoh koneksi di atas.
 
-Contoh di atas tergantung user yang telah di autentikasi dari aplikasi kamu, dan sukses autentikasi di setujui
+Contoh di atas tergantung user yang telah di autentikasi dari aplikasi Kamu, dan sukses autentikasi di setujui
 oleh cookie user ID.
 
 Cookie user ID secara otomatis mengirim ke koneksi saat koneksi baru di coba, dan penggunaan `current_user` untuk
-mengidentifikasi koneksi dengan user yang sama, dan juga memastikan kamu dapat menerima semua koneksi dari user
+mengidentifikasi koneksi dengan user yang sama, dan juga memastikan Kamu dapat menerima semua koneksi dari user
 (dan berpontensi diskoneksi ke semuanya jika user telah di hapus atau tidak di autentikasi).
 
 ### Saluran
 
 Sebuah *saluran* merangkum unit logik dari sebuah pekerjaan, mirip dengan apa yang di lakukan oleh controller pada
 MVC(Model View Controller). Secara default, Rails membuat sebuah kelas induk `ApplicationCable::Channel` untuk
-bersama merangkum logic antara saluran kamu.
+bersama merangkum logic antara saluran Kamu.
 
 #### Memasang Induk Saluran
 
@@ -95,7 +95,7 @@ module ApplicationCable
 end
 ```
 
-Kemudian kamu dapat membuat kelas saluran kamu sendiri. berikut contoh, yang dapat kamu buat
+Kemudian Kamu dapat membuat kelas saluran Kamu sendiri. berikut contoh, yang dapat Kamu buat
 ```ChatChannel` dan `ApperanceChannel`:
 
 ```ruby
@@ -148,7 +148,7 @@ JavaScript berikut, yang dibuat secara default oleh Rails:
 }).call(this);
 ```
 
-Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di server kamu
+Contoh di atas menyiapkan konsumen yang akan terhubung dengan `/ kabel` di server Kamu
 secara default. Koneksi tidak akan terjalin sampai mendapat minimal satu pelanggan
 yang telah di tentukan untuk menjadi pelanggan.
 
@@ -164,23 +164,20 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" }
 App.cable.subscriptions.create { channel: "AppearanceChannel" }
 ```
 
-While this creates the subscription, the functionality needed to respond to
-received data will be described later on.
+Meskipun langganan telah di buat, fungsionalitas yang diperlukan untuk menanggapi data yang diterima akan dijabarkan lagi.
 
-A consumer can act as a subscriber to a given channel any number of times. For
-example, a consumer could subscribe to multiple chat rooms at the same time:
+Konsumen dapat bertindak sebagai pelanggan kapan saja pada setiap saluran yang di berikan. Sebagai contoh, konsumen dapat berlangganan beberapa ruang obrolan secara bersamaan:
 
 ```coffeescript
 App.cable.subscriptions.create { channel: "ChatChannel", room: "1st Room" }
 App.cable.subscriptions.create { channel: "ChatChannel", room: "2nd Room" }
 ```
 
-## Client-Server Interactions
+## Interaksi Klien-Server
 
-### Streams
+### Streaming
 
-*Streams* provide the mechanism by which channels route published content
-(broadcasts) to their subscribers.
+*streaming* menyediakan mekanisme saluran yang di kirimkan sebagai publikasi konten (siaran) ke pelanggan yang berlangganan.
 
 ```ruby
 # app/channels/chat_channel.rb
@@ -191,9 +188,7 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 
-If you have a stream that is related to a model, then the broadcasting used
-can be generated from the model and channel. The following example would
-subscribe to a broadcasting like `comments:Z2lkOi8vVGVzdEFwcC9Qb3N0LzE`
+Jika Kamu memiliki streaming yang berhubungan dengan model, maka siaran dapat menggunakan model dan saluran tersebut. Berikut contoh siaran pada saluran berlangganan `comments:Z2lkOi8vVGVzdEFwcC9Qb3N0LzE`
 
 ```ruby
 class CommentsChannel < ApplicationCable::Channel
@@ -204,23 +199,19 @@ class CommentsChannel < ApplicationCable::Channel
 end
 ```
 
-You can then broadcast to this channel like this:
+Kamu dapat melakukan siaran pada saluran di atas seperti ini:
 
 ```ruby
 CommentsChannel.broadcast_to(@post, @comment)
 ```
 
-### Broadcasting
+### Siaran
 
-A *broadcasting* is a pub/sub link where anything transmitted by a publisher
-is routed directly to the channel subscribers who are streaming that named
-broadcasting. Each channel can be streaming zero or more broadcastings.
+*Siaran* adalah tautan pub / sub di mana segala sesuatu yang ditransmisikan oleh penerbit dan dikirim langsung ke pelanggan saluran streaming yang bernama siaran. Setiap saluran dapat melakukan streaming siaran dari nol hingga lebih banyak siaran.
 
-Broadcastings are purely an online queue and time-dependent. If a consumer is
-not streaming (subscribed to a given channel), they'll not get the broadcast
-should they connect later.
+Siaran adalah murni antrean online dan tergantung waktu. Jika konsumen tidak streaming (berlangganan saluran yang diberikan), mereka tidak akan mendapatkan siaran jika mereka terhubung nanti.
 
-Broadcasts are called elsewhere in your Rails application:
+Panggil Siaran di Aplikasi rails Kamu di mana saja:
 
 ```ruby
 WebNotificationsChannel.broadcast_to(
@@ -230,24 +221,19 @@ WebNotificationsChannel.broadcast_to(
 )
 ```
 
-The `WebNotificationsChannel.broadcast_to` call places a message in the current
-subscription adapter (by default `redis` for production and `async` for development and
-test environments)'s pubsub queue under a separate broadcasting name for each user.
-For a user with an ID of 1, the broadcasting name would be `web_notifications:1`.
+Panggilan `webNotificationsChannel.broadcast_to` menempatkan pesan pada adaptor berlangganan(secara default `redis` untuk produksi dan `async` untuk development dan test pengembangan) antrean pub/sub di pisahkan oleh nama saluran untuk masing - masing user. Untuk dengan ID 1, nama saluran menjadi `web_notification:1`.
 
-The channel has been instructed to stream everything that arrives at
-`web_notifications:1` directly to the client by invoking the `received`
-callback.
+Saluran telah diinstruksikan untuk streaming semua yang datang pada `web_notifications:1`. langsung ke klien dengan memohon `received` kembali.
 
-### Subscriptions
+### Berlangganan
 
-When a consumer is subscribed to a channel, they act as a subscriber. This
-connection is called a subscription. Incoming messages are then routed to
-these channel subscriptions based on an identifier sent by the cable consumer.
+Ketika konsumen berlangganan di sebuah channel, konsumen menjadi pelanggan. Koneksi ini di sebut berlangganan.
+. Pesan yang masuk kemudian dialihkan ke
+langganan saluran ini berdasarkan pengenal yang dikirim oleh konsumen.
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
-# Assumes you've already requested the right to send web notifications
+# Asumsi Kamu telah mengirim request pada notifikasi web
 App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
   received: (data) ->
     @appendLine(data)
@@ -265,10 +251,9 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
     """
 ```
 
-### Passing Parameters to Channels
+### Memberikan Parameter untuk Saluran
 
-You can pass parameters from the client side to the server side when creating a
-subscription. For example:
+Kamu dapat memberikan parameter dari sisi klien ke sisi server dengan membuat langganan. Sebagai contoh:
 
 ```ruby
 # app/channels/chat_channel.rb
@@ -279,8 +264,8 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 
-An object passed as the first argument to `subscriptions.create` becomes the
-params hash in the cable channel. The keyword `channel` is required:
+Kemudian objek di teruskan ke`subscriptions.create`
+dan menjadi parameter hash di dalam saluran. Keyword `channel` di haruskan:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/chat.coffee
@@ -302,8 +287,8 @@ App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
 ```
 
 ```ruby
-# Somewhere in your app this is called, perhaps
-# from a NewCommentJob.
+# Misal di app Kamu seperti
+# dari NewCommentJob
 ActionCable.server.broadcast(
   "chat_#{room}",
   sent_by: 'Paul',
@@ -311,10 +296,9 @@ ActionCable.server.broadcast(
 )
 ```
 
-### Rebroadcasting a Message
+### Siaran ulang sebuah Pesan
 
-A common use case is to *rebroadcast* a message sent by one client to any
-other connected clients.
+Kasus yang biasa terjadi adalah *siaran ulang* sebuah pesan oleh satu klien ke klien lain yang sama - sama terkoneksi.
 
 ```ruby
 # app/channels/chat_channel.rb
@@ -338,25 +322,23 @@ App.chatChannel = App.cable.subscriptions.create { channel: "ChatChannel", room:
 App.chatChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
 ```
 
-The rebroadcast will be received by all connected clients, _including_ the
-client that sent the message. Note that params are the same as they were when
-you subscribed to the channel.
+Siaran ulang akan di terima oleh semua yang terkoneksi bersama, _termasuk_ klien yang mengirim pesan tersebut. Perhatikan bahwa parameter sama seperti ketika
+Kamu berlangganan saluran.
 
-## Full-Stack Examples
+## Contoh Full-Stack
 
-The following setup steps are common to both examples:
+Langkah-langkah pengaturan umum pada kedua contoh:
 
-  1. [Setup your connection](#connection-setup).
-  2. [Setup your parent channel](#parent-channel-setup).
-  3. [Connect your consumer](#connect-consumer).
+  1. [Memasang koneksi](#connection-setup).
+  2. [Memasang induk saluran](#parent-channel-setup).
+  3. [Hubungkan konsumen](#connect-consumer).
 
-### Example 1: User Appearances
+### Contoh 1: Menampilkan User
 
-Here's a simple example of a channel that tracks whether a user is online or not
-and what page they're on. (This is useful for creating presence features like showing
-a green dot next to a user name if they're online).
+Berikut adalah contoh sederhana saluran yang melacak apakah pengguna sedang online atau tidak dan di halaman mana mereka berada. (Ini berguna untuk membuat fitur kehadiran seperti menunjukkan
+titik hijau di sebelah nama pengguna jika sedang online)
 
-Create the server-side appearance channel:
+Buat tampilan saluran sisi server:
 
 ```ruby
 # app/channels/appearance_channel.rb
@@ -379,25 +361,24 @@ class AppearanceChannel < ApplicationCable::Channel
 end
 ```
 
-When a subscription is initiated the `subscribed` callback gets fired and we
-take that opportunity to say "the current user has indeed appeared". That
-appear/disappear API could be backed by Redis, a database, or whatever else.
+Ketika pelangggan mulai `berlangganan` panggilan ulang dibatalkan dan mendapatkan kesempatan untuk "user saat ini telah di tampilkan" . That
+appear/disappear API dapat di dukung oleh redis, sebuah database, atau yang lainnya.
 
-Create the client-side appearance channel subscription:
+Membuat tampilan berlangganan sisi-klien pada saluran:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/appearance.coffee
 App.cable.subscriptions.create "AppearanceChannel",
-  # Called when the subscription is ready for use on the server.
+  # Dipanggil saat langganan telah siap untuk di gunakan pada server.
   connected: ->
     @install()
     @appear()
 
-  # Called when the WebSocket connection is closed.
+  # Dipanggil saat WebSocket koneksi tertutup.
   disconnected: ->
     @uninstall()
 
-  # Called when the subscription is rejected by the server.
+  # Dipanggil ketika berlangganan di tolak oleh server.
   rejected: ->
     @uninstall()
 
@@ -427,44 +408,32 @@ App.cable.subscriptions.create "AppearanceChannel",
     $(buttonSelector).hide()
 ```
 
-##### Client-Server Interaction
+##### Klien-Server Interaksi
 
-1. **Client** connects to the **Server** via `App.cable =
-ActionCable.createConsumer("ws://cable.example.com")`. (`cable.js`). The
-**Server** identifies this connection by `current_user`.
+1. **Client** dihubungkan dengan **Server** via `App.cable =
+ActionCable.createConsumer("ws://cable.example.com")`. (`cable.js`). dan
+**Server** mengindentifikasi koneksi ini oleh `current_user`.
 
-2. **Client** subscribes to the appearance channel via
+2. **Client** berlangganan ke saluran yang ditampilkan via
 `App.cable.subscriptions.create(channel: "AppearanceChannel")`. (`appearance.coffee`)
 
-3. **Server** recognizes a new subscription has been initiated for the
-appearance channel and runs its `subscribed` callback, calling the `appear`
-method on `current_user`. (`appearance_channel.rb`)
+3. **Server** menerima sebuah langganan baru telah terpasang untuk di tampilkan pada saluran dan menjalankan `berlangganan` memanggil ulang, memanggil `appear`
+metode pada`current_user`. (`appearance_channel.rb`)
 
-4. **Client** recognizes that a subscription has been established and calls
-`connected` (`appearance.coffee`) which in turn calls `@install` and `@appear`.
-`@appear` calls `AppearanceChannel#appear(data)` on the server, and supplies a
-data hash of `{ appearing_on: $("main").data("appearing-on") }`. This is
-possible because the server-side channel instance automatically exposes all
-public methods declared on the class (minus the callbacks), so that these can be
-reached as remote procedure calls via a subscription's `perform` method.
+4. **Client** mengakui bahwa sebuah langganan telah terpasang  dan dipanggil
+`connected` (`appearance.coffee`) yang mendapat giliran `@install` dan `@appear`.
+`@appear` dipanggil `AppearanceChannel#appear(data)` di dalam server, dan persediaan hash data pada `{ appearing_on: $("main").data("appearing-on") }`. Hal ini dimungkinkan karena contoh saluran sisi server secara otomatis memaparkan semua metode publik yang dideklarasikan di kelas (minus panggilan balik), sehingga dapat tercapai dengan remote prosedur yang dipanggil lewat metode `perform` pada langganan.
 
-5. **Server** receives the request for the `appear` action on the appearance
-channel for the connection identified by `current_user`
-(`appearance_channel.rb`). **Server** retrieves the data with the
-`:appearing_on` key from the data hash and sets it as the value for the `:on`
-key being passed to `current_user.appear`.
+5. **Server** menerima request untuk aksi`appear` pada tampilan saluran agar koneksi diidentifikasi oleh `current_user`
+(`appearance_channel.rb`). **Server** mengambil data pada `:appearing_on` key dari hash data telah di tetapkan sebagai nilai pada `:on` key diteruskan ke`current_user.appear`.
 
-### Example 2: Receiving New Web Notifications
+### Example 2: Menerima Pemberitahuan Baru Web
 
-The appearance example was all about exposing server functionality to
-client-side invocation over the WebSocket connection. But the great thing
-about WebSockets is that it's a two-way street. So now let's show an example
-where the server invokes an action on the client.
+Contoh tampilan adalah tentang mengekspose fungsionalitas server ada sisi klien melalu koneksi WebSocket. Tapi yang menarik tentang WebSocket adalah memiliki dua arah jalan. Sekarang mari kita lihat sebuah contoh di mana server meminta tindakan pada klien
 
-This is a web notification channel that allows you to trigger client-side
-web notifications when you broadcast to the right streams:
+Dibawah ini adalah saluran web notifikasi yang mengizinkan Kamu untuk memicu sisi klien web notifikasi ketika Kamu menyiarkan ke streaming yang tepat:
 
-Create the server-side web notifications channel:
+Membuat saluran sisi server web notifikasi:
 
 ```ruby
 # app/channels/web_notifications_channel.rb
@@ -475,22 +444,21 @@ class WebNotificationsChannel < ApplicationCable::Channel
 end
 ```
 
-Create the client-side web notifications channel subscription:
+Membuat saluran berlangganan sisi klien web notifikasi:
 
 ```coffeescript
 # app/assets/javascripts/cable/subscriptions/web_notifications.coffee
-# Client-side which assumes you've already requested
-# the right to send web notifications.
+# Asumsi sisi klien Kamu telah melakukan request
+# dengan benar ke web notifikasi
 App.cable.subscriptions.create "WebNotificationsChannel",
   received: (data) ->
     new Notification data["title"], body: data["body"]
 ```
 
-Broadcast content to a web notification channel instance from elsewhere in your
-application:
+Konten siaran untuk saluran web notifikasi misalnya dari aplikasi Kamu:
 
 ```ruby
-# Somewhere in your app this is called, perhaps from a NewCommentJob
+# Misal di app Kamu dari NewCommentJob
 WebNotificationsChannel.broadcast_to(
   current_user,
   title: 'New things!',
@@ -498,31 +466,24 @@ WebNotificationsChannel.broadcast_to(
 )
 ```
 
-The `WebNotificationsChannel.broadcast_to` call places a message in the current
-subscription adapter's pubsub queue under a separate broadcasting name for each
-user. For a user with an ID of 1, the broadcasting name would be
-`web_notifications:1`.
+Panggilan `WebNotificationsChannel.broadcast_to` menempatkan pesan di antrian pub / sub adaptor berlangganan saat ini, di bawah nama penyiaran yang terpisah untuk setiap pengguna. Untuk pengguna user ID 1, nama penyiarannya adalah `web_notifications: 1`.
 
-The channel has been instructed to stream everything that arrives at
-`web_notifications:1` directly to the client by invoking the `received`
-callback. The data passed as argument is the hash sent as the second parameter
-to the server-side broadcast call, JSON encoded for the trip across the wire
-and unpacked for the data argument arriving as `received`.
+Saluran telah diinstruksikan untuk melakukan streaming untuk semua yang di terima di `web_notifications: 1` langsung ke klien dengan memohon panggilan balik` received`. Data yang dikirimkan sebagai argumen adalah hash yang dikirim sebagai parameter kedua
+ke panggilan siaran sisi-server, JSON disandikan untuk melewati jalur yang di lewati dan dibuka untuk argumen data yang tiba sebagai `received`.
 
-### More Complete Examples
+### Contoh Yang Lebih Komplet
 
-See the [rails/actioncable-examples](https://github.com/rails/actioncable-examples)
-repository for a full example of how to setup Action Cable in a Rails app and adding channels.
+Lihat di [rails/actioncable-examples](https://github.com/rails/actioncable-examples)
+repository yang lebih lengkap dengan contoh bagaiamana memasang Action Cable pada Rails aplikasi dan menambahkan saluran.
 
-## Configuration
+## Konfigurasi
 
-Action Cable has two required configurations: a subscription adapter and allowed request origins.
+Action Cable memiliki dua konfigurasi yang diperlukan: adapter berlangganan dan mengizinkan permintaan yang masuk.
 
-### Subscription Adapter
+### Adaptor Berlangganan
 
-By default, Action Cable looks for a configuration file in `config/cable.yml`.
-The file must specify an adapter for each Rails environment. See the
-[Dependencies](#dependencies) section for additional information on adapters.
+Secara default, Action Cable mencari konfigurasi file di `config/cable.yml`.
+File harus di tetapkan untuk setiap adaptor Rails environment. Lihat di [Dependencies](#dependencies) bagian untuk menambahkan informasi didalam adaptor.
 
 ```yaml
 development:
@@ -536,56 +497,46 @@ production:
   url: redis://10.10.3.153:6381
   channel_prefix: appname_production
 ```
-#### Adapter Configuration
+
+#### Adaptor Konfigurasi
 
 Below is a list of the subscription adapters available for end users.
 
 ##### Async Adapter
 
-The async adapter is intended for development/testing and should not be used in production.
+Adaptor async dimaksudkan untuk development/testing dan tidak boleh digunakan dalam produksi.
 
-##### Redis Adapter
+##### Redis Adaptor
 
-The Redis adapter requires users to provide a URL pointing to the Redis server.
-Additionally, a `channel_prefix` may be provided to avoid channel name collisions
-when using the same Redis server for multiple applications. See the [Redis PubSub documentation](https://redis.io/topics/pubsub#database-amp-scoping) for more details.
+Adaptor Redis mengharuskan pengguna untuk menyediakan URL yang menunjuk ke server Redis.
+Selain itu, `channel_prefix` dapat disediakan untuk menghindari tabrakan nama saluran
+saat menggunakan server Redis yang sama untuk beberapa aplikasi. Lihat [Dokumentasi Redis PubSub](https://redis.io/topics/pubsub#database-amp-scoping) untuk detail lebih lanjut.
 
-##### PostgreSQL Adapter
+##### PostgreSQL Adaptor
 
-The PostgreSQL adapter uses Active Record's connection pool, and thus the
-application's `config/database.yml` database configuration, for its connection.
-This may change in the future. [#27214](https://github.com/rails/rails/issues/27214)
+Adaptor PostgreSQL menggunakan kumpulan koneksi Active Record's, dan konfigurasi database `config / database.yml`aplikasi, untuk koneksinya. Ini mungkin berubah di masa depan. [# 27214](https://github.com/rails/rails/issues/27214)
 
-### Allowed Request Origins
+### Menerima Request Dari Sumber
 
-Action Cable will only accept requests from specified origins, which are
-passed to the server config as an array. The origins can be instances of
-strings or regular expressions, against which a check for the match will be performed.
+Action Cable hanya akan menerima permintaan dari sumber yang ditentukan, yang diteruskan ke konfigurasi server sebagai array. Sumber dapat berupa contoh string atau ekspresi reguler, yang dicek kecocokan dan akan digunakan.
 
 ```ruby
 config.action_cable.allowed_request_origins = ['http://rubyonrails.com', %r{http://ruby.*}]
 ```
-
-To disable and allow requests from any origin:
+Untuk dinonaktifkan dan diterima request dari sumber:
 
 ```ruby
 config.action_cable.disable_request_forgery_protection = true
 ```
+Secara default, Action Cable memungkinkan semua permintaan dari localhost: 3000 saat berjalan di development environment.
 
-By default, Action Cable allows all requests from localhost:3000 when running
-in the development environment.
+### Konsumen Konfigurasi
 
-### Consumer Configuration
+Untuk mengkonfigurasi URL, tambahkan panggilan ke `action_cable_meta_tag` di layout HTML HEAD. Ini menggunakan URL atau jalur yang biasanya ditetapkan melalui `config.action_cable.url` di file konfigurasi environment.
 
-To configure the URL, add a call to `action_cable_meta_tag` in your HTML layout
-HEAD. This uses a URL or path typically set via `config.action_cable.url` in the
-environment configuration files.
+### Konfigurasi Lainnya
 
-### Other Configurations
-
-The other common option to configure is the log tags applied to the
-per-connection logger. Here's an example that uses
-the user account id if available, else "no-account" while tagging:
+Opsi umum lainnya untuk mengonfigurasi adalah tag log yang diterapkan ke logger per-koneksi. Berikut adalah contoh yang menggunakan id akun user jika tersedia, dan jika tidak "tidak ada akun" saat memberi tag:
 
 ```ruby
 config.action_cable.log_tags = [
@@ -595,21 +546,16 @@ config.action_cable.log_tags = [
 ]
 ```
 
-For a full list of all configuration options, see the
-`ActionCable::Server::Configuration` class.
+Untuk daftar lengkap semua opsi konfigurasi, lihat
+Class `ActionCable :: Server :: Configuration`.
 
-Also, note that your server must provide at least the same number of database
-connections as you have workers. The default worker pool size is set to 4, so
-that means you have to make at least that available. You can change that in
-`config/database.yml` through the `pool` attribute.
+Juga, perhatikan bahwa server Anda harus menyediakan setidaknya jumlah koneksi database yang sama seperti di pakai. Ukuran yang dipakai secara default diatur ke 4 pool, jadi itu berarti Anda harus membuat setidaknya tersedia. Anda dapat mengubahnya di `config / database.yml` melalui atribut` pool`.
 
-## Running Standalone Cable Servers
+## Menjalankan Cable Server Mandiri
 
-### In App
+### Di Aplikasi
 
-Action Cable can run alongside your Rails application. For example, to
-listen for WebSocket requests on `/websocket`, specify that path to
-`config.action_cable.mount_path`:
+Action Cable dapat berjalan di samping aplikasi Rails Kamu. Misalnya, untuk mendapat permintaan WebSocket di `/ websocket`, tentukan path itu ke` config.action_cable.mount_path`:
 
 ```ruby
 # config/application.rb
@@ -618,20 +564,17 @@ class Application < Rails::Application
 end
 ```
 
-You can use `App.cable = ActionCable.createConsumer()` to connect to the cable
-server if `action_cable_meta_tag` is invoked in the layout. A custom path is
-specified as first argument to `createConsumer` (e.g. `App.cable =
-ActionCable.createConsumer("/websocket")`).
+Kamu dapat menggunakan `App.cable = ActionCable.createConsumer ()` untuk terhubung ke cable server jika `action_cable_meta_tag` dipanggil dalam layout. Jalur khusus ditetapkan sebagai argumen pertama untuk `createConsumer` (mis.` App.cable =
+ActionCable.createConsumer ("/ websocket") `).
 
-For every instance of your server you create and for every worker your server
-spawns, you will also have a new instance of Action Cable, but the use of Redis
-keeps messages synced across connections.
+Untuk setiap permintaan dari server yang Kamu buat dan untuk setiap pekerjaan yang dihasilkan oleh server Kamu, Kamu juga akan memiliki permintaan baru dari Action Cable, tetapi penggunaan Redis
+membuat pesan disinkronkan di seluruh koneksi.
 
-### Standalone
+### Mandiri
 
-The cable servers can be separated from your normal application server. It's
-still a Rack application, but it is its own Rack application. The recommended
-basic setup is as follows:
+Cable server dapat dipisahkan dari server aplikasi normal kamu. Dan
+masih merupakan sebuah Rack aplikasi, tetapi itu aplikasi Rack-nya sendiri. Direkomendasikan
+pengaturan dasar adalah sebagai berikut:
 
 ```ruby
 # cable/config.ru
@@ -641,7 +584,7 @@ Rails.application.eager_load!
 run ActionCable.server
 ```
 
-Then you start the server using a binstub in `bin/cable` ala:
+Kemudian kamu dapat menjalankan server menggunakan sebuah binstub `bin/cable` seperti ini:
 
 ```
 #!/bin/bash
@@ -650,32 +593,30 @@ bundle exec puma -p 28080 cable/config.ru
 
 The above will start a cable server on port 28080.
 
-### Notes
+### Catatan
 
-The WebSocket server doesn't have access to the session, but it has
-access to the cookies. This can be used when you need to handle
-authentication. You can see one way of doing that with Devise in this [article](http://www.rubytutorial.io/actioncable-devise-authentication).
+Server WebSocket tidak memiliki akses ke session, tetapi mendapat
+akses ke cookies. Ini dapat digunakan saat kamu perlu mengerjakan
+otentikasi. Kamu dapat melihat salah satu cara melakukannya dengan Devise dalam [artikel] ini (http://www.rubytutorial.io/actioncable-devise-authentication).
 
-## Dependencies
+## Ketergantungan
 
-Action Cable provides a subscription adapter interface to process its
-pubsub internals. By default, asynchronous, inline, PostgreSQL, and Redis
-adapters are included. The default adapter
-in new Rails applications is the asynchronous (`async`) adapter.
+Action Cable menyediakan antarmuka adaptor berlangganan untuk memprosesnya
+pubsub internal. Secara default, asinkron, inline, PostgreSQL, dan Redis
+Adaptor juga termasuk. Adaptor default
+dalam aplikasi Rails baru adalah adaptor asinkron (`async`).
 
-The Ruby side of things is built on top of [websocket-driver](https://github.com/faye/websocket-driver-ruby),
+Hal dari sisi Ruby yang dibangun di atas [websocket-driver](https://github.com/faye/websocket-driver-ruby),
 [nio4r](https://github.com/celluloid/nio4r), and [concurrent-ruby](https://github.com/ruby-concurrency/concurrent-ruby).
 
 ## Deployment
 
-Action Cable is powered by a combination of WebSockets and threads. Both the
-framework plumbing and user-specified channel work are handled internally by
-utilizing Ruby's native thread support. This means you can use all your regular
-Rails models with no problem, as long as you haven't committed any thread-safety sins.
+Action Cable ditenagai oleh kombinasi WebSockets dan threads. Keduanya
+framework plumbing dan pekerjaan saluran yang pengguna yang ditentukan ditangani secara internal oleh memanfaatkan dukungan threads Ruby. Ini berarti kamu dapat menggunakan semua yang biasa kamu lakukan di Model rails tanpa masalah, selama kamu tidak melakukan kesalahan penulisan.
 
-The Action Cable server implements the Rack socket hijacking API,
-thereby allowing the use of a multithreaded pattern for managing connections
-internally, irrespective of whether the application server is multi-threaded or not.
+Server Action Cable mengimplementasikan Rack socket hijacking API,
+dengan demikian memungkinkan penggunaan pola multithreaded untuk mengelola koneksi
+secara internal, terlepas dari apakah server aplikasi multi-threaded atau tidak.
 
-Accordingly, Action Cable works with popular servers like Unicorn, Puma, and
-Passenger.
+Karenanya, Action Cable bekerja dengan server populer seperti Unicorn, Puma, dan
+Passengger.
