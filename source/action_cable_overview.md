@@ -595,9 +595,9 @@ The above will start a cable server on port 28080.
 
 ### Catatan
 
-The WebSocket server doesn't have access to the session, but it has
-access to the cookies. This can be used when you need to handle
-authentication. You can see one way of doing that with Devise in this [article](http://www.rubytutorial.io/actioncable-devise-authentication).
+Server WebSocket tidak memiliki akses ke session, tetapi mendapat
+akses ke cookies. Ini dapat digunakan saat kamu perlu mengerjakan
+otentikasi. Kamu dapat melihat salah satu cara melakukannya dengan Devise dalam [artikel] ini (http://www.rubytutorial.io/actioncable-devise-authentication).
 
 ## Dependencies
 
