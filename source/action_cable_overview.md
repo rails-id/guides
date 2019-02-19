@@ -11,7 +11,7 @@ Setelah membaca panduan ini, Kamu akan mengetahui tentang:
 * Apa itu Action Cable untuk mengintergrasikan dengan backend dan frontend
 * Bagaimana pemasangan Action Cable
 * Bagaimana pemasangan Channels
-* Pemasangan dan menjalankan Action Cable pada Arsitektur dan Penyebaran
+* Pemasangan dan menjalankan Action Cable pada Arsitektur dan Deploy
 
 --------------------------------------------------------------------------------
 
@@ -572,7 +572,7 @@ membuat pesan disinkronkan di seluruh koneksi.
 
 ### Mandiri
 
-Cable server dapat dipisahkan dari server aplikasi normal kamu. Dan
+Cable server dapat dipisahkan dari server aplikasi normal Kamu. Dan
 masih merupakan sebuah Rack aplikasi, tetapi itu aplikasi Rack-nya sendiri. Direkomendasikan
 pengaturan dasar adalah sebagai berikut:
 
@@ -584,7 +584,7 @@ Rails.application.eager_load!
 run ActionCable.server
 ```
 
-Kemudian kamu dapat menjalankan server menggunakan sebuah binstub `bin/cable` seperti ini:
+Kemudian Kamu dapat menjalankan server menggunakan sebuah binstub `bin/cable` seperti ini:
 
 ```
 #!/bin/bash
@@ -596,7 +596,7 @@ The above will start a cable server on port 28080.
 ### Catatan
 
 Server WebSocket tidak memiliki akses ke session, tetapi mendapat
-akses ke cookies. Ini dapat digunakan saat kamu perlu mengerjakan
+akses ke cookies. Ini dapat digunakan saat Kamu perlu mengerjakan
 otentikasi. Kamu dapat melihat salah satu cara melakukannya dengan Devise dalam [artikel] ini (http://www.rubytutorial.io/actioncable-devise-authentication).
 
 ## Ketergantungan
@@ -612,7 +612,7 @@ Hal dari sisi Ruby yang dibangun di atas [websocket-driver](https://github.com/f
 ## Deployment
 
 Action Cable ditenagai oleh kombinasi WebSockets dan threads. Keduanya
-framework plumbing dan pekerjaan saluran yang pengguna yang ditentukan ditangani secara internal oleh memanfaatkan dukungan threads Ruby. Ini berarti kamu dapat menggunakan semua yang biasa kamu lakukan di Model rails tanpa masalah, selama kamu tidak melakukan kesalahan penulisan.
+framework plumbing dan pekerjaan saluran yang pengguna yang ditentukan ditangani secara internal oleh memanfaatkan dukungan threads Ruby. Ini berarti Kamu dapat menggunakan semua yang biasa Kamu lakukan di Model rails tanpa masalah, selama Kamu tidak melakukan kesalahan penulisan.
 
 Server Action Cable mengimplementasikan API pembajakan soket Rack,
 dengan demikian memungkinkan penggunaan pola multithreaded untuk mengelola koneksi
