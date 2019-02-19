@@ -35,7 +35,7 @@ module Kindle
   def generate_front_matter(html_pages)
     frontmatter = []
     html_pages.delete_if { |x|
-      if /(toc|welcome|copyright).html/.match?(x)
+      if x =~ /(toc|welcome|credits|copyright).html/
         frontmatter << x unless x =~ /toc/
         true
       end
@@ -62,7 +62,7 @@ module Kindle
     html_pages.each_with_index do |page, section_idx|
       FileUtils.mkdir_p("sections/%03d" % section_idx)
       doc = Nokogiri::HTML(File.open(page))
-      title = doc.at("title").inner_text.gsub("Panduan Ruby on Rails: ", "")
+      title = doc.at("title").inner_text.gsub("Ruby on Rails Guides: ", "")
       title = page.capitalize.gsub(".html", "") if title.strip == ""
       File.open("sections/%03d/_section.txt" % section_idx, "w") { |f| f.puts title }
       doc.xpath("//h3[@id]").each_with_index do |h3, item_idx|

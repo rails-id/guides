@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
-require "bundler/inline"
+begin
+  require "bundler/inline"
+rescue LoadError => e
+  $stderr.puts "Bundler version 1.10 or later is required. Please update your Bundler"
+  raise e
+end
 
 gemfile(true) do
   source "https://rubygems.org"
@@ -13,6 +18,9 @@ end
 
 require "minitest/autorun"
 require "active_job"
+
+# Ensure backward compatibility with Minitest 4
+Minitest::Test = MiniTest::Unit::TestCase unless defined?(Minitest::Test)
 
 class BuggyJob < ActiveJob::Base
   def perform

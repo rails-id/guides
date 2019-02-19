@@ -17,15 +17,14 @@ module RailsGuides
   class Generator
     GUIDES_RE = /\.(?:erb|md)\z/
 
-    def initialize(edge:, version:, all:, only:, kindle:, language:, direction: "ltr", stable:)
-      @edge      = edge
-      @version   = version
-      @all       = all
-      @only      = only
-      @kindle    = kindle
-      @language  = language
-      @direction = direction
-      @stable    = stable
+    def initialize(edge:, version:, all:, only:, kindle:, language:, stable:)
+      @edge     = edge
+      @version  = version
+      @all      = all
+      @only     = only
+      @kindle   = kindle
+      @language = language
+      @stable   = stable
 
       if @kindle
         check_for_kindlegen
@@ -64,9 +63,9 @@ module RailsGuides
       end
 
       def mobi
-        mobi = +"ruby_on_rails_guides_#{@version || @edge[0, 7]}"
-        mobi << ".#{@language}" if @language
-        mobi << ".mobi"
+        mobi  = "ruby_on_rails_guides_#{@version || @edge[0, 7]}"
+        mobi += ".#{@language}" if @language
+        mobi += ".mobi"
       end
 
       def initialize_dirs
@@ -127,14 +126,6 @@ module RailsGuides
 
       def copy_assets
         FileUtils.cp_r(Dir.glob("#{@guides_dir}/assets/*"), @output_dir)
-
-        if @direction == "rtl"
-          overwrite_css_with_right_to_left_direction
-        end
-      end
-
-      def overwrite_css_with_right_to_left_direction
-        FileUtils.mv("#{@output_dir}/stylesheets/main.rtl.css", "#{@output_dir}/stylesheets/main.css")
       end
 
       def output_file_for(guide)
@@ -160,34 +151,32 @@ module RailsGuides
         puts "Generating #{guide} as #{output_file}"
         layout = @kindle ? "kindle/layout" : "layout"
 
-        view = ActionView::Base.new(
-          @source_dir,
-          edge:     @edge,
-          version:  @version,
-          mobi:     "kindle/#{mobi}",
-          language: @language
-        )
-        view.extend(Helpers)
-
-        if guide =~ /\.(\w+)\.erb$/
-          return if %w[_license _welcome layout].include?($`)
-
-          # Generate the special pages like the home.
-          # Passing a template handler in the template name is deprecated. So pass the file name without the extension.
-          result = view.render(layout: layout, formats: [$1], file: $`)
-        else
-          body = File.read("#{@source_dir}/#{guide}")
-          result = RailsGuides::Markdown.new(
-            view:    view,
-            layout:  layout,
-            edge:    @edge,
-            version: @version
-          ).render(body)
-
-          warn_about_broken_links(result)
-        end
-
         File.open(output_path, "w") do |f|
+          view = ActionView::Base.new(
+            @source_dir,
+            edge:     @edge,
+            version:  @version,
+            mobi:     "kindle/#{mobi}",
+            language: @language
+          )
+          view.extend(Helpers)
+
+          if guide =~ /\.(\w+)\.erb$/
+            # Generate the special pages like the home.
+            # Passing a template handler in the template name is deprecated. So pass the file name without the extension.
+            result = view.render(layout: layout, formats: [$1], file: $`)
+          else
+            body = File.read("#{@source_dir}/#{guide}")
+            result = RailsGuides::Markdown.new(
+              view:    view,
+              layout:  layout,
+              edge:    @edge,
+              version: @version
+            ).render(body)
+
+            warn_about_broken_links(result)
+          end
+
           f.write(result)
         end
       end
@@ -217,7 +206,7 @@ module RailsGuides
       def check_fragment_identifiers(html, anchors)
         html.scan(/<a\s+href="#([^"]+)/).flatten.each do |fragment_identifier|
           next if fragment_identifier == "mainCol" # in layout, jumps to some DIV
-          unless anchors.member?(CGI.unescape(fragment_identifier))
+          unless anchors.member?(fragment_identifier)
             guess = anchors.min { |a, b|
               Levenshtein.distance(fragment_identifier, a) <=> Levenshtein.distance(fragment_identifier, b)
             }
