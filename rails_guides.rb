@@ -26,5 +26,5 @@ RailsGuides::Generator.new(
   only:     env_value["ONLY"],
   kindle:   env_flag["KINDLE"],
   language: env_value["GUIDES_LANGUAGE"],
-  stable:    env_value["STABLE"]
+  stable:   env_value["STABLE"]
 ).generate
