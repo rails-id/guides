@@ -601,10 +601,10 @@ otentikasi. Kamu dapat melihat salah satu cara melakukannya dengan Devise dalam 
 
 ## Ketergantungan
 
-Action Cable provides a subscription adapter interface to process its
-pubsub internals. By default, asynchronous, inline, PostgreSQL, and Redis
-adapters are included. The default adapter
-in new Rails applications is the asynchronous (`async`) adapter.
+Action Cable menyediakan antarmuka adaptor berlangganan untuk memprosesnya
+pubsub internal. Secara default, asinkron, inline, PostgreSQL, dan Redis
+Adaptor juga termasuk. Adaptor default
+dalam aplikasi Rails baru adalah adaptor asinkron (`async`).
 
 The Ruby side of things is built on top of [websocket-driver](https://github.com/faye/websocket-driver-ruby),
 [nio4r](https://github.com/celluloid/nio4r), and [concurrent-ruby](https://github.com/ruby-concurrency/concurrent-ruby).
