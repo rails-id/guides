@@ -593,7 +593,7 @@ bundle exec puma -p 28080 cable/config.ru
 
 The above will start a cable server on port 28080.
 
-### Notes
+### Catatan
 
 The WebSocket server doesn't have access to the session, but it has
 access to the cookies. This can be used when you need to handle
