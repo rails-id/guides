@@ -62,7 +62,7 @@ module Kindle
     html_pages.each_with_index do |page, section_idx|
       FileUtils.mkdir_p("sections/%03d" % section_idx)
       doc = Nokogiri::HTML(File.open(page))
-      title = doc.at("title").inner_text.gsub("Ruby on Rails Guides: ", "")
+      title = doc.at("title").inner_text.gsub("Panduan Ruby on Rails: ", "")
       title = page.capitalize.gsub(".html", "") if title.strip == ""
       File.open("sections/%03d/_section.txt" % section_idx, "w") { |f| f.puts title }
       doc.xpath("//h3[@id]").each_with_index do |h3, item_idx|
