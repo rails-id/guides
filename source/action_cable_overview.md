@@ -606,7 +606,7 @@ pubsub internal. Secara default, asinkron, inline, PostgreSQL, dan Redis
 Adaptor juga termasuk. Adaptor default
 dalam aplikasi Rails baru adalah adaptor asinkron (`async`).
 
-The Ruby side of things is built on top of [websocket-driver](https://github.com/faye/websocket-driver-ruby),
+Hal dari sisi Ruby yang dibangun di atas [websocket-driver](https://github.com/faye/websocket-driver-ruby),
 [nio4r](https://github.com/celluloid/nio4r), and [concurrent-ruby](https://github.com/ruby-concurrency/concurrent-ruby).
 
 ## Deployment
