@@ -611,14 +611,12 @@ Hal dari sisi Ruby yang dibangun di atas [websocket-driver](https://github.com/f
 
 ## Deployment
 
-Action Cable is powered by a combination of WebSockets and threads. Both the
-framework plumbing and user-specified channel work are handled internally by
-utilizing Ruby's native thread support. This means you can use all your regular
-Rails models with no problem, as long as you haven't committed any thread-safety sins.
+Action Cable ditenagai oleh kombinasi WebSockets dan threads. Keduanya
+framework plumbing dan pekerjaan saluran yang pengguna yang ditentukan ditangani secara internal oleh memanfaatkan dukungan threads Ruby. Ini berarti kamu dapat menggunakan semua yang biasa kamu lakukan di Model rails tanpa masalah, selama kamu tidak melakukan kesalahan penulisan.
 
-The Action Cable server implements the Rack socket hijacking API,
-thereby allowing the use of a multithreaded pattern for managing connections
-internally, irrespective of whether the application server is multi-threaded or not.
+Server Action Cable mengimplementasikan API pembajakan soket Rack,
+dengan demikian memungkinkan penggunaan pola multithreaded untuk mengelola koneksi
+secara internal, terlepas dari apakah server aplikasi multi-threaded atau tidak.
 
-Accordingly, Action Cable works with popular servers like Unicorn, Puma, and
-Passenger.
+Karenanya, Action Cable bekerja dengan server populer seperti Unicorn, Puma, dan
+Passengger.
