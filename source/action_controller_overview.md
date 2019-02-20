@@ -1,6 +1,6 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
 
-Action Controller Overview
+Ikhtiar Action Controller 
 ==========================
 
 In this guide you will learn how controllers work and how they fit into the request cycle in your application.
