@@ -3,7 +3,7 @@
 Ikhtiar Action Controller 
 ==========================
 
-In this guide you will learn how controllers work and how they fit into the request cycle in your application.
+Dalam panduan ini kamu akan mempelajari cara kerja controller dan bagaimana mencocokan ke dalam siklus permintaan dalam aplikasi kamu.
 
 After reading this guide, you will know:
 
