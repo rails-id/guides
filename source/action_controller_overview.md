@@ -5,16 +5,16 @@ Ikhtiar Action Controller
 
 Dalam panduan ini kamu akan mempelajari cara kerja controller dan bagaimana mencocokan ke dalam siklus permintaan dalam aplikasi kamu.
 
-After reading this guide, you will know:
+Setelah membaca panduan ini, kamu akan mengetahui:
 
-* How to follow the flow of a request through a controller.
-* How to restrict parameters passed to your controller.
-* How and why to store data in the session or cookies.
-* How to work with filters to execute code during request processing.
-* How to use Action Controller's built-in HTTP authentication.
-* How to stream data directly to the user's browser.
-* How to filter sensitive parameters so they do not appear in the application's log.
-* How to deal with exceptions that may be raised during request processing.
+* Bagaimana mengikuti alur permintaan melalui controller
+* Bagaimana membatasi parameter yang diteruskan ke controller kamu.
+* Bagaimana dan mengapa menyimpan data dalam session atau cookie.
+* Bagaimana bekerja dengan filter untuk mengeksekusi kode selama pemrosesan permintaan.
+* Bagaimana menggunakan otentikasi HTTP bawaan Action Controller.
+* Bagaimana streaming data langsung ke browser pengguna.
+* Bagaimana memfilter parameter sensitif sehingga tidak muncul di log aplikasi.
+* Bagaimana menangani pengecualian yang mungkin dimunculkan selama pemrosesan permintaan.
 
 --------------------------------------------------------------------------------
 
