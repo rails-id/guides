@@ -1,9 +1,8 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.4.5
-  - 2.5.3
-  - 2.6.0
+  - 2.5.5
+  - 2.6.2
   - ruby-head
 branches:
   only:
@@ -25,11 +24,12 @@ before_install:
 install:
   - travis_retry gem update --system
   - travis_retry gem install bundler
-  - travis_retry bundle
+  - travis_retry bundle install
+  - travis_retry bundle update
 after_success:
-  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_RUBY_VERSION = "2.6.0" &&
+  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_RUBY_VERSION = "2.6.2" &&
     sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY_EDGE" ./deploy.sh && bash ./deploy.sh master
-  - test $TRAVIS_BRANCH = "5-2-stable" && test $TRAVIS_RUBY_VERSION = "2.6.0" &&
+  - test $TRAVIS_BRANCH = "5-2-stable" && test $TRAVIS_RUBY_VERSION = "2.6.2" &&
     sed -i "2 i\REMOTE_FOR_DEPLOY=$REMOTE_FOR_DEPLOY" ./deploy.sh && bash ./deploy.sh v5.2 stable
 notifications:
   email: false
