@@ -64,7 +64,7 @@
 git branch --track origin/action-cable-overview # akan mendapatkan branch `action-cable-overview` dari remote origin
 ```
 
-##### Untuk menggabungkan file yang baru saja di rubah ke branch lain:
+##### Untuk menggabungkan file yang baru saja diubah ke branch lain:
 ``` bash
 git checkout 5-2-stable # pindah dulu ke branch 5-2-stable
 git checkout --patch action-cable-overview source/action_cable_overview.md # tambahkan file dari branch action-cable-overview ke branch 5-2-stable
