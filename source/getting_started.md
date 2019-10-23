@@ -394,38 +394,37 @@ membuat dan membaca. Untuk bisa melakukan itu Kamu akan melihat seperti ini nant
 Untuk tampilan yang sekarang terlihat sedikit mendasar, tapi tidak apa-apa.
 Kita bisa kapanpun untuk menambahkan style tersebut.
 
-### Laying down the groundwork
+### Meletakkan dasar
 
-Firstly, you need a place within the application to create a new article. A
-great place for that would be at `/articles/new`. With the route already
-defined, requests can now be made to `/articles/new` in the application.
-Navigate to <http://localhost:3000/articles/new> and you'll see a routing
-error:
+Pertama, Kamu memerlukan tempat dalam aplikasi untuk membuat artikel baru.
+Tempat yang tepat untuk itu adalah di `/articles/new`. Dengan route yang sudah
+ditentukan, permintaan sekarang dapat dibuat ke `/articles/new` dalam aplikasi.
+Arahkan ke <http://localhost:3000/articles/new> dan Kamu akan melihat kesalahan pada route:
 
-![Another routing error, uninitialized constant ArticlesController](images/getting_started/routing_error_no_controller.png)
+![Kesalahan route, ArticlesController konstan yang tidak diinisialisasi](images/getting_started/routing_error_no_controller.png)
 
-This error occurs because the route needs to have a controller defined in order
-to serve the request. The solution to this particular problem is simple: create
-a controller called `ArticlesController`. You can do this by running this
-command:
+Kesalahan ini terjadi karena route harus memiliki controller yang ditetapkan
+untuk melayani permintaan. Solusi untuk masalah khusus ini sederhana:
+buat controller yang disebut ArticlesController. Kamu dapat melakukan
+ini dengan menjalankan perintah ini:
 
 ```bash
 $ bin/rails generate controller Articles
 ```
 
-If you open up the newly generated `app/controllers/articles_controller.rb`
-you'll see a fairly empty controller:
+Jika Kamu membuka file yang baru digenerate `app/controllers/articles_controller.rb`
+Kamu akan melihat controller yang kosong:
 
 ```ruby
 class ArticlesController < ApplicationController
 end
 ```
 
-A controller is simply a class that is defined to inherit from
+Controller hanyalah sebuah kelas yang didefinisikan untuk inherit dari
 `ApplicationController`.
-It's inside this class that you'll define methods that will become the actions
-for this controller. These actions will perform CRUD operations on the articles
-within our system.
+Di dalam kelas ini Kamu akan menentukan metode yang akan menjadi
+action untuk controller ini. Action ini akan melakukan operasi
+CRUD pada artikel dalam sistem.
 
 NOTE: There are `public`, `private` and `protected` methods in Ruby,
 but only `public` methods can be actions for controllers.
