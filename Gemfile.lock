@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/danchoi/kindlerb.git
+  remote: https://github.com/danchoi/kindlerb.git
   revision: 56f90d0b82564ce822e9453dd645d6cac9c9b5ff
   specs:
     kindlerb (1.2.1)
@@ -52,12 +52,12 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     builder (3.2.3)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.10)
     crass (1.0.4)
     erubi (1.8.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
-    i18n (1.5.2)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     loofah (2.2.3)
@@ -71,8 +71,8 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
-    minitest (5.11.3)
-    mustache (1.1.0)
+    minitest (5.17.0)
+    mustache (1.1.1)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -114,7 +114,7 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.20.3)
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     w3c_validators (1.3.4)
       json (>= 1.8)
